@@ -6,13 +6,13 @@ namespace RevisionTwo_App.Auxillary;
 
 public class AuthId
 {
-    public int getAuthId(List<AcuAuth> acuAuths)
+    public int getAuthId(List<Credential> credentials)
     {
-        foreach (AcuAuth acuAuth in acuAuths)
+        foreach (Credential credential in credentials)
         {
-            if (acuAuth.IsChecked)
+            if (credential.IsChecked)
             {
-                return acuAuth.Id;
+                return credential.Id;
             }
         }
         return 0;

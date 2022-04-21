@@ -269,11 +269,11 @@ public class Model_Conversion
             Status        = so_value.Status;
             Date          = so_value.Date;
             CustomerID    = so_value.CustomerID;
-            CustomerName  = ba_value;
+            //CustomerName  = ba_value;
             OrderedQty    = so_value.OrderedQty;
             OrderTotal    = so_value.OrderTotal;
             CurrencyID    = so_value.CurrencyID;
-            ShipmentDate  = sp_value;
+            //ShipmentDate  = sp_value;
             LastModified  = so_value.LastModified;
         }
         #endregion

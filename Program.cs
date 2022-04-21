@@ -1,6 +1,13 @@
+
+/// <summary>
+/// Revision Two Demo Application
+/// Version 1.0.1
+/// </summary>
+
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
+
 using RevisionTwo_App.Data;
+using RevisionTwo_App.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,11 +15,16 @@ builder.Logging.AddSimpleConsole();
 
 // Add services to the container.
 
-builder.Services.AddRazorPages();
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("AppDbContext")));
 
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("AppDbContext") 
-        ?? throw new InvalidOperationException("Connection string 'AppDbContext' not found.")));
+    options.UseSqlServer("AppDbContext"));
+
+builder.Services.AddDefaultIdentity<DemoUser>(options => options.SignIn.RequireConfirmedAccount = false)
+     .AddEntityFrameworkStores<AppDbContext>();
+
+builder.Services.AddRazorPages();
 
 var app = builder.Build();
 

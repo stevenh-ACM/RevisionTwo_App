@@ -1,14 +1,13 @@
 ﻿#nullable disable
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+
 using RevisionTwo_App.Models;
 
 namespace RevisionTwo_App.Data
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<DemoUser>
     {
         public AppDbContext (DbContextOptions<AppDbContext> options) : base(options)
         {  }

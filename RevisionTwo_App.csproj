@@ -7,13 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Auxillary\**" />
     <Compile Remove="External\**" />
-    <Content Remove="Auxillary\**" />
     <Content Remove="External\**" />
-    <EmbeddedResource Remove="Auxillary\**" />
     <EmbeddedResource Remove="External\**" />
-    <None Remove="Auxillary\**" />
     <None Remove="External\**" />
   </ItemGroup>
 
@@ -70,6 +66,8 @@
   <ItemGroup>
     <PackageReference Include="Acumatica.Default_20.200.001" Version="2.0.0" />
     <PackageReference Include="Acumatica.RESTClient" Version="2.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.4">
       <PrivateAssets>all</PrivateAssets>
