@@ -20,11 +20,11 @@ namespace RevisionTwo_App.Areas.Demo.Pages.Credentials
             _context = context;
         }
 
-        public IList<Credential> Credentials { get;set; }
+        public IList<Credential> Credential { get;set; }
 
         public async Task OnGetAsync()
         {
-            Credentials = await _context.Credentials.ToListAsync();
+            Credential = await _context.Credentials.ToListAsync();
         }
     }
 }

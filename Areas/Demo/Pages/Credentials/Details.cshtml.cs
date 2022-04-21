@@ -20,7 +20,7 @@ namespace RevisionTwo_App.Areas.Demo.Pages.Credentials
             _context = context;
         }
 
-        public Credential Credentials { get; set; }
+        public Credential Credential { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,9 +29,9 @@ namespace RevisionTwo_App.Areas.Demo.Pages.Credentials
                 return NotFound();
             }
 
-            Credentials = await _context.Credentials.FirstOrDefaultAsync(m => m.Id == id);
+            Credential = await _context.Credentials.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (Credentials == null)
+            if (Credential == null)
             {
                 return NotFound();
             }

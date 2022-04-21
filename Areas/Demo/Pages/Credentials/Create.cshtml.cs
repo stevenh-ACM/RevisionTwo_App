@@ -26,7 +26,7 @@ namespace RevisionTwo_App.Areas.Demo.Pages.Credentials
         }
 
         [BindProperty]
-        public Credential Credentials { get; set; }
+        public Credential Credential { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -36,7 +36,7 @@ namespace RevisionTwo_App.Areas.Demo.Pages.Credentials
                 return Page();
             }
 
-            _context.Credentials.Add(Credentials);
+            _context.Credentials.Add(Credential);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

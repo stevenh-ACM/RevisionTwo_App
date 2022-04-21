@@ -1,10 +1,4 @@
-#nullable disable
-
-
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-
-using System.Text.Json;
 using Microsoft.Extensions.DependencyInjection;
 using RevisionTwo_App.Data;
 
@@ -14,22 +8,21 @@ builder.Logging.AddSimpleConsole();
 
 // Add services to the container.
 
-
 builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
-
-    options.UseInMemoryDatabase(builder.Configuration.GetConnectionString("AppDbContext") ?? throw new InvalidOperationException("Connection string 'AppDbContext' not found.")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("AppDbContext") 
+        ?? throw new InvalidOperationException("Connection string 'AppDbContext' not found.")));
 
 var app = builder.Build();
 
 //Seed AcuCredentials
-//using (var scope = app.Services.CreateScope())
-//{
-//    var services = scope.ServiceProvider;
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
 
-//    SeedData.Initialize(services);
-//}
+    SeedData.Initialize(services);
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

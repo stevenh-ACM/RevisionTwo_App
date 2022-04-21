@@ -22,7 +22,7 @@ namespace RevisionTwo_App.Areas.Demo.Pages.Credentials
         }
 
         [BindProperty]
-        public Credential Credentials { get; set; }
+        public Credential Credential { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -31,9 +31,9 @@ namespace RevisionTwo_App.Areas.Demo.Pages.Credentials
                 return NotFound();
             }
 
-            Credentials = await _context.Credentials.FirstOrDefaultAsync(m => m.Id == id);
+            Credential = await _context.Credentials.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (Credentials == null)
+            if (Credential == null)
             {
                 return NotFound();
             }
@@ -49,7 +49,7 @@ namespace RevisionTwo_App.Areas.Demo.Pages.Credentials
                 return Page();
             }
 
-            _context.Attach(Credentials).State = EntityState.Modified;
+            _context.Attach(Credential).State = EntityState.Modified;
 
             try
             {
@@ -57,7 +57,7 @@ namespace RevisionTwo_App.Areas.Demo.Pages.Credentials
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CredentialsExists(Credentials.Id))
+                if (!CredentialExists(Credential.Id))
                 {
                     return NotFound();
                 }
@@ -70,7 +70,7 @@ namespace RevisionTwo_App.Areas.Demo.Pages.Credentials
             return RedirectToPage("./Index");
         }
 
-        private bool CredentialsExists(int id)
+        private bool CredentialExists(int id)
         {
             return _context.Credentials.Any(e => e.Id == id);
         }

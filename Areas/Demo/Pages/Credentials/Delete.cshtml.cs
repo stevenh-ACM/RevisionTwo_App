@@ -21,7 +21,7 @@ namespace RevisionTwo_App.Areas.Demo.Pages.Credentials
         }
 
         [BindProperty]
-        public Credential Credentials { get; set; }
+        public Credential Credential { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,9 +30,9 @@ namespace RevisionTwo_App.Areas.Demo.Pages.Credentials
                 return NotFound();
             }
 
-            Credentials = await _context.Credentials.FirstOrDefaultAsync(m => m.Id == id);
+            Credential = await _context.Credentials.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (Credentials == null)
+            if (Credential == null)
             {
                 return NotFound();
             }
@@ -46,11 +46,11 @@ namespace RevisionTwo_App.Areas.Demo.Pages.Credentials
                 return NotFound();
             }
 
-            Credentials = await _context.Credentials.FindAsync(id);
+            Credential = await _context.Credentials.FindAsync(id);
 
-            if (Credentials != null)
+            if (Credential != null)
             {
-                _context.Credentials.Remove(Credentials);
+                _context.Credentials.Remove(Credential);
                 await _context.SaveChangesAsync();
             }
 
