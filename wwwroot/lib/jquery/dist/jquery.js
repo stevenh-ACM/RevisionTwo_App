@@ -1222,7 +1222,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 			return function( elem ) {
 				var node = typeof elem.getAttributeNode !== "undefined" &&
 					elem.getAttributeNode( "id" );
-				return node && node.value === attrId;
+				return node && node.Value === attrId;
 			};
 		};
 
@@ -1237,7 +1237,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 
 					// Verify the id attribute
 					node = elem.getAttributeNode( "id" );
-					if ( node && node.value === id ) {
+					if ( node && node.Value === id ) {
 						return [ elem ];
 					}
 
@@ -1246,7 +1246,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 					i = 0;
 					while ( ( elem = elems[ i++ ] ) ) {
 						node = elem.getAttributeNode( "id" );
-						if ( node && node.value === id ) {
+						if ( node && node.Value === id ) {
 							return [ elem ];
 						}
 					}
@@ -1665,7 +1665,7 @@ Sizzle.attr = function( elem, name ) {
 		support.attributes || !documentIsHTML ?
 			elem.getAttribute( name ) :
 			( val = elem.getAttributeNode( name ) ) && val.specified ?
-				val.value :
+				val.Value :
 				null;
 };
 
@@ -2385,7 +2385,7 @@ function toSelector( tokens ) {
 		len = tokens.length,
 		selector = "";
 	for ( ; i < len; i++ ) {
-		selector += tokens[ i ].value;
+		selector += tokens[ i ].Value;
 	}
 	return selector;
 }
@@ -2858,7 +2858,7 @@ select = Sizzle.select = function( selector, context, results, seed ) {
 				context = context.parentNode;
 			}
 
-			selector = selector.slice( tokens.shift().value.length );
+			selector = selector.slice( tokens.shift(.Value.length );
 		}
 
 		// Fetch a seed set for right-to-left matching
@@ -2963,7 +2963,7 @@ if ( !assert( function( el ) {
 		if ( !isXML ) {
 			return elem[ name ] === true ? name.toLowerCase() :
 				( val = elem.getAttributeNode( name ) ) && val.specified ?
-					val.value :
+					val.Value :
 					null;
 		}
 	} );
@@ -5656,7 +5656,7 @@ function leverageNative( el, type, expectSync ) {
 						// Cancel the outer synthetic event
 						event.stopImmediatePropagation();
 						event.preventDefault();
-						return result.value;
+						return result.Value;
 					}
 
 				// If this is an inner synthetic event for an event with a bubbling surrogate
@@ -7960,7 +7960,7 @@ jQuery.fn.delay = function( time, type ) {
 
 	// Support: Android <=4.3 only
 	// Default value for a checkbox should be "on"
-	support.checkOn = input.value !== "";
+	support.checkOn = input.Value !== "";
 
 	// Support: IE <=11 only
 	// Must access selectedIndex to make default options select
@@ -7969,9 +7969,9 @@ jQuery.fn.delay = function( time, type ) {
 	// Support: IE <=11 only
 	// An input loses its value after becoming a radio
 	input = document.createElement( "input" );
-	input.value = "t";
+	input.Value = "t";
 	input.type = "radio";
-	support.radioValue = input.value === "t";
+	support.radioValue = input.Value === "t";
 } )();
 
 
@@ -8042,10 +8042,10 @@ jQuery.extend( {
 			set: function( elem, value ) {
 				if ( !support.radioValue && value === "radio" &&
 					nodeName( elem, "input" ) ) {
-					var val = elem.value;
+					var val = elem.Value;
 					elem.setAttribute( "type", value );
 					if ( val ) {
-						elem.value = val;
+						elem.Value = val;
 					}
 					return value;
 				}
@@ -8447,7 +8447,7 @@ jQuery.fn.extend( {
 					return ret;
 				}
 
-				ret = elem.value;
+				ret = elem.Value;
 
 				// Handle most common string cases
 				if ( typeof ret === "string" ) {
@@ -8493,7 +8493,7 @@ jQuery.fn.extend( {
 
 			// If set returns undefined, fall back to normal setting
 			if ( !hooks || !( "set" in hooks ) || hooks.set( this, val, "value" ) === undefined ) {
-				this.value = val;
+				this.Value = val;
 			}
 		} );
 	}
@@ -8601,7 +8601,7 @@ jQuery.each( [ "radio", "checkbox" ], function() {
 	};
 	if ( !support.checkOn ) {
 		jQuery.valHooks[ this ].get = function( elem ) {
-			return elem.getAttribute( "value" ) === null ? "on" : elem.value;
+			return elem.getAttribute( "value" ) === null ? "on" : elem.Value;
 		};
 	}
 } );
@@ -8945,7 +8945,7 @@ jQuery.param = function( a, traditional ) {
 
 		// Serialize the form elements
 		jQuery.each( a, function() {
-			add( this.name, this.value );
+			add( this.name, this.Value );
 		} );
 
 	} else {
