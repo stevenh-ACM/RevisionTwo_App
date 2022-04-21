@@ -1,0 +1,199 @@
+﻿@page
+@model RevisionTwo_App.Areas.Demo.Pages.SalesOrders.DetailsModel
+@{
+    ViewData["Title"] = "Sales Order Details";
+}
+<h4 class="align-text-top text-muted">@ViewData["Title"]</h4>
+
+<div>
+    <h4>Sales Orders held Locally</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SalesOrder.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SalesOrder.Status.Value)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SalesOrder.Approved)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SalesOrder.Approved.Value)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SalesOrder.ContactID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SalesOrder.ContactID.Value)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SalesOrder.CustomerID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SalesOrder.CustomerID.Value)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SalesOrder.CustomerOrder)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SalesOrder.CustomerOrder.Value)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SalesOrder.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Convert.ToDateTime(Model.SalesOrder.Date.Value).ToString("yyyy/MM/dd")
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SalesOrder.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SalesOrder.Description.Value)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SalesOrder.Hold)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SalesOrder.Hold.Value)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SalesOrder.OrderedQty)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SalesOrder.OrderedQty.Value)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SalesOrder.OrderNbr)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SalesOrder.OrderNbr.Value)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SalesOrder.OrderTotal)
+        </dt>
+        <dd class="col-sm-10">
+            $@Html.DisplayFor(model => model.SalesOrder.OrderTotal.Value)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SalesOrder.OrderType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SalesOrder.OrderType.Value)
+        </dd>
+        <dd></dd><hr/>
+        @if(Model.SalesOrderDetails is not null)
+        {
+            @foreach(var detail in Model.SalesOrderDetails)
+            {
+             <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.SalesOrderDetails[0].InventoryID)
+            </dt><hr/>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(modelDetail => detail.InventoryID.Value)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.SalesOrderDetails[0].OrderQty)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(modelDetail => detail.OrderQty.Value)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.SalesOrderDetails[0].ShipOn)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(modelDetail => detail.ShipOn.Value)
+            </dd>
+            <dt class="col-sm-2">
+               @Html.DisplayNameFor(model => model.SalesOrderDetails[0].Amount)
+            </dt> 
+            <dd class="col-sm-10">
+                $@Html.DisplayFor(modelDetail => detail.Amount.Value)
+            </dd>
+            <dt class="col-sm-2">
+               @Html.DisplayNameFor(model => model.SalesOrderDetails[0].Amount)
+            </dt> 
+            <dd class="col-sm-10">
+                $@Html.DisplayFor(modelDetail => detail.Amount.Value)
+            </dd>
+            }
+        } 
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SalesOrder.ShipToAddress)
+        </dt><hr/>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SalesOrder.ShipToAddress.AddressLine1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SalesOrder.ShipToAddress.AddressLine1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SalesOrder.ShipToAddress.AddressLine2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SalesOrder.ShipToAddress.AddressLine2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SalesOrder.ShipToAddress.City)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SalesOrder.ShipToAddress.City)
+        </dd>
+         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SalesOrder.ShipToAddress.State)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SalesOrder.ShipToAddress.State)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SalesOrder.ShipToAddress.PostalCode)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SalesOrder.ShipToAddress.PostalCode)
+        </dd>
+        <dd></dd><hr/>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SalesOrder.Totals)
+        </dt><hr/>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SalesOrder.Totals.DiscountTotal)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SalesOrder.Totals.DiscountTotal.Value)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SalesOrder.Totals.LineTotalAmount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SalesOrder.Totals.LineTotalAmount.Value)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SalesOrder.Totals.MiscTotalAmount)      
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SalesOrder.Totals.MiscTotalAmount.Value)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SalesOrder.Totals.TaxTotal)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SalesOrder.Totals.TaxTotal.Value)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SalesOrder.Totals.UnbilledAmount)
+        </dt>
+        <dd class="col-sm-10">            
+            @Html.DisplayFor(model => model.SalesOrder.Totals.UnbilledAmount.Value)
+        </dd>
+        <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.SalesOrder.Totals.UnpaidBalance)
+        </dt>        
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SalesOrder.Totals.UnpaidBalance.Value)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-orderNbr="@Model.SalesOrder.OrderNbr.Value"><i class="bi bi-pencil-square" title="Edit"></i></a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

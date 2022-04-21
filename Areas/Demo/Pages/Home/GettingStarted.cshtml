@@ -1,0 +1,255 @@
+﻿@page
+@model GettingStartedModel
+@{
+    ViewData["Title"] = "Getting Started";
+}
+<div class="card h-100 shadow" id="mycard">
+    <img class="card-img" id="mybanner" src="~/images/bg_homepage.jpg"/> 
+    <div class="card-img-overlay">
+        <div class="card-body">
+            <h2 class="card-title">@ViewData["Title"]</h2>
+        </div>  
+        <div class="card-footer bg-transparent border-0">
+            <p><a class="btn btn-primary" asp-area="" asp-page="/Index"><i class="bi bi-arrow-return-left"></i></a></p>
+            <p class="card-text text-wrap" style="width:auto">Information on getting ready to demo.</p>
+            <p><i><b>See</b></i> Steps to get started. <i class="bi bi-eyeglasses"></i> <i class="bi bi-arrow-down-square"></i></p>
+
+        </div>
+    </div>   
+</div>
+<br/>
+
+
+<div class="accordion" id="accordionText">
+
+    @*First accordion section*@
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                Steps to get started&nbsp;&nbsp; <i class="bi bi-arrow-down-up"></i>
+            </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionText">
+            <div class="accordion-body">
+                <p> <b>Steps</b>                         
+                    <ol type="1">
+                        <li>First Login as you'll need to be authenticated to use the Demo section.</li>
+                        <li>Once logged in, goto the Demo home page.</li>
+                        <li>Create, Edit as needed a connection string. The URL is the one used to connect to your Acumatica ERP instance.</li>
+                        <li>Once you've indicated which connection string you'll be using... Back on the Demo Home Page</li>
+                        <li>Select a transaction type you'd like to demo.</li>
+                        <li>The demo is most effective if the workspace for that transaction type is opened to observe in real-time the new, editted, deleted transaction.</li>
+                        <li>When done, simply close the app.</li>
+                    </ol>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    @*Second accordion section*@
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Background&nbsp;&nbsp; <i class="bi bi-arrow-down-up"></i>
+            </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionText">
+            <div class="accordion-body">
+                <p class="text-wrap">
+                    <h3>ReST APIs and Acumatica Cloud ERP</h3>
+                    <p>
+                        Acumatica ERP provides web services for integration with external systems. Through the web services of Acumatica ERP, external systems
+                        can get data records from Acumatica ERP, process these records, and save new or updated records to Acumatica ERP. To access these web services, you can use the
+                        contract-based<dfn><b>Re</b>presentational <b>S</b>tate <b>T</b>ransfer (ReST) API</dfn>, the contract-based SOAP application programming interface (API), and the
+                        screen-based SOAP API. ReST APIs are used by this demonstration application. 
+                    </p>
+                     <p>
+                        Acumatica ERP has full support for the ReST Open APIs which is made possible using contract-based web services. For general information on the
+                        contract-based web services, see&nbsp;<a href="https://help.acumatica.com/(W(2))/Help?ScreenId=ShowWiki&pageid=f048ad33-3308-49aa-aac8-fec1a470fc0f">
+                        Integration Development Guide: REST API</a>&nbsp;. It has a comprehensive explanation of the web services and web service endpoints or
+                        contracts which enable Acumatica ERP to integrate with external systems.
+                    </p>
+                    <h4>Endpoints and Contracts</h4>
+                    <p> 
+                        An endpoint is an entry point to the Acumatica ERP web services. For each endpoint that a web service API provides, a contract of the
+                        endpoint defines the entities, with their actions and fields, that are
+                        available through the endpoint and the methods that you can use to work with these entities. 
+                    </p>
+                    <p>
+                        These endpoints are identified by the URL that you use to access the web services. For example, the endpoint http://localhost/AcumaticaDB/entity/Default/20.200.001?wsdl 
+                        has the version 20.200.001 and the name Default. The version of an endpoint defines the list of entities, with their actions and fields you can work with through this endpoint. 
+                        The contract of an endpoint is identified by contract version. The version of a contract defines the list of methods for working with
+                        entities that you can use when working with Acumatica ERP through the endpoint with this version of the contract. 
+                    </p>
+                    <p>
+                        The following image depicts this relationship:
+                        <img src="~/images/AcumaticaERP_IntegrationDevelopmentGuide.jpg"/>
+                    </p>
+                    <h4>API Entities, Fields, and Actions</h4>
+                    <p>
+                        The contract of an endpoint defines the following elements of the contract-based web services API: entities, fields, and actions.
+                    </p>
+                    <h4>Entities</h4>
+                    <p>
+                        An entity corresponds to a business logic object that you are going to work with. For example, the contract of a system endpoint includes
+                        the Warehouse entity, which represents a warehouse and holds the data related to the warehouse. This entity is associated with the Warehouses (IN204000) form. For
+                        a custom endpoint, if you are going to use an entity to transfer data to or from Acumatica ERP, you should associate this entity with a particular
+                        Acumatica ERP form. For example, you can create a Vendor entity, which represents a vendor. This entity is associated with the Vendor (AP303000) form. 
+                    </p>
+                    <h4>Fields</h4>
+                    <p>
+                        The fields of an entity correspond to the parameters of a business logic object. For example, the Warehouse Description and fields, among others. 
+                        In the contract, these fields are mapped to the Description and the elements of the Summary area of the Warehouses form. 
+                        For a custom endpoint, if you need to connect the field with a particular element on an Acumatica ERP form, you should map the field to this element. 
+                        For example, if you have created the Vendor entity, which designates a vendor, you can add the field VendorID to the entity
+                        and connect this field with the Vendor ID element of the Summary area of the Vendors form.
+                    </p>
+                    <h4>Actions</h4>
+                    <p>
+                        The actions of an entity correspond to the actions that can be applied to a business logic object. For example, the TransferOrder entity,
+                        which is available through the system endpoint, has the ReleaseTransferOrder action. This action corresponds to the Release button on the form toolbar of the Transfers (IN304000) form. 
+                    </p>
+                    <p>For a custom endpoint, if you need to use an Acumatica ERP action, you should add this action to the contract of the custom endpoint with
+                        the needed parameters. For example, suppose you want to add an action that changes the customer ID of an existing customer, you can add the action <i>ChangeID</i>
+                        and map it to the Change ID action, which is available on the Customers form. The new action should have one parameter, which specifies the new ID of a customer as the Change ID action has. 
+                    </p>
+                    <h4>Using the Web Endpoints and Contracts</h4>
+                    <p>
+                        First, export a specific web endpoint into a json formatted file using the OpenAPI 2.0 tool in the Service Definition menu in the Web Service Endpoint form (SM207060).
+                    </p>
+                    <p>
+                        This representation of the endpoint can be used to generate C# classes that then can be used to make the ReST API calls.
+                    </p>
+                    <h4>Acumatica ReST API Client</h4>
+                    <p>
+                        Acumatica has created a NuGet package for the API Client and all the latest Endpoints available in Acumatica ERP. This package has transformed
+                        the json definitions available for all the Acumatica web service endpoints into C# classes that can be used very naturally to interact with an Acumatica ERP instance..
+                        The API Client is utilized by this application.
+                    </p>
+                    <p>
+                        The Acumatica ReST API Client is also publicly available on github.com. It uses an Open-Source project called RestSharp. The RestSharp is also publicly available on github.com.
+                    </p>
+                    <p>
+                        The transformation of the json file into actual C# classes can be performed in a few ways, namely: OpenCodeGenerator, NSwag, or even on swagger.io.
+                        The code generator was utilized in the API Client project. More information regarding this all is in the ReadMe.md file on github.com.
+                    </p>   
+                </p>
+            </div>
+        </div>
+    </div>
+
+    @*Third accordion section*@  
+    <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Acumatica Support for the ReST APIs&nbsp;&nbsp; <i class="bi bi-arrow-down-up"></i>
+            </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionText">
+            <div class="accordion-body">
+                <p>  
+                    <dl>
+                        <dt>Configuring the REST API</dt>
+                            <dd>
+                                Acumatica ERP provides web services for integration with external systems. 
+                                Through the web services of Acumatica ERP, external systems can get data records from Acumatica ERP, 
+                                process these records, and save new or updated records to Acumatica ERP.
+                                To access these web services, you can use the contract-based representational state transfer (REST) API, 
+                                the contract-based SOAP application programming interface (API), 
+                                and the screen-based SOAP API. The main concepts related to the contract-based SOAP API and the contract-based REST API.
+                            </dd>
+                        
+                        <dt>Contract-Based Web Service API</dt>
+                            <dd>
+                                The contract-based web service APIs operate with business logic objects that do not depend on Acumatica ERP forms or their properties and methods. 
+                                (In this context, contract-based means based on the object model the web service API provides.) 
+                                Each web service contract is fixed and does not change based on system customization, localization, or any other changes made to Acumatica ERP.
+                            </dd>
+                        
+                        <dt>Endpoints and Contracts</dt>
+                            <dd>
+                                You access the contract-based REST and SOAP API through endpoints that you configure on the Web Service Endpoints (SM207060) form.
+                            </dd>
+                        
+                        <dt>API Entities, Fields, and Actions</dt>
+                            <dd>
+                                The contract of an endpoint defines the following elements of the contract-based web services API: entities, fields, and actions.
+                            </dd>
+                        
+                        <dt>Custom Fields</dt>
+                            <dd>
+                                You can work with the values of the custom fields that are not included in the entity definition.
+                            </dd>
+                        
+                        <dt>Custom Endpoints and Endpoint Extensions</dt>
+                            <dd>
+                                If the API provided by the system endpoint of Acumatica ERP is not sufficient for the requirements of your application, 
+                                you can create a custom endpoint from scratch or by extending an existing endpoint.
+                            </dd>
+                        
+                        <dt>Naming Rules for Endpoints</dt>
+                            <dd>
+                                When you create a custom endpoint on the Web Service Endpoints (SM207060) form (either from scratch or by extending a system endpoint), 
+                                for the names of the entities, fields, actions, and action parameters of the endpoint, and the endpoint name and version, 
+                                you should make sure to adhere to the following rules:
+                        </dd>
+                        
+                        <dt>Comparison of Contract Versions</dt>
+                            <dd>
+                                Acumatica ERP 2022 R1 supports three versions of system contracts. In this topic, you can learn the main differences between the contract versions.
+                            </dd>
+                        
+                        <dt>Comparison of System Endpoints</dt>
+                            <dd>
+                                Acumatica ERP 2022 R1 supports three system endpoints. In this topic, you can learn about the differences between these endpoints.
+                            </dd>
+                        
+                        <dt>Contract-Based REST API of a Web Service Endpoint</dt>
+                            <dd>
+                                Acumatica ERP provides you with the contract-based REST APIs of web service endpoints and with the contract-based REST API of an Acumatica ERP instance. 
+                                The methods of a REST API are provided in a swagger.json file, which is an OpenAPI 2.0 (formerly known as Swagger 2.0) file. 
+                                For more information about the OpenAPI specification, see https://www.openapis.org. 
+                                You can use the swagger.json files to review the APIs of the instance and endpoints and build the client applications for Acumatica ERP based on these files.
+                        </dd>
+                        
+                        <dt>Contract-Based REST API of an Instance</dt>
+                            <dd>
+                                You can retrieve the swagger.json file of an Acumatica ERP instance by using the following URL.
+                            </dd>
+                        
+                        <dt>Representation of a Record in JSON Format</dt>
+                            <dd>
+                                By using the contract-based REST API, you obtain existing records from Acumatica ERP, create new records, update, and delete them. 
+                                You work with the records in Acumatica ERP by using the entities that are defined in the contract of the endpoint that you use to access the service. 
+                                You pass records to and receive them from the contract-based REST API in JavaScript object notation (JSON) format. 
+                                JSON is a text format for transmitting data objects that consist of key-value pairs.
+                            </dd>
+                        
+                        <dt>To Create a Custom Endpoint</dt>
+                            <dd>
+                                You use the Web Service Endpoints (SM207060) form to create a custom endpoint.
+                            </dd>
+                        
+                        <dt>To Extend an Existing Endpoint</dt>
+                            <dd>
+                                You use the Web Service Endpoints (SM207060) form to create an endpoint as an extension of an existing endpoint.
+                            </dd>
+                        
+                        <dt>To Validate an Endpoint</dt>
+                            <dd>
+                                You use the Web Service Endpoints (SM207060) form to validate an endpoint, an entity, or an action. 
+                                During this validation, the system makes sure the following criteria are met for the elements of the endpoint, entity, or action:
+                            </dd>
+                        
+                        <dt>To Import a REST Schema to a Visual Studio Solution</dt>
+                            <dd>
+                                You can create a Visual Studio project and use the REST schema contained in the Acumatica ERPswagger.json files for interaction with Acumatica ERP. 
+                                You import the REST schema to a Visual Studio solution in two stages:#You generate Visual Studio packages from the REST schema.
+                                #You include the generated Visual Studio packages in your Visual Studio solution.
+                            </dd>
+                    </dl> 
+                </p>  
+            </div>
+        </div>
+    </div>
+</div>
