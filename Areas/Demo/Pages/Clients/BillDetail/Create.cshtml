@@ -1,0 +1,80 @@
+﻿@page
+@model RevisionTwo_App.Areas.Demo.Pages.Clients.BillDetail.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>BillDetail_App</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BillDetail_App.Branch" class="control-label"></label>
+                <input asp-for="BillDetail_App.Branch" class="form-control" />
+                <span asp-validation-for="BillDetail_App.Branch" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BillDetail_App.InventoryID" class="control-label"></label>
+                <input asp-for="BillDetail_App.InventoryID" class="form-control" />
+                <span asp-validation-for="BillDetail_App.InventoryID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BillDetail_App.TransactionDescription" class="control-label"></label>
+                <input asp-for="BillDetail_App.TransactionDescription" class="form-control" />
+                <span asp-validation-for="BillDetail_App.TransactionDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BillDetail_App.Qty" class="control-label"></label>
+                <input asp-for="BillDetail_App.Qty" class="form-control" />
+                <span asp-validation-for="BillDetail_App.Qty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BillDetail_App.UnitCost" class="control-label"></label>
+                <input asp-for="BillDetail_App.UnitCost" class="form-control" />
+                <span asp-validation-for="BillDetail_App.UnitCost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BillDetail_App.Amount" class="control-label"></label>
+                <input asp-for="BillDetail_App.Amount" class="form-control" />
+                <span asp-validation-for="BillDetail_App.Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BillDetail_App.Account" class="control-label"></label>
+                <input asp-for="BillDetail_App.Account" class="form-control" />
+                <span asp-validation-for="BillDetail_App.Account" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BillDetail_App.Description" class="control-label"></label>
+                <input asp-for="BillDetail_App.Description" class="form-control" />
+                <span asp-validation-for="BillDetail_App.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BillDetail_App.CostCode" class="control-label"></label>
+                <input asp-for="BillDetail_App.CostCode" class="form-control" />
+                <span asp-validation-for="BillDetail_App.CostCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BillDetail_App.POOrderNbr" class="control-label"></label>
+                <input asp-for="BillDetail_App.POOrderNbr" class="form-control" />
+                <span asp-validation-for="BillDetail_App.POOrderNbr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

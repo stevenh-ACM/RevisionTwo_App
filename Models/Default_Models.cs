@@ -3,15 +3,14 @@
 using Acumatica.Default_20_200_001.Model;
 using Acumatica.RESTClient.Model;
 
-namespace RevisionTwo_App.Models;
+namespace RevisionTwo_App.Models.Default;
 /// <summary>
 ///  Models of Acumatica Default EndPoints. 
 ///  These classes are custom models from the complete Models of Acumatica <see cref="RestClient"></see> .
 ///  These Models are used for ReST API communications with the Acumatica Instance. They are not for EntityFramework
 ///  Nuget Package - Acumatica Models all available with RestClient
 /// </summary>
-public class Default
-{
+
     /// <summary>
     ///  mapping class for standard output form
     /// </summary>
@@ -163,4 +162,3 @@ public class Default
         public StringValue   Description { get; set; }
         #endregion
     }
-}

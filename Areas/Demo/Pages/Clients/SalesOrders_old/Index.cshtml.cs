@@ -1,9 +1,5 @@
 #nullable disable
 
-using RevisionTwo_App.Auxillary;
-using RevisionTwo_App.Data;
-using RevisionTwo_App.Models;
-
 using Acumatica.Auth.Api;
 using Acumatica.RESTClient.Model;
 using Acumatica.Default_20_200_001.Api;
@@ -13,12 +9,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-using System.Linq;
-using System.Reflection;
 using System.ComponentModel.DataAnnotations;
-using static RevisionTwo_App.Models.Default;
-using static RevisionTwo_App.Models.App;
-using static RevisionTwo_App.Models.Model_Conversion;
+
+using RevisionTwo_App.Auxillary;
+using RevisionTwo_App.Data;
+using RevisionTwo_App.Models;
+using RevisionTwo_App.Models.Default;
+using RevisionTwo_App.Models.Conversion;
+using RevisionTwo_App.Models.App;
 
 namespace RevisionTwo_App.Areas.Demo.Pages.SalesOrders;
 
@@ -60,7 +58,7 @@ public class IndexModel : PageModel
     public List<TaxDetail> TaxDetails { get; set; }
     public Totals Totals { get; set; }
     public BusinessAccount BusinessAccount { get; set; }
-    public List<CustomSalesOrderInfo> CustomSalesOrderInfo { get; set; }
+    public List<SalesOrder_Model> CustomSalesOrderInfo { get; set; }
     public bool salesOrdersRetrieved { get; set; }
 
     [BindProperty, DataType(DataType.Date), DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
@@ -127,7 +125,7 @@ public class IndexModel : PageModel
                 }
                 else
                 {
-                    if (!_context.CustomSalesOrders.Any())
+                    if (!_context.SalesOrder_App.Any())
                     {
                         //for 2022R1 latest salesorders are dated 2022-02-03
                         //var dateTimeOffset = new DateTime(2022, 2, 1, 0, 0, 0).ToString("s");
@@ -141,7 +139,7 @@ public class IndexModel : PageModel
 
                         SalesOrders = salesOrderApi.GetList(select, filter, expand, custom, skip, top);
 
-                        List<CustomSalesOrderInfo> c_temps = new();
+                        List<SalesOrder_Model> c_temps = new();
 
                         for (int idx = 0; idx < (SalesOrders.Count - 1); idx++)
                         {
@@ -149,10 +147,10 @@ public class IndexModel : PageModel
                             if (SalesOrders[idx].Shipments.Count > 0) shipmentDate = SalesOrders[idx].Shipments[0].ShipmentDate;
                             string[] customerID = { SalesOrders[idx].CustomerID.Value };
                             BusinessAccount = businessAccountApi.GetByKeys(customerID);
-                            CustomSalesOrderInfo customSalesOrderInfo = new(SalesOrders[idx], shipmentDate, this.BusinessAccount.Name);
-                            ConvertToCustomSalesOrder co_temp = new ConvertToCustomSalesOrder(customSalesOrderInfo);
-                            c_temps.Add(customSalesOrderInfo);
-                            _context.CustomSalesOrders.Add(co_temp);
+                            Create_SalesOrder_Model salesOrder_Model = new(SalesOrders[idx], shipmentDate, BusinessAccount.Name);
+                            ToSalesOrder_App co_temp = new ToSalesOrder_App(salesOrder_Model);
+                            c_temps.Add(salesOrder_Model);
+                            _context.SalesOrder_App.Add(co_temp);
 
                         }
                         this.CustomSalesOrderInfo = c_temps;
@@ -162,12 +160,12 @@ public class IndexModel : PageModel
                     {
 
 
-                        List<CustomSalesOrderInfo> c_temps = new();
-                        List<CustomSalesOrder> co_temps = new();
-                        co_temps = await _context.CustomSalesOrders.ToListAsync();
+                        List<SalesOrder_Model> c_temps = new();
+                        List<SalesOrder_App> co_temps = new();
+                        co_temps = await _context.SalesOrder_App.ToListAsync();
                         foreach (var co in co_temps)
                         {
-                            ConvertToCustomSalesOrderInfo c_temp = new(co);
+                            ToSalesOrder_Model c_temp = new(co);
                             c_temps.Add(c_temp);
 
                         }
@@ -217,7 +215,7 @@ public class IndexModel : PageModel
 
         List<SalesOrder_Model> c_temps = new();
         List<SalesOrder_App> co_temps = new();
-        co_temps = await _context.SalesOrders_App.Where(x => x.Date >= FromDate && x.Date <= ToDate).ToListAsync();
+        co_temps = await _context.SalesOrder_App.Where(x => x.Date >= FromDate && x.Date <= ToDate).ToListAsync();
         foreach (var co in co_temps)
         {
             ToSalesOrder_Model c_temp = new(co);
@@ -229,39 +227,4 @@ public class IndexModel : PageModel
         return Page();
     }
 
-}
-#region classes
-
-public class CustomSalesOrderInfo
-{
-    //ctor
-    public CustomSalesOrderInfo()
-    { }
-    public CustomSalesOrderInfo(SalesOrder so_value, DateTimeValue sp_value, StringValue ba_value)
-    {
-        OrderType = so_value.OrderType;
-        OrderNbr = so_value.OrderNbr;
-        Status = so_value.Status;
-        Date = so_value.Date;
-        CustomerID = so_value.CustomerID;
-        OrderedQty = so_value.OrderedQty;
-        OrderTotal = so_value.OrderTotal;
-        CurrencyID = so_value.CurrencyID;
-        LastModified = so_value.LastModified;
-        ShipmentDate = sp_value;
-        CustomerName = ba_value;
-    }
-    //properties
-    public StringValue OrderType { get; set; }
-    public StringValue OrderNbr { get; set; }
-    public StringValue Status { get; set; }
-    public DateTimeValue Date { get; set; }
-    public StringValue CustomerID { get; set; }
-    public DecimalValue OrderedQty { get; set; }
-    public DecimalValue OrderTotal { get; set; }
-    public StringValue CurrencyID { get; set; }
-    public DateTimeValue LastModified { get; set; }
-    public DateTimeValue ShipmentDate { get; set; }
-    public StringValue CustomerName { get; set; }
-    #endregion
 }

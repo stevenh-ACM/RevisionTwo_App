@@ -1,0 +1,63 @@
+4/21/2022 1:40:20 PM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
+	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
+-----------------------------------------
+
+4/21/2022 1:40:58 PM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+4/21/2022 1:40:58 PM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/logout
+-----------------------------------------
+
+4/21/2022 1:40:58 PM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+4/21/2022 1:41:29 PM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
+	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
+-----------------------------------------
+
+4/21/2022 1:41:29 PM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+4/21/2022 1:41:29 PM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/logout
+-----------------------------------------
+
+4/21/2022 1:41:29 PM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+4/21/2022 1:41:42 PM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
+	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
+-----------------------------------------
+
+4/21/2022 1:41:43 PM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+

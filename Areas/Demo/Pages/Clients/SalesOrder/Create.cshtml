@@ -1,0 +1,85 @@
+﻿@page
+@model RevisionTwo_App.Areas.Demo.Pages.Clients.SalesOrder.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>SalesOrder_App</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SalesOrder_App.OrderType" class="control-label"></label>
+                <input asp-for="SalesOrder_App.OrderType" class="form-control" />
+                <span asp-validation-for="SalesOrder_App.OrderType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SalesOrder_App.OrderNbr" class="control-label"></label>
+                <input asp-for="SalesOrder_App.OrderNbr" class="form-control" />
+                <span asp-validation-for="SalesOrder_App.OrderNbr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SalesOrder_App.Status" class="control-label"></label>
+                <input asp-for="SalesOrder_App.Status" class="form-control" />
+                <span asp-validation-for="SalesOrder_App.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SalesOrder_App.Date" class="control-label"></label>
+                <input asp-for="SalesOrder_App.Date" class="form-control" />
+                <span asp-validation-for="SalesOrder_App.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SalesOrder_App.CustomerID" class="control-label"></label>
+                <input asp-for="SalesOrder_App.CustomerID" class="form-control" />
+                <span asp-validation-for="SalesOrder_App.CustomerID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SalesOrder_App.CustomerName" class="control-label"></label>
+                <input asp-for="SalesOrder_App.CustomerName" class="form-control" />
+                <span asp-validation-for="SalesOrder_App.CustomerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SalesOrder_App.OrderedQty" class="control-label"></label>
+                <input asp-for="SalesOrder_App.OrderedQty" class="form-control" />
+                <span asp-validation-for="SalesOrder_App.OrderedQty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SalesOrder_App.OrderTotal" class="control-label"></label>
+                <input asp-for="SalesOrder_App.OrderTotal" class="form-control" />
+                <span asp-validation-for="SalesOrder_App.OrderTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SalesOrder_App.CurrencyID" class="control-label"></label>
+                <input asp-for="SalesOrder_App.CurrencyID" class="form-control" />
+                <span asp-validation-for="SalesOrder_App.CurrencyID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SalesOrder_App.ShipmentDate" class="control-label"></label>
+                <input asp-for="SalesOrder_App.ShipmentDate" class="form-control" />
+                <span asp-validation-for="SalesOrder_App.ShipmentDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SalesOrder_App.LastModified" class="control-label"></label>
+                <input asp-for="SalesOrder_App.LastModified" class="form-control" />
+                <span asp-validation-for="SalesOrder_App.LastModified" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

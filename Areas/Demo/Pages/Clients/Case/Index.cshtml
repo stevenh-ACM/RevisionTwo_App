@@ -1,0 +1,115 @@
+﻿@page
+@model RevisionTwo_App.Areas.Demo.Pages.Clients.Case.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Case_App[0].CaseID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Case_App[0].Subject)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Case_App[0].BusinessAccount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Case_App[0].BusinessAccountName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Case_App[0].Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Case_App[0].Reason)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Case_App[0].Severity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Case_App[0].Priority)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Case_App[0].Owner)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Case_App[0].Workgroup)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Case_App[0].ClassID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Case_App[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Case_App[0].LastActivityDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Case_App[0].LastModifiedDateTime)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Case_App) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CaseID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BusinessAccount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BusinessAccountName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reason)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Severity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Priority)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Owner)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Workgroup)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClassID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastActivityDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastModifiedDateTime)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

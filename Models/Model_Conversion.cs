@@ -1,20 +1,18 @@
 ﻿#nullable disable
 
-
 using Acumatica.Default_20_200_001.Model;
 using Acumatica.RESTClient.Model;
 
-using static RevisionTwo_App.Models.App;
-using static RevisionTwo_App.Models.Default;
+using RevisionTwo_App.Models.App;
+using RevisionTwo_App.Models.Default;
 
-namespace RevisionTwo_App.Models;
+namespace RevisionTwo_App.Models.Conversion;
 
 
 /// <summary>
 /// Conversion classes using inheritance of custom models
 /// </summary>
-public class Model_Conversion
-{
+
     #region classes
 
     /// <summary>
@@ -256,7 +254,7 @@ public class Model_Conversion
     /// Create custom Default model from API Response, add new properties
     /// potentially from other Default Models by constructor
     /// </summary>
-    public class Create_SalesOrder_Model : SalesOrder
+    public class Create_SalesOrder_Model : SalesOrder_Model
     {
         #region Create_SalesOrder_Model
         //ctor
@@ -269,11 +267,11 @@ public class Model_Conversion
             Status        = so_value.Status;
             Date          = so_value.Date;
             CustomerID    = so_value.CustomerID;
-            //CustomerName  = ba_value;
+            CustomerName  = ba_value;
             OrderedQty    = so_value.OrderedQty;
             OrderTotal    = so_value.OrderTotal;
             CurrencyID    = so_value.CurrencyID;
-            //ShipmentDate  = sp_value;
+            ShipmentDate  = sp_value;
             LastModified  = so_value.LastModified;
         }
         #endregion
@@ -362,4 +360,3 @@ public class Model_Conversion
     }
 
     #endregion
-}

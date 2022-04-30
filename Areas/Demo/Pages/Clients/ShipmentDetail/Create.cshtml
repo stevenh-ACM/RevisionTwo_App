@@ -1,0 +1,65 @@
+﻿@page
+@model RevisionTwo_App.Areas.Demo.Pages.Clients.ShipmentDetail.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>ShipmentDetail_App</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ShipmentDetail_App.OrderType" class="control-label"></label>
+                <input asp-for="ShipmentDetail_App.OrderType" class="form-control" />
+                <span asp-validation-for="ShipmentDetail_App.OrderType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShipmentDetail_App.OrderNbr" class="control-label"></label>
+                <input asp-for="ShipmentDetail_App.OrderNbr" class="form-control" />
+                <span asp-validation-for="ShipmentDetail_App.OrderNbr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShipmentDetail_App.InventoryID" class="control-label"></label>
+                <input asp-for="ShipmentDetail_App.InventoryID" class="form-control" />
+                <span asp-validation-for="ShipmentDetail_App.InventoryID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShipmentDetail_App.WarehouseID" class="control-label"></label>
+                <input asp-for="ShipmentDetail_App.WarehouseID" class="form-control" />
+                <span asp-validation-for="ShipmentDetail_App.WarehouseID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShipmentDetail_App.ShippedQty" class="control-label"></label>
+                <input asp-for="ShipmentDetail_App.ShippedQty" class="form-control" />
+                <span asp-validation-for="ShipmentDetail_App.ShippedQty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShipmentDetail_App.OrderedQty" class="control-label"></label>
+                <input asp-for="ShipmentDetail_App.OrderedQty" class="form-control" />
+                <span asp-validation-for="ShipmentDetail_App.OrderedQty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShipmentDetail_App.Description" class="control-label"></label>
+                <input asp-for="ShipmentDetail_App.Description" class="form-control" />
+                <span asp-validation-for="ShipmentDetail_App.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -14,11 +14,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Areas\Demo\Pages\Clients\SalesOrders\Create.cshtml" />
-    <None Include="Areas\Demo\Pages\Clients\SalesOrders\Delete.cshtml" />
-    <None Include="Areas\Demo\Pages\Clients\SalesOrders\Details.cshtml" />
-    <None Include="Areas\Demo\Pages\Clients\SalesOrders\Edit.cshtml" />
-    <None Include="Areas\Demo\Pages\Clients\SalesOrders\Index.cshtml" />
+    <None Include="Areas\Demo\Pages\Clients\SalesOrders_old\Create.cshtml" />
+    <None Include="Areas\Demo\Pages\Clients\SalesOrders_old\Delete.cshtml" />
+    <None Include="Areas\Demo\Pages\Clients\SalesOrders_old\Details.cshtml" />
+    <None Include="Areas\Demo\Pages\Clients\SalesOrders_old\Edit.cshtml" />
+    <None Include="Areas\Demo\Pages\Clients\SalesOrders_old\Index.cshtml" />
     <None Include="Areas\Demo\Pages\_ValidationScriptsPartial.cshtml" />
     <None Include="Pages\Shared\_Layout.cshtml" />
     <None Include="Pages\Shared\_ValidationScriptsPartial.cshtml" />
