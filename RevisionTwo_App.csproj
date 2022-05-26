@@ -7,18 +7,45 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Demo\Pages\Clients\Bill - Copy\**" />
+    <Compile Remove="Areas\Demo\Pages\Clients\BillDetail\**" />
+    <Compile Remove="Areas\Demo\Pages\Clients\Displays\**" />
+    <Compile Remove="Areas\Demo\Pages\Clients\SalesOrders_old\**" />
+    <Compile Remove="Entities\Acumatica.Default_20.200.001\**" />
     <Compile Remove="External\**" />
+    <Content Remove="Areas\Demo\Pages\Clients\Bill - Copy\**" />
+    <Content Remove="Areas\Demo\Pages\Clients\BillDetail\**" />
+    <Content Remove="Areas\Demo\Pages\Clients\Displays\**" />
+    <Content Remove="Areas\Demo\Pages\Clients\SalesOrders_old\**" />
+    <Content Remove="Entities\Acumatica.Default_20.200.001\**" />
     <Content Remove="External\**" />
+    <EmbeddedResource Remove="Areas\Demo\Pages\Clients\Bill - Copy\**" />
+    <EmbeddedResource Remove="Areas\Demo\Pages\Clients\BillDetail\**" />
+    <EmbeddedResource Remove="Areas\Demo\Pages\Clients\Displays\**" />
+    <EmbeddedResource Remove="Areas\Demo\Pages\Clients\SalesOrders_old\**" />
+    <EmbeddedResource Remove="Entities\Acumatica.Default_20.200.001\**" />
     <EmbeddedResource Remove="External\**" />
+    <None Remove="Areas\Demo\Pages\Clients\Bill - Copy\**" />
+    <None Remove="Areas\Demo\Pages\Clients\BillDetail\**" />
+    <None Remove="Areas\Demo\Pages\Clients\Displays\**" />
+    <None Remove="Areas\Demo\Pages\Clients\SalesOrders_old\**" />
+    <None Remove="Entities\Acumatica.Default_20.200.001\**" />
     <None Remove="External\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Areas\Demo\Pages\Clients\SalesOrders_old\Create.cshtml" />
-    <None Include="Areas\Demo\Pages\Clients\SalesOrders_old\Delete.cshtml" />
-    <None Include="Areas\Demo\Pages\Clients\SalesOrders_old\Details.cshtml" />
-    <None Include="Areas\Demo\Pages\Clients\SalesOrders_old\Edit.cshtml" />
-    <None Include="Areas\Demo\Pages\Clients\SalesOrders_old\Index.cshtml" />
+    <Compile Remove="DTOs\Entities.cs" />
+    <Compile Remove="Models\App_Models.cs" />
+    <Compile Remove="Models\Default_Models.cs" />
+    <Compile Remove="Models\Model_Conversion.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Areas\Demo\Pages\Clients\_ValidationScriptsPartial.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Areas\Demo\Pages\Clients\_ValidationScriptsPartial.cshtml" />
     <None Include="Areas\Demo\Pages\_ValidationScriptsPartial.cshtml" />
     <None Include="Pages\Shared\_Layout.cshtml" />
     <None Include="Pages\Shared\_ValidationScriptsPartial.cshtml" />
@@ -67,20 +94,24 @@
   <ItemGroup>
     <PackageReference Include="Acumatica.Default_20.200.001" Version="2.0.0" />
     <PackageReference Include="Acumatica.RESTClient" Version="2.1.2" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.4" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.4" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.4" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.4">
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.4" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.4">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.3" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.5" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Entities\" />
   </ItemGroup>
 
 </Project>

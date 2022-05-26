@@ -26,3 +26,7 @@ footer {
 #mycard {
     border-radius: 10px;
 }
+
+td, th {
+    min-width: 200px
+}

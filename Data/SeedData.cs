@@ -27,6 +27,7 @@ public static class SeedData
             context.Credentials.AddRange(
                 new Credential
                 {
+                    IsChecked = true,
                     SiteUrl = "https://acu-demos.us/acumaticaerp",
                     UserName = "admin",
                     Password = "123",
@@ -38,6 +39,7 @@ public static class SeedData
 
                 new Credential
                 {
+                    IsChecked = false,
                     SiteUrl = "https://acu-demos.us/acumaticaerp",
                     UserName = "admin",
                     Password = "123",
@@ -49,6 +51,7 @@ public static class SeedData
 
                 new Credential
                 {
+                    IsChecked = false,
                     SiteUrl = "https://acu-demos.us/acumaticaerp",
                     UserName = "admin",
                     Password = "123",
@@ -60,6 +63,7 @@ public static class SeedData
 
                 new Credential
                 {
+                    IsChecked = false,
                     SiteUrl = "https://acu-demos.us/acumaticaerp",
                     UserName = "admin",
                     Password = "123",

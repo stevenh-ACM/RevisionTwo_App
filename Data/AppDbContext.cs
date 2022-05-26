@@ -3,8 +3,6 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-using RevisionTwo_App.Models.App;
-
 using RevisionTwo_App.Models;
 
 namespace RevisionTwo_App.Data
@@ -15,14 +13,14 @@ namespace RevisionTwo_App.Data
         {  }
 
         public DbSet<Credential> Credentials { get; set; }
-        public DbSet<Address_App> Address_App { get; set; }
-        public DbSet<Bill_App> Bill_App { get; set; }
-        public DbSet<BillDetail_App> BillDetail_App { get; set; }
-        public DbSet<Case_App> Case_App { get; set; }
-        public DbSet<Contact_App> Contact_App { get; set; }
-        public DbSet<Opportunity_App> Opportunity_App { get; set; }
-        public DbSet<SalesOrder_App> SalesOrder_App { get; set; }
-        public DbSet<Shipment_App> Shipment_App { get; set; }
-        public DbSet<ShipmentDetail_App> ShipmentDetail_App { get; set; }
+        public DbSet<Addr> Addrs { get; set; }
+        public DbSet<AR_Bill> AR_Bills { get; set; }
+        public DbSet<AR_BillDetail> AR_BillDetails { get; set; }
+        public DbSet<CRCase> CRCases { get; set; }
+        public DbSet<CO> Contacts { get; set; }
+        public DbSet<OP> Opportunities { get; set; }
+        public DbSet<SO> SalesOrders { get; set; }
+        public DbSet<SP> Shipments { get; set; }
+        public DbSet<SPDetail> ShipmentDetails { get; set; }
     }
 }

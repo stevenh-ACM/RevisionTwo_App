@@ -1,0 +1,75 @@
+﻿#nullable disable
+
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
+
+using RevisionTwo_App.Data;
+using RevisionTwo_App.Models;
+
+namespace RevisionTwo_App.Areas.Demo.Pages.Clients.SalesOrders
+{
+    public class EditModel : PageModel
+    {
+        private readonly AppDbContext _context;
+
+        public EditModel(AppDbContext context)
+        {
+            _context = context;
+        }
+
+        [BindProperty]
+        public SO so { get; set; }
+
+        public async Task<IActionResult> OnGetAsync(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            so = await _context.SalesOrders.FirstOrDefaultAsync(m => m.Id == id);
+
+            if (so == null)
+            {
+                return NotFound();
+            }
+            return Page();
+        }
+
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see https://aka.ms/RazorPagesCRUD.
+        public async Task<IActionResult> OnPostAsync()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            _context.Attach(so).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!soExists(so.Id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return RedirectToPage("./Index");
+        }
+
+        private bool soExists(int id)
+        {
+            return _context.SalesOrders.Any(e => e.Id == id);
+        }
+    }
+}
