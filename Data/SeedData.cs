@@ -40,11 +40,11 @@ public static class SeedData
                 new Credential
                 {
                     IsChecked = false,
-                    SiteUrl = "https://acu-demos.us/acumaticaerp",
+                    SiteUrl = "http://localhost/acumaticaerp",
                     UserName = "admin",
                     Password = "123",
                     Tenant = "Company",
-                    Branch = "USA",
+                    Branch = "",
                     Locale = "en-US"
 
                 },
@@ -52,7 +52,7 @@ public static class SeedData
                 new Credential
                 {
                     IsChecked = false,
-                    SiteUrl = "https://acu-demos.us/acumaticaerp",
+                    SiteUrl = "https://acu-demos.us/mystoreinstance",
                     UserName = "admin",
                     Password = "123",
                     Tenant = "MyStore",
@@ -64,11 +64,11 @@ public static class SeedData
                 new Credential
                 {
                     IsChecked = false,
-                    SiteUrl = "https://acu-demos.us/acumaticaerp",
+                    SiteUrl = "https://acu-demos.us/phonerepairshop",
                     UserName = "admin",
                     Password = "123",
-                    Tenant = "Company",
-                    Branch = "other",
+                    Tenant = "MyTenant",
+                    Branch = "Yogifon",
                     Locale = "en-US"
 
                 }
