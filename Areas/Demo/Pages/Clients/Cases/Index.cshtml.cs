@@ -99,14 +99,14 @@ public class IndexModel : PageModel
                 }
                 else
                 {
-                    Console.WriteLine("Reading Accounts...");
+                    Console.WriteLine("Reading Cases...");
                 }
 
 
                 CaseApi caseApi = new(configuration);
                 if (caseApi is null)
                 {
-                    _logger.LogError($"Failure to create an salesOrderApi using {configuration.ToString}");
+                    _logger.LogError($"Failure to create a caseApi using {configuration.ToString}");
                     throw new NullReferenceException(nameof(caseApi));
                 }
                 else
@@ -120,9 +120,9 @@ public class IndexModel : PageModel
                     else
                     {
 
-                        var dateTimeOffset = new DateTime(DateTime.Now.Year, /*DateTime.Now.Month*/1, 1, 0, 0, 0).ToString("s");
-                        string filter = "";
-                        string select = "CaseID, Subject, BusinessAccount, BusinessAccountName, Status, Reason, Severity, Priority, Owner, Workgroup, ClassID, Date, LastActivityDate, LastModifiedDateTime";
+                        var dateTimeOffset = new DateTime(DateTime.Now.Year - 6, /*DateTime.Now.Month*/1, 1, 0, 0, 0).ToString("s");
+                        string filter = @$"datereported gt datetimeoffset'{dateTimeOffset}'";
+                        string select = "CaseID, Subject, BusinessAccount, BusinessAccountName, Status, Reason, Severity, Priority, Owner, Workgroup, ClassID, DateReported, LastActivityDate, LastModifiedDateTime";
                         string expand = "";
                         string custom = String.Empty;
                         int skip = 0;

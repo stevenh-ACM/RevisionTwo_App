@@ -1,86 +1,804 @@
-5/29/2022 5:47:08 PM
+5/30/2022 12:58:34 AM
 Request
 	Method: Post
 	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
 	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
 -----------------------------------------
 
-5/29/2022 5:47:09 PM
+5/30/2022 12:58:35 AM
 Response
 	Status code: NoContent
 	Content: 
 -----------------------------------------
 
-5/29/2022 5:47:50 PM
+5/30/2022 12:58:55 AM
 Request
 	Method: Get
-	URL: https://acu-demos.us/acumaticaerp/entity/Default/20.200.001/Contact?%24select=Active%2c ContactID%2c DisplayName%2c BusinessAccount%2c JobTitle%2c Owner%2c CompanyName%2c ContactClass%2c  Email%2c Phone1%2c LastModifiedDateTime&%24skip=0&%24top=15?$select=Active, ContactID, DisplayName, BusinessAccount, JobTitle, Owner, CompanyName, ContactClass,  Email, Phone1, LastModifiedDateTime&$skip=0&$top=15
+	URL: https://acu-demos.us/acumaticaerp/entity/Default/20.200.001/Case?%24select=CaseID%2c Subject%2c BusinessAccount%2c BusinessAccountName%2c Status%2c Reason%2c Severity%2c Priority%2c Owner%2c Workgroup%2c ClassID%2c Date%2c LastActivityDate%2c LastModifiedDateTime&%24skip=0&%24top=15?$select=CaseID, Subject, BusinessAccount, BusinessAccountName, Status, Reason, Severity, Priority, Owner, Workgroup, ClassID, Date, LastActivityDate, LastModifiedDateTime&$skip=0&$top=15
 -----------------------------------------
 
-5/29/2022 5:47:50 PM
+5/30/2022 12:58:55 AM
+Response
+	Status code: InternalServerError
+	Content: {"message":"An error has occurred.","exceptionMessage":"The given key was not present in the dictionary.","exceptionType":"System.Collections.Generic.KeyNotFoundException","stackTrace":"   at System.ThrowHelper.ThrowKeyNotFoundException()\r\n   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\r\n   at Microsoft.Data.OData.Query.SyntacticAst.SelectPathSegmentTokenBinder.TryBindAsDeclaredProperty(PathSegmentToken tokenIn, IEdmEntityType entityType, ODataPathSegment& segment)\r\n   at Microsoft.Data.OData.Query.SyntacticAst.SelectPathSegmentTokenBinder.ConvertNonTypeTokenToSegment(PathSegmentToken tokenIn, IEdmModel model, IEdmEntityType entityType)\r\n   at Microsoft.Data.OData.Query.SyntacticAst.SelectPropertyVisitor.ProcessTokenAsPath(NonSystemToken tokenIn)\r\n   at Microsoft.Data.OData.Query.SyntacticAst.SelectPropertyVisitor.Visit(NonSystemToken tokenIn)\r\n   at Microsoft.Data.OData.Query.SyntacticAst.SelectBinder.Bind(SelectToken tokenIn)\r\n   at Microsoft.Data.OData.Query.SelectExpandSemanticBinder.Parse(IEdmEntityType elementType, IEdmEntitySet entitySet, ExpandToken expandToken, SelectToken selectToken, ODataUriParserConfiguration configuration)\r\n   at PX.Api.ContractBased.OData.Helpers.FillRestQueryOptions(IEdmModel edmModel, EntityImpl entity, String filter, String select, String expand, String custom)\r\n   at PX.Api.ContractBased.SystemContracts.V2.RestController.GetList(String objectName, CancellationToken cancellationToken, String select, String filter, String expand, String custom, Nullable`1 skip, Nullable`1 top)\r\n   at lambda_method(Closure , Object , Object[] )\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_3.<GetExecutor>b__3(Object instance, Object[] methodParameters)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__3.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__15.MoveNext()"}
+-----------------------------------------
+
+5/30/2022 1:11:27 AM
 Request
 	Method: Post
 	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
 	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
 -----------------------------------------
 
-5/29/2022 5:48:15 PM
-Request
-	Method: Post
-	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
-	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
------------------------------------------
-
-5/29/2022 5:48:15 PM
+5/30/2022 1:11:28 AM
 Response
 	Status code: NoContent
 	Content: 
 -----------------------------------------
 
-5/29/2022 5:48:23 PM
+5/30/2022 1:11:28 AM
 Request
 	Method: Get
-	URL: https://acu-demos.us/acumaticaerp/entity/Default/20.200.001/Contact?%24select=Active%2c ContactID%2c DisplayName%2c BusinessAccount%2c JobTitle%2c Owner%2c CompanyName%2c ContactClass%2c  Email%2c Phone1%2c LastModifiedDateTime&%24skip=0&%24top=15?$select=Active, ContactID, DisplayName, BusinessAccount, JobTitle, Owner, CompanyName, ContactClass,  Email, Phone1, LastModifiedDateTime&$skip=0&$top=15
+	URL: https://acu-demos.us/acumaticaerp/entity/Default/20.200.001/Case?%24select=CaseID%2c Subject%2c BusinessAccount%2c BusinessAccountName%2c Status%2c Reason%2c Severity%2c Priority%2c Owner%2c Workgroup%2c ClassID%2c Date%2c LastActivityDate%2c LastModifiedDateTime&%24skip=0&%24top=15?$select=CaseID, Subject, BusinessAccount, BusinessAccountName, Status, Reason, Severity, Priority, Owner, Workgroup, ClassID, Date, LastActivityDate, LastModifiedDateTime&$skip=0&$top=15
 -----------------------------------------
 
-5/29/2022 5:48:23 PM
+5/30/2022 1:11:29 AM
 Response
-	Status code: OK
-	Content: [{"id":"88123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":1,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{},"CompanyName":{"value":"Data Source Software Corp"},"ContactClass":{"value":"LEADBUS"},"ContactID":{"value":9810},"DisplayName":{"value":"John Elbow"},"Email":{"value":"jelbow@dss.con"},"JobTitle":{"value":"Developer"},"LastModifiedDateTime":{"value":"2018-08-24T11:41:03.303-07:00"},"Owner":{"value":"3205"},"Phone1":{"value":"(207) 871-7784"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/88123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/88123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}},{"id":"8a123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":2,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{},"CompanyName":{"value":"deVere and Partners (UK) Ltd"},"ContactClass":{"value":"LEADBUSSVC"},"ContactID":{"value":9811},"DisplayName":{"value":"Mag Darrow"},"Email":{"value":"mdarrow@deverebrokers.con"},"JobTitle":{"value":"Client Services Manager"},"LastModifiedDateTime":{"value":"2018-08-24T11:41:06.44-07:00"},"Owner":{"value":"3205"},"Phone1":{"value":"+41 44389 8282"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/8a123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/8a123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}},{"id":"9a123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":3,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{},"CompanyName":{"value":"Advanced Concepts Of Engineering & Software Inc"},"ContactClass":{"value":"LEADBUSSVC"},"ContactID":{"value":9819},"DisplayName":{"value":"Bill Coleans"},"Email":{"value":"bcoleans@advancedconcepts.con"},"JobTitle":{"value":"Designer"},"LastModifiedDateTime":{"value":"2018-08-24T11:40:53.507-07:00"},"Owner":{"value":"3205"},"Phone1":{"value":"718-961-4900"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/9a123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/9a123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}},{"id":"a6123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":4,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{},"CompanyName":{"value":"Roxell"},"ContactClass":{"value":"LEADBUS"},"ContactID":{"value":9825},"DisplayName":{"value":"Kurt Meire"},"Email":{"value":"kmeire@roxell.con"},"JobTitle":{"value":"planning supervisor"},"LastModifiedDateTime":{"value":"2018-08-24T11:41:04.903-07:00"},"Owner":{"value":"3241"},"Phone1":{"value":"+32 5 072 91 78"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/a6123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/a6123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}},{"id":"b8123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":5,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{},"CompanyName":{"value":"RFI Informatique"},"ContactClass":{"value":"LEADBUS"},"ContactID":{"value":9834},"DisplayName":{"value":"Jerome Bouat"},"Email":{"value":"jbouat@informatiqe.con"},"JobTitle":{"value":"Information System Analyst"},"LastModifiedDateTime":{"value":"2018-08-24T11:41:02.723-07:00"},"Owner":{"value":"3205"},"Phone1":{"value":"+33 4 76 84 25 87"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/b8123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/b8123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}},{"id":"d2123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":6,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{},"CompanyName":{"value":"Workless"},"ContactClass":{"value":"LEADBUS"},"ContactID":{"value":9847},"DisplayName":{"value":"Harris Bueller"},"Email":{"value":"hbueller@workless.con"},"JobTitle":{"value":"Accountant"},"LastModifiedDateTime":{"value":"2018-08-24T11:41:00.373-07:00"},"Owner":{"value":"3205"},"Phone1":{"value":"(425) 123-4565"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/d2123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/d2123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}},{"id":"d4123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":7,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{},"CompanyName":{"value":"Hotel Supplies Inc"},"ContactClass":{"value":"LEADBUS"},"ContactID":{"value":9848},"DisplayName":{"value":"Kim Coffee"},"Email":{"value":"kcoffee@hotelsupplies.con"},"JobTitle":{"value":"Purchasing Agent"},"LastModifiedDateTime":{"value":"2018-08-24T11:41:04.59-07:00"},"Owner":{"value":"3241"},"Phone1":{"value":"(703) 433-2323"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/d4123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/d4123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}},{"id":"d8123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":8,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{"value":"ABARTENDE"},"CompanyName":{"value":"USA Bartending School"},"ContactClass":{"value":"LEADBUSSVC"},"ContactID":{"value":9977},"DisplayName":{"value":"Fadi Kabuk"},"Email":{"value":"dean@bartending.con"},"JobTitle":{"value":"Dean"},"LastModifiedDateTime":{"value":"2018-08-24T11:40:59.183-07:00"},"Owner":{"value":"3205"},"Phone1":{"value":"+1 (777) 532-9522"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/d8123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/d8123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}},{"id":"d9123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":9,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{"value":"ABCSTUDIOS"},"CompanyName":{"value":"ABC Studios Inc"},"ContactClass":{"value":"LEADBUS"},"ContactID":{"value":9978},"DisplayName":{"value":"Mill Simpson"},"Email":{},"JobTitle":{"value":"Manager"},"LastModifiedDateTime":{"value":"2018-08-24T11:41:07.41-07:00"},"Owner":{"value":"3205"},"Phone1":{"value":"+1  (777) 892-3466"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/d9123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/d9123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}},{"id":"da123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":10,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{"value":"ABCSTUDIOS"},"CompanyName":{"value":"ABC Studios Inc"},"ContactClass":{"value":"LEADBUS"},"ContactID":{"value":9979},"DisplayName":{"value":"Travis Harper"},"Email":{"value":"tharper@abcstudios.con"},"JobTitle":{"value":"Officer"},"LastModifiedDateTime":{"value":"2018-08-24T11:41:12.427-07:00"},"Owner":{"value":"3205"},"Phone1":{"value":"+1 (777) 228-0220"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/da123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/da123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}},{"id":"db123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":11,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{"value":"ABCSTUDIOS"},"CompanyName":{"value":"ABC Studios Inc"},"ContactClass":{"value":"LEADBUS"},"ContactID":{"value":9980},"DisplayName":{"value":"Aleks Neverov"},"Email":{"value":"aneverov@abcsstudios.con"},"JobTitle":{"value":"Specialist"},"LastModifiedDateTime":{"value":"2018-08-24T11:40:50.937-07:00"},"Owner":{"value":"3205"},"Phone1":{"value":"+1 (777) 446-7534"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/db123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/db123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}},{"id":"dc123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":12,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{"value":"ACITAISYST"},"CompanyName":{"value":"Acitai Systems - Computer Services For Business"},"ContactClass":{},"ContactID":{"value":9981},"DisplayName":{"value":"Peter Cook"},"Email":{"value":"Peter@acitai.con"},"JobTitle":{"value":"Manager"},"LastModifiedDateTime":{"value":"2018-08-24T11:41:08.37-07:00"},"Owner":{"value":"3205"},"Phone1":{"value":"+44(2233) 834262"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/dc123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/dc123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}},{"id":"dd123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":13,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{"value":"ACTIVESTAF"},"CompanyName":{"value":"Active Staffing Service"},"ContactClass":{},"ContactID":{"value":9982},"DisplayName":{"value":"Linda Dunnaville"},"Email":{"value":"info@active-staffing.con"},"JobTitle":{"value":"Secretary"},"LastModifiedDateTime":{"value":"2018-08-24T11:41:05.687-07:00"},"Owner":{"value":"3205"},"Phone1":{"value":"+1 (777) 244-6544"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/dd123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/dd123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}},{"id":"de123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":14,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{"value":"AEROCOREBE"},"CompanyName":{"value":"Aerocorebe Travel Agency Corporation"},"ContactClass":{},"ContactID":{"value":9983},"DisplayName":{"value":"Dora Korpos"},"Email":{},"JobTitle":{"value":"Travel Agent"},"LastModifiedDateTime":{"value":"2018-08-24T11:40:56.973-07:00"},"Owner":{"value":"3205"},"Phone1":{"value":"+1 (777) 458-3124"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/de123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/de123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}},{"id":"df123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":15,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{"value":"ALPHABETLD"},"CompanyName":{"value":"Alphabetland School Center"},"ContactClass":{},"ContactID":{"value":9984},"DisplayName":{"value":"David Schuster"},"Email":{},"JobTitle":{"value":"Secretary"},"LastModifiedDateTime":{"value":"2018-08-24T11:40:56.38-07:00"},"Owner":{"value":"3205"},"Phone1":{"value":"+1 (777) 826-9338"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/df123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/df123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}}]
+	Status code: InternalServerError
+	Content: {"message":"An error has occurred.","exceptionMessage":"The given key was not present in the dictionary.","exceptionType":"System.Collections.Generic.KeyNotFoundException","stackTrace":"   at System.ThrowHelper.ThrowKeyNotFoundException()\r\n   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\r\n   at Microsoft.Data.OData.Query.SyntacticAst.SelectPathSegmentTokenBinder.TryBindAsDeclaredProperty(PathSegmentToken tokenIn, IEdmEntityType entityType, ODataPathSegment& segment)\r\n   at Microsoft.Data.OData.Query.SyntacticAst.SelectPathSegmentTokenBinder.ConvertNonTypeTokenToSegment(PathSegmentToken tokenIn, IEdmModel model, IEdmEntityType entityType)\r\n   at Microsoft.Data.OData.Query.SyntacticAst.SelectPropertyVisitor.ProcessTokenAsPath(NonSystemToken tokenIn)\r\n   at Microsoft.Data.OData.Query.SyntacticAst.SelectPropertyVisitor.Visit(NonSystemToken tokenIn)\r\n   at Microsoft.Data.OData.Query.SyntacticAst.SelectBinder.Bind(SelectToken tokenIn)\r\n   at Microsoft.Data.OData.Query.SelectExpandSemanticBinder.Parse(IEdmEntityType elementType, IEdmEntitySet entitySet, ExpandToken expandToken, SelectToken selectToken, ODataUriParserConfiguration configuration)\r\n   at PX.Api.ContractBased.OData.Helpers.FillRestQueryOptions(IEdmModel edmModel, EntityImpl entity, String filter, String select, String expand, String custom)\r\n   at PX.Api.ContractBased.SystemContracts.V2.RestController.GetList(String objectName, CancellationToken cancellationToken, String select, String filter, String expand, String custom, Nullable`1 skip, Nullable`1 top)\r\n   at lambda_method(Closure , Object , Object[] )\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_3.<GetExecutor>b__3(Object instance, Object[] methodParameters)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__3.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__15.MoveNext()"}
 -----------------------------------------
 
-5/29/2022 5:57:50 PM
-Request
-	Method: Post
-	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
-	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
------------------------------------------
-
-5/29/2022 5:57:50 PM
-Response
-	Status code: NoContent
-	Content: 
------------------------------------------
-
-5/29/2022 5:57:50 PM
-Request
-	Method: Get
-	URL: https://acu-demos.us/acumaticaerp/entity/Default/20.200.001/Contact?%24select=Active%2c ContactID%2c DisplayName%2c BusinessAccount%2c JobTitle%2c Owner%2c CompanyName%2c ContactClass%2c  Email%2c Phone1%2c LastModifiedDateTime&%24skip=0&%24top=15?$select=Active, ContactID, DisplayName, BusinessAccount, JobTitle, Owner, CompanyName, ContactClass,  Email, Phone1, LastModifiedDateTime&$skip=0&$top=15
------------------------------------------
-
-5/29/2022 5:57:51 PM
-Response
-	Status code: OK
-	Content: [{"id":"88123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":1,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{},"CompanyName":{"value":"Data Source Software Corp"},"ContactClass":{"value":"LEADBUS"},"ContactID":{"value":9810},"DisplayName":{"value":"John Elbow"},"Email":{"value":"jelbow@dss.con"},"JobTitle":{"value":"Developer"},"LastModifiedDateTime":{"value":"2018-08-24T11:41:03.303-07:00"},"Owner":{"value":"3205"},"Phone1":{"value":"(207) 871-7784"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/88123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/88123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}},{"id":"8a123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":2,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{},"CompanyName":{"value":"deVere and Partners (UK) Ltd"},"ContactClass":{"value":"LEADBUSSVC"},"ContactID":{"value":9811},"DisplayName":{"value":"Mag Darrow"},"Email":{"value":"mdarrow@deverebrokers.con"},"JobTitle":{"value":"Client Services Manager"},"LastModifiedDateTime":{"value":"2018-08-24T11:41:06.44-07:00"},"Owner":{"value":"3205"},"Phone1":{"value":"+41 44389 8282"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/8a123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/8a123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}},{"id":"9a123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":3,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{},"CompanyName":{"value":"Advanced Concepts Of Engineering & Software Inc"},"ContactClass":{"value":"LEADBUSSVC"},"ContactID":{"value":9819},"DisplayName":{"value":"Bill Coleans"},"Email":{"value":"bcoleans@advancedconcepts.con"},"JobTitle":{"value":"Designer"},"LastModifiedDateTime":{"value":"2018-08-24T11:40:53.507-07:00"},"Owner":{"value":"3205"},"Phone1":{"value":"718-961-4900"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/9a123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/9a123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}},{"id":"a6123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":4,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{},"CompanyName":{"value":"Roxell"},"ContactClass":{"value":"LEADBUS"},"ContactID":{"value":9825},"DisplayName":{"value":"Kurt Meire"},"Email":{"value":"kmeire@roxell.con"},"JobTitle":{"value":"planning supervisor"},"LastModifiedDateTime":{"value":"2018-08-24T11:41:04.903-07:00"},"Owner":{"value":"3241"},"Phone1":{"value":"+32 5 072 91 78"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/a6123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/a6123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}},{"id":"b8123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":5,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{},"CompanyName":{"value":"RFI Informatique"},"ContactClass":{"value":"LEADBUS"},"ContactID":{"value":9834},"DisplayName":{"value":"Jerome Bouat"},"Email":{"value":"jbouat@informatiqe.con"},"JobTitle":{"value":"Information System Analyst"},"LastModifiedDateTime":{"value":"2018-08-24T11:41:02.723-07:00"},"Owner":{"value":"3205"},"Phone1":{"value":"+33 4 76 84 25 87"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/b8123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/b8123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}},{"id":"d2123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":6,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{},"CompanyName":{"value":"Workless"},"ContactClass":{"value":"LEADBUS"},"ContactID":{"value":9847},"DisplayName":{"value":"Harris Bueller"},"Email":{"value":"hbueller@workless.con"},"JobTitle":{"value":"Accountant"},"LastModifiedDateTime":{"value":"2018-08-24T11:41:00.373-07:00"},"Owner":{"value":"3205"},"Phone1":{"value":"(425) 123-4565"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/d2123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/d2123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}},{"id":"d4123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":7,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{},"CompanyName":{"value":"Hotel Supplies Inc"},"ContactClass":{"value":"LEADBUS"},"ContactID":{"value":9848},"DisplayName":{"value":"Kim Coffee"},"Email":{"value":"kcoffee@hotelsupplies.con"},"JobTitle":{"value":"Purchasing Agent"},"LastModifiedDateTime":{"value":"2018-08-24T11:41:04.59-07:00"},"Owner":{"value":"3241"},"Phone1":{"value":"(703) 433-2323"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/d4123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/d4123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}},{"id":"d8123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":8,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{"value":"ABARTENDE"},"CompanyName":{"value":"USA Bartending School"},"ContactClass":{"value":"LEADBUSSVC"},"ContactID":{"value":9977},"DisplayName":{"value":"Fadi Kabuk"},"Email":{"value":"dean@bartending.con"},"JobTitle":{"value":"Dean"},"LastModifiedDateTime":{"value":"2018-08-24T11:40:59.183-07:00"},"Owner":{"value":"3205"},"Phone1":{"value":"+1 (777) 532-9522"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/d8123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/d8123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}},{"id":"d9123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":9,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{"value":"ABCSTUDIOS"},"CompanyName":{"value":"ABC Studios Inc"},"ContactClass":{"value":"LEADBUS"},"ContactID":{"value":9978},"DisplayName":{"value":"Mill Simpson"},"Email":{},"JobTitle":{"value":"Manager"},"LastModifiedDateTime":{"value":"2018-08-24T11:41:07.41-07:00"},"Owner":{"value":"3205"},"Phone1":{"value":"+1  (777) 892-3466"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/d9123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/d9123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}},{"id":"da123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":10,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{"value":"ABCSTUDIOS"},"CompanyName":{"value":"ABC Studios Inc"},"ContactClass":{"value":"LEADBUS"},"ContactID":{"value":9979},"DisplayName":{"value":"Travis Harper"},"Email":{"value":"tharper@abcstudios.con"},"JobTitle":{"value":"Officer"},"LastModifiedDateTime":{"value":"2018-08-24T11:41:12.427-07:00"},"Owner":{"value":"3205"},"Phone1":{"value":"+1 (777) 228-0220"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/da123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/da123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}},{"id":"db123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":11,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{"value":"ABCSTUDIOS"},"CompanyName":{"value":"ABC Studios Inc"},"ContactClass":{"value":"LEADBUS"},"ContactID":{"value":9980},"DisplayName":{"value":"Aleks Neverov"},"Email":{"value":"aneverov@abcsstudios.con"},"JobTitle":{"value":"Specialist"},"LastModifiedDateTime":{"value":"2018-08-24T11:40:50.937-07:00"},"Owner":{"value":"3205"},"Phone1":{"value":"+1 (777) 446-7534"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/db123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/db123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}},{"id":"dc123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":12,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{"value":"ACITAISYST"},"CompanyName":{"value":"Acitai Systems - Computer Services For Business"},"ContactClass":{},"ContactID":{"value":9981},"DisplayName":{"value":"Peter Cook"},"Email":{"value":"Peter@acitai.con"},"JobTitle":{"value":"Manager"},"LastModifiedDateTime":{"value":"2018-08-24T11:41:08.37-07:00"},"Owner":{"value":"3205"},"Phone1":{"value":"+44(2233) 834262"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/dc123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/dc123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}},{"id":"dd123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":13,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{"value":"ACTIVESTAF"},"CompanyName":{"value":"Active Staffing Service"},"ContactClass":{},"ContactID":{"value":9982},"DisplayName":{"value":"Linda Dunnaville"},"Email":{"value":"info@active-staffing.con"},"JobTitle":{"value":"Secretary"},"LastModifiedDateTime":{"value":"2018-08-24T11:41:05.687-07:00"},"Owner":{"value":"3205"},"Phone1":{"value":"+1 (777) 244-6544"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/dd123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/dd123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}},{"id":"de123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":14,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{"value":"AEROCOREBE"},"CompanyName":{"value":"Aerocorebe Travel Agency Corporation"},"ContactClass":{},"ContactID":{"value":9983},"DisplayName":{"value":"Dora Korpos"},"Email":{},"JobTitle":{"value":"Travel Agent"},"LastModifiedDateTime":{"value":"2018-08-24T11:40:56.973-07:00"},"Owner":{"value":"3205"},"Phone1":{"value":"+1 (777) 458-3124"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/de123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/de123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}},{"id":"df123b2c-d87f-e411-beca-00b56d0561c2","rowNumber":15,"note":{"value":""},"Active":{"value":true},"BusinessAccount":{"value":"ALPHABETLD"},"CompanyName":{"value":"Alphabetland School Center"},"ContactClass":{},"ContactID":{"value":9984},"DisplayName":{"value":"David Schuster"},"Email":{},"JobTitle":{"value":"Secretary"},"LastModifiedDateTime":{"value":"2018-08-24T11:40:56.38-07:00"},"Owner":{"value":"3205"},"Phone1":{"value":"+1 (777) 826-9338"},"custom":{},"_links":{"self":"/acumaticaerp/entity/Default/20.200.001/Contact/df123b2c-d87f-e411-beca-00b56d0561c2","files:put":"/acumaticaerp/entity/Default/20.200.001/files/PX.Objects.CR.ContactMaint/Contact/df123b2c-d87f-e411-beca-00b56d0561c2/{filename}"}}]
------------------------------------------
-
-5/29/2022 5:58:01 PM
+5/30/2022 1:11:29 AM
 Request
 	Method: Post
 	URL: https://acu-demos.us/acumaticaerp/entity/auth/logout
 -----------------------------------------
 
-5/29/2022 5:58:01 PM
+5/30/2022 1:11:29 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:12:00 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
+	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
+-----------------------------------------
+
+5/30/2022 1:12:00 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:12:00 AM
+Request
+	Method: Get
+	URL: https://acu-demos.us/acumaticaerp/entity/Default/20.200.001/Case?%24select=CaseID%2c Subject%2c BusinessAccount%2c BusinessAccountName%2c Status%2c Reason%2c Severity%2c Priority%2c Owner%2c Workgroup%2c ClassID%2c Date%2c LastActivityDate%2c LastModifiedDateTime&%24skip=0&%24top=15?$select=CaseID, Subject, BusinessAccount, BusinessAccountName, Status, Reason, Severity, Priority, Owner, Workgroup, ClassID, Date, LastActivityDate, LastModifiedDateTime&$skip=0&$top=15
+-----------------------------------------
+
+5/30/2022 1:12:00 AM
+Response
+	Status code: InternalServerError
+	Content: {"message":"An error has occurred.","exceptionMessage":"The given key was not present in the dictionary.","exceptionType":"System.Collections.Generic.KeyNotFoundException","stackTrace":"   at System.ThrowHelper.ThrowKeyNotFoundException()\r\n   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\r\n   at Microsoft.Data.OData.Query.SyntacticAst.SelectPathSegmentTokenBinder.TryBindAsDeclaredProperty(PathSegmentToken tokenIn, IEdmEntityType entityType, ODataPathSegment& segment)\r\n   at Microsoft.Data.OData.Query.SyntacticAst.SelectPathSegmentTokenBinder.ConvertNonTypeTokenToSegment(PathSegmentToken tokenIn, IEdmModel model, IEdmEntityType entityType)\r\n   at Microsoft.Data.OData.Query.SyntacticAst.SelectPropertyVisitor.ProcessTokenAsPath(NonSystemToken tokenIn)\r\n   at Microsoft.Data.OData.Query.SyntacticAst.SelectPropertyVisitor.Visit(NonSystemToken tokenIn)\r\n   at Microsoft.Data.OData.Query.SyntacticAst.SelectBinder.Bind(SelectToken tokenIn)\r\n   at Microsoft.Data.OData.Query.SelectExpandSemanticBinder.Parse(IEdmEntityType elementType, IEdmEntitySet entitySet, ExpandToken expandToken, SelectToken selectToken, ODataUriParserConfiguration configuration)\r\n   at PX.Api.ContractBased.OData.Helpers.FillRestQueryOptions(IEdmModel edmModel, EntityImpl entity, String filter, String select, String expand, String custom)\r\n   at PX.Api.ContractBased.SystemContracts.V2.RestController.GetList(String objectName, CancellationToken cancellationToken, String select, String filter, String expand, String custom, Nullable`1 skip, Nullable`1 top)\r\n   at lambda_method(Closure , Object , Object[] )\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_3.<GetExecutor>b__3(Object instance, Object[] methodParameters)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__3.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__15.MoveNext()"}
+-----------------------------------------
+
+5/30/2022 1:12:01 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/logout
+-----------------------------------------
+
+5/30/2022 1:12:01 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:13:50 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
+	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
+-----------------------------------------
+
+5/30/2022 1:13:50 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:13:50 AM
+Request
+	Method: Get
+	URL: https://acu-demos.us/acumaticaerp/entity/Default/20.200.001/Case?%24select=CaseID%2c Subject%2c BusinessAccount%2c BusinessAccountName%2c Status%2c Reason%2c Severity%2c Priority%2c Owner%2c Workgroup%2c ClassID%2c Date%2c LastActivityDate%2c LastModifiedDateTime&%24filter=Date gt datetimeoffset%272020-01-01T00%3a00%3a00%27&%24skip=0&%24top=15?$select=CaseID, Subject, BusinessAccount, BusinessAccountName, Status, Reason, Severity, Priority, Owner, Workgroup, ClassID, Date, LastActivityDate, LastModifiedDateTime&$filter=Date gt datetimeoffset'2020-01-01T00:00:00'&$skip=0&$top=15
+-----------------------------------------
+
+5/30/2022 1:13:50 AM
+Response
+	Status code: InternalServerError
+	Content: {"message":"An error has occurred.","exceptionMessage":"The given key was not present in the dictionary.","exceptionType":"System.Collections.Generic.KeyNotFoundException","stackTrace":"   at System.ThrowHelper.ThrowKeyNotFoundException()\r\n   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\r\n   at Microsoft.Data.OData.Query.EndPathBinder.BindEndPath(EndPathToken endPathToken, BindingState state)\r\n   at Microsoft.Data.OData.Query.MetadataBinder.Bind(QueryToken token)\r\n   at Microsoft.Data.OData.Query.BinaryOperatorBinder.GetOperandFromToken(BinaryOperatorKind operatorKind, QueryToken queryToken)\r\n   at Microsoft.Data.OData.Query.BinaryOperatorBinder.BindBinaryOperator(BinaryOperatorToken binaryOperatorToken)\r\n   at Microsoft.Data.OData.Query.MetadataBinder.Bind(QueryToken token)\r\n   at Microsoft.Data.OData.Query.FilterBinder.BindFilter(QueryToken filter)\r\n   at Microsoft.Data.OData.Query.ODataUriParser.ParseFilterImplementation(String filter, IEdmType elementType, IEdmEntitySet entitySet)\r\n   at PX.Api.ContractBased.OData.Helpers.FillRestQueryOptions(IEdmModel edmModel, EntityImpl entity, String filter, String select, String expand, String custom)\r\n   at PX.Api.ContractBased.SystemContracts.V2.RestController.GetList(String objectName, CancellationToken cancellationToken, String select, String filter, String expand, String custom, Nullable`1 skip, Nullable`1 top)\r\n   at lambda_method(Closure , Object , Object[] )\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_3.<GetExecutor>b__3(Object instance, Object[] methodParameters)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__3.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__15.MoveNext()"}
+-----------------------------------------
+
+5/30/2022 1:13:50 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/logout
+-----------------------------------------
+
+5/30/2022 1:13:50 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:14:13 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
+	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
+-----------------------------------------
+
+5/30/2022 1:14:14 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:14:14 AM
+Request
+	Method: Get
+	URL: https://acu-demos.us/acumaticaerp/entity/Default/20.200.001/Case?%24select=CaseID%2c Subject%2c BusinessAccount%2c BusinessAccountName%2c Status%2c Reason%2c Severity%2c Priority%2c Owner%2c Workgroup%2c ClassID%2c Date%2c LastActivityDate%2c LastModifiedDateTime&%24filter=Date gt datetimeoffset%272020-01-01T00%3a00%3a00%27&%24skip=0&%24top=15?$select=CaseID, Subject, BusinessAccount, BusinessAccountName, Status, Reason, Severity, Priority, Owner, Workgroup, ClassID, Date, LastActivityDate, LastModifiedDateTime&$filter=Date gt datetimeoffset'2020-01-01T00:00:00'&$skip=0&$top=15
+-----------------------------------------
+
+5/30/2022 1:14:14 AM
+Response
+	Status code: InternalServerError
+	Content: {"message":"An error has occurred.","exceptionMessage":"The given key was not present in the dictionary.","exceptionType":"System.Collections.Generic.KeyNotFoundException","stackTrace":"   at System.ThrowHelper.ThrowKeyNotFoundException()\r\n   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\r\n   at Microsoft.Data.OData.Query.EndPathBinder.BindEndPath(EndPathToken endPathToken, BindingState state)\r\n   at Microsoft.Data.OData.Query.MetadataBinder.Bind(QueryToken token)\r\n   at Microsoft.Data.OData.Query.BinaryOperatorBinder.GetOperandFromToken(BinaryOperatorKind operatorKind, QueryToken queryToken)\r\n   at Microsoft.Data.OData.Query.BinaryOperatorBinder.BindBinaryOperator(BinaryOperatorToken binaryOperatorToken)\r\n   at Microsoft.Data.OData.Query.MetadataBinder.Bind(QueryToken token)\r\n   at Microsoft.Data.OData.Query.FilterBinder.BindFilter(QueryToken filter)\r\n   at Microsoft.Data.OData.Query.ODataUriParser.ParseFilterImplementation(String filter, IEdmType elementType, IEdmEntitySet entitySet)\r\n   at PX.Api.ContractBased.OData.Helpers.FillRestQueryOptions(IEdmModel edmModel, EntityImpl entity, String filter, String select, String expand, String custom)\r\n   at PX.Api.ContractBased.SystemContracts.V2.RestController.GetList(String objectName, CancellationToken cancellationToken, String select, String filter, String expand, String custom, Nullable`1 skip, Nullable`1 top)\r\n   at lambda_method(Closure , Object , Object[] )\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_3.<GetExecutor>b__3(Object instance, Object[] methodParameters)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__3.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__15.MoveNext()"}
+-----------------------------------------
+
+5/30/2022 1:14:14 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/logout
+-----------------------------------------
+
+5/30/2022 1:14:14 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:14:50 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
+	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
+-----------------------------------------
+
+5/30/2022 1:14:50 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:14:50 AM
+Request
+	Method: Get
+	URL: https://acu-demos.us/acumaticaerp/entity/Default/20.200.001/Case?%24select=CaseID%2c Subject%2c BusinessAccount%2c BusinessAccountName%2c Status%2c Reason%2c Severity%2c Priority%2c Owner%2c Workgroup%2c ClassID%2c Date%2c LastActivityDate%2c LastModifiedDateTime&%24filter=Date gt datetimeoffset%272021-01-01T00%3a00%3a00%27&%24skip=0&%24top=15?$select=CaseID, Subject, BusinessAccount, BusinessAccountName, Status, Reason, Severity, Priority, Owner, Workgroup, ClassID, Date, LastActivityDate, LastModifiedDateTime&$filter=Date gt datetimeoffset'2021-01-01T00:00:00'&$skip=0&$top=15
+-----------------------------------------
+
+5/30/2022 1:14:50 AM
+Response
+	Status code: InternalServerError
+	Content: {"message":"An error has occurred.","exceptionMessage":"The given key was not present in the dictionary.","exceptionType":"System.Collections.Generic.KeyNotFoundException","stackTrace":"   at System.ThrowHelper.ThrowKeyNotFoundException()\r\n   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\r\n   at Microsoft.Data.OData.Query.EndPathBinder.BindEndPath(EndPathToken endPathToken, BindingState state)\r\n   at Microsoft.Data.OData.Query.MetadataBinder.Bind(QueryToken token)\r\n   at Microsoft.Data.OData.Query.BinaryOperatorBinder.GetOperandFromToken(BinaryOperatorKind operatorKind, QueryToken queryToken)\r\n   at Microsoft.Data.OData.Query.BinaryOperatorBinder.BindBinaryOperator(BinaryOperatorToken binaryOperatorToken)\r\n   at Microsoft.Data.OData.Query.MetadataBinder.Bind(QueryToken token)\r\n   at Microsoft.Data.OData.Query.FilterBinder.BindFilter(QueryToken filter)\r\n   at Microsoft.Data.OData.Query.ODataUriParser.ParseFilterImplementation(String filter, IEdmType elementType, IEdmEntitySet entitySet)\r\n   at PX.Api.ContractBased.OData.Helpers.FillRestQueryOptions(IEdmModel edmModel, EntityImpl entity, String filter, String select, String expand, String custom)\r\n   at PX.Api.ContractBased.SystemContracts.V2.RestController.GetList(String objectName, CancellationToken cancellationToken, String select, String filter, String expand, String custom, Nullable`1 skip, Nullable`1 top)\r\n   at lambda_method(Closure , Object , Object[] )\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_3.<GetExecutor>b__3(Object instance, Object[] methodParameters)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__3.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__15.MoveNext()"}
+-----------------------------------------
+
+5/30/2022 1:14:50 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/logout
+-----------------------------------------
+
+5/30/2022 1:14:50 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:14:53 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
+	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
+-----------------------------------------
+
+5/30/2022 1:14:53 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:14:53 AM
+Request
+	Method: Get
+	URL: https://acu-demos.us/acumaticaerp/entity/Default/20.200.001/Case?%24select=CaseID%2c Subject%2c BusinessAccount%2c BusinessAccountName%2c Status%2c Reason%2c Severity%2c Priority%2c Owner%2c Workgroup%2c ClassID%2c Date%2c LastActivityDate%2c LastModifiedDateTime&%24filter=Date gt datetimeoffset%272021-01-01T00%3a00%3a00%27&%24skip=0&%24top=15?$select=CaseID, Subject, BusinessAccount, BusinessAccountName, Status, Reason, Severity, Priority, Owner, Workgroup, ClassID, Date, LastActivityDate, LastModifiedDateTime&$filter=Date gt datetimeoffset'2021-01-01T00:00:00'&$skip=0&$top=15
+-----------------------------------------
+
+5/30/2022 1:14:53 AM
+Response
+	Status code: InternalServerError
+	Content: {"message":"An error has occurred.","exceptionMessage":"The given key was not present in the dictionary.","exceptionType":"System.Collections.Generic.KeyNotFoundException","stackTrace":"   at System.ThrowHelper.ThrowKeyNotFoundException()\r\n   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\r\n   at Microsoft.Data.OData.Query.EndPathBinder.BindEndPath(EndPathToken endPathToken, BindingState state)\r\n   at Microsoft.Data.OData.Query.MetadataBinder.Bind(QueryToken token)\r\n   at Microsoft.Data.OData.Query.BinaryOperatorBinder.GetOperandFromToken(BinaryOperatorKind operatorKind, QueryToken queryToken)\r\n   at Microsoft.Data.OData.Query.BinaryOperatorBinder.BindBinaryOperator(BinaryOperatorToken binaryOperatorToken)\r\n   at Microsoft.Data.OData.Query.MetadataBinder.Bind(QueryToken token)\r\n   at Microsoft.Data.OData.Query.FilterBinder.BindFilter(QueryToken filter)\r\n   at Microsoft.Data.OData.Query.ODataUriParser.ParseFilterImplementation(String filter, IEdmType elementType, IEdmEntitySet entitySet)\r\n   at PX.Api.ContractBased.OData.Helpers.FillRestQueryOptions(IEdmModel edmModel, EntityImpl entity, String filter, String select, String expand, String custom)\r\n   at PX.Api.ContractBased.SystemContracts.V2.RestController.GetList(String objectName, CancellationToken cancellationToken, String select, String filter, String expand, String custom, Nullable`1 skip, Nullable`1 top)\r\n   at lambda_method(Closure , Object , Object[] )\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_3.<GetExecutor>b__3(Object instance, Object[] methodParameters)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__3.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__15.MoveNext()"}
+-----------------------------------------
+
+5/30/2022 1:14:53 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/logout
+-----------------------------------------
+
+5/30/2022 1:14:53 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:23:15 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
+	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
+-----------------------------------------
+
+5/30/2022 1:23:16 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:23:16 AM
+Request
+	Method: Get
+	URL: https://acu-demos.us/acumaticaerp/entity/Default/20.200.001/Case?%24select=CaseID%2c Subject%2c BusinessAccount%2c BusinessAccountName%2c Status%2c Reason%2c Severity%2c Priority%2c Owner%2c Workgroup%2c ClassID%2c Date%2c LastActivityDate%2c LastModifiedDateTime&%24filter=Date gt datetimeoffset%272021-01-01T00%3a00%3a00%27&%24skip=0&%24top=15?$select=CaseID, Subject, BusinessAccount, BusinessAccountName, Status, Reason, Severity, Priority, Owner, Workgroup, ClassID, Date, LastActivityDate, LastModifiedDateTime&$filter=Date gt datetimeoffset'2021-01-01T00:00:00'&$skip=0&$top=15
+-----------------------------------------
+
+5/30/2022 1:23:16 AM
+Response
+	Status code: InternalServerError
+	Content: {"message":"An error has occurred.","exceptionMessage":"The given key was not present in the dictionary.","exceptionType":"System.Collections.Generic.KeyNotFoundException","stackTrace":"   at System.ThrowHelper.ThrowKeyNotFoundException()\r\n   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\r\n   at Microsoft.Data.OData.Query.EndPathBinder.BindEndPath(EndPathToken endPathToken, BindingState state)\r\n   at Microsoft.Data.OData.Query.MetadataBinder.Bind(QueryToken token)\r\n   at Microsoft.Data.OData.Query.BinaryOperatorBinder.GetOperandFromToken(BinaryOperatorKind operatorKind, QueryToken queryToken)\r\n   at Microsoft.Data.OData.Query.BinaryOperatorBinder.BindBinaryOperator(BinaryOperatorToken binaryOperatorToken)\r\n   at Microsoft.Data.OData.Query.MetadataBinder.Bind(QueryToken token)\r\n   at Microsoft.Data.OData.Query.FilterBinder.BindFilter(QueryToken filter)\r\n   at Microsoft.Data.OData.Query.ODataUriParser.ParseFilterImplementation(String filter, IEdmType elementType, IEdmEntitySet entitySet)\r\n   at PX.Api.ContractBased.OData.Helpers.FillRestQueryOptions(IEdmModel edmModel, EntityImpl entity, String filter, String select, String expand, String custom)\r\n   at PX.Api.ContractBased.SystemContracts.V2.RestController.GetList(String objectName, CancellationToken cancellationToken, String select, String filter, String expand, String custom, Nullable`1 skip, Nullable`1 top)\r\n   at lambda_method(Closure , Object , Object[] )\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_3.<GetExecutor>b__3(Object instance, Object[] methodParameters)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__3.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__15.MoveNext()"}
+-----------------------------------------
+
+5/30/2022 1:23:16 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/logout
+-----------------------------------------
+
+5/30/2022 1:23:16 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:24:50 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
+	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
+-----------------------------------------
+
+5/30/2022 1:24:50 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:24:50 AM
+Request
+	Method: Get
+	URL: https://acu-demos.us/acumaticaerp/entity/Default/20.200.001/Case?%24select=CaseID%2c Subject%2c BusinessAccount%2c BusinessAccountName%2c Status%2c Reason%2c Severity%2c Priority%2c Owner%2c Workgroup%2c ClassID%2c Date%2c LastActivityDate%2c LastModifiedDateTime&%24filter=Date gt datetimeoffset%272017-01-01T00%3a00%3a00%27&%24skip=0&%24top=15?$select=CaseID, Subject, BusinessAccount, BusinessAccountName, Status, Reason, Severity, Priority, Owner, Workgroup, ClassID, Date, LastActivityDate, LastModifiedDateTime&$filter=Date gt datetimeoffset'2017-01-01T00:00:00'&$skip=0&$top=15
+-----------------------------------------
+
+5/30/2022 1:24:50 AM
+Response
+	Status code: InternalServerError
+	Content: {"message":"An error has occurred.","exceptionMessage":"The given key was not present in the dictionary.","exceptionType":"System.Collections.Generic.KeyNotFoundException","stackTrace":"   at System.ThrowHelper.ThrowKeyNotFoundException()\r\n   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\r\n   at Microsoft.Data.OData.Query.EndPathBinder.BindEndPath(EndPathToken endPathToken, BindingState state)\r\n   at Microsoft.Data.OData.Query.MetadataBinder.Bind(QueryToken token)\r\n   at Microsoft.Data.OData.Query.BinaryOperatorBinder.GetOperandFromToken(BinaryOperatorKind operatorKind, QueryToken queryToken)\r\n   at Microsoft.Data.OData.Query.BinaryOperatorBinder.BindBinaryOperator(BinaryOperatorToken binaryOperatorToken)\r\n   at Microsoft.Data.OData.Query.MetadataBinder.Bind(QueryToken token)\r\n   at Microsoft.Data.OData.Query.FilterBinder.BindFilter(QueryToken filter)\r\n   at Microsoft.Data.OData.Query.ODataUriParser.ParseFilterImplementation(String filter, IEdmType elementType, IEdmEntitySet entitySet)\r\n   at PX.Api.ContractBased.OData.Helpers.FillRestQueryOptions(IEdmModel edmModel, EntityImpl entity, String filter, String select, String expand, String custom)\r\n   at PX.Api.ContractBased.SystemContracts.V2.RestController.GetList(String objectName, CancellationToken cancellationToken, String select, String filter, String expand, String custom, Nullable`1 skip, Nullable`1 top)\r\n   at lambda_method(Closure , Object , Object[] )\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_3.<GetExecutor>b__3(Object instance, Object[] methodParameters)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__3.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__15.MoveNext()"}
+-----------------------------------------
+
+5/30/2022 1:24:50 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/logout
+-----------------------------------------
+
+5/30/2022 1:24:50 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:25:35 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
+	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
+-----------------------------------------
+
+5/30/2022 1:25:35 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:25:35 AM
+Request
+	Method: Get
+	URL: https://acu-demos.us/acumaticaerp/entity/Default/20.200.001/Case?%24select=CaseID%2c Subject%2c BusinessAccount%2c BusinessAccountName%2c Status%2c Reason%2c Severity%2c Priority%2c Owner%2c Workgroup%2c ClassID%2c Date%2c LastActivityDate%2c LastModifiedDateTime&%24filter=Date gt datetimeoffset%272016-01-01T00%3a00%3a00%27&%24skip=0&%24top=15?$select=CaseID, Subject, BusinessAccount, BusinessAccountName, Status, Reason, Severity, Priority, Owner, Workgroup, ClassID, Date, LastActivityDate, LastModifiedDateTime&$filter=Date gt datetimeoffset'2016-01-01T00:00:00'&$skip=0&$top=15
+-----------------------------------------
+
+5/30/2022 1:25:35 AM
+Response
+	Status code: InternalServerError
+	Content: {"message":"An error has occurred.","exceptionMessage":"The given key was not present in the dictionary.","exceptionType":"System.Collections.Generic.KeyNotFoundException","stackTrace":"   at System.ThrowHelper.ThrowKeyNotFoundException()\r\n   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\r\n   at Microsoft.Data.OData.Query.EndPathBinder.BindEndPath(EndPathToken endPathToken, BindingState state)\r\n   at Microsoft.Data.OData.Query.MetadataBinder.Bind(QueryToken token)\r\n   at Microsoft.Data.OData.Query.BinaryOperatorBinder.GetOperandFromToken(BinaryOperatorKind operatorKind, QueryToken queryToken)\r\n   at Microsoft.Data.OData.Query.BinaryOperatorBinder.BindBinaryOperator(BinaryOperatorToken binaryOperatorToken)\r\n   at Microsoft.Data.OData.Query.MetadataBinder.Bind(QueryToken token)\r\n   at Microsoft.Data.OData.Query.FilterBinder.BindFilter(QueryToken filter)\r\n   at Microsoft.Data.OData.Query.ODataUriParser.ParseFilterImplementation(String filter, IEdmType elementType, IEdmEntitySet entitySet)\r\n   at PX.Api.ContractBased.OData.Helpers.FillRestQueryOptions(IEdmModel edmModel, EntityImpl entity, String filter, String select, String expand, String custom)\r\n   at PX.Api.ContractBased.SystemContracts.V2.RestController.GetList(String objectName, CancellationToken cancellationToken, String select, String filter, String expand, String custom, Nullable`1 skip, Nullable`1 top)\r\n   at lambda_method(Closure , Object , Object[] )\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_3.<GetExecutor>b__3(Object instance, Object[] methodParameters)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__3.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__15.MoveNext()"}
+-----------------------------------------
+
+5/30/2022 1:25:35 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/logout
+-----------------------------------------
+
+5/30/2022 1:25:35 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:25:40 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
+	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
+-----------------------------------------
+
+5/30/2022 1:25:40 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:25:40 AM
+Request
+	Method: Get
+	URL: https://acu-demos.us/acumaticaerp/entity/Default/20.200.001/Case?%24select=CaseID%2c Subject%2c BusinessAccount%2c BusinessAccountName%2c Status%2c Reason%2c Severity%2c Priority%2c Owner%2c Workgroup%2c ClassID%2c Date%2c LastActivityDate%2c LastModifiedDateTime&%24filter=Date gt datetimeoffset%272016-01-01T00%3a00%3a00%27&%24skip=0&%24top=15?$select=CaseID, Subject, BusinessAccount, BusinessAccountName, Status, Reason, Severity, Priority, Owner, Workgroup, ClassID, Date, LastActivityDate, LastModifiedDateTime&$filter=Date gt datetimeoffset'2016-01-01T00:00:00'&$skip=0&$top=15
+-----------------------------------------
+
+5/30/2022 1:25:40 AM
+Response
+	Status code: InternalServerError
+	Content: {"message":"An error has occurred.","exceptionMessage":"The given key was not present in the dictionary.","exceptionType":"System.Collections.Generic.KeyNotFoundException","stackTrace":"   at System.ThrowHelper.ThrowKeyNotFoundException()\r\n   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\r\n   at Microsoft.Data.OData.Query.EndPathBinder.BindEndPath(EndPathToken endPathToken, BindingState state)\r\n   at Microsoft.Data.OData.Query.MetadataBinder.Bind(QueryToken token)\r\n   at Microsoft.Data.OData.Query.BinaryOperatorBinder.GetOperandFromToken(BinaryOperatorKind operatorKind, QueryToken queryToken)\r\n   at Microsoft.Data.OData.Query.BinaryOperatorBinder.BindBinaryOperator(BinaryOperatorToken binaryOperatorToken)\r\n   at Microsoft.Data.OData.Query.MetadataBinder.Bind(QueryToken token)\r\n   at Microsoft.Data.OData.Query.FilterBinder.BindFilter(QueryToken filter)\r\n   at Microsoft.Data.OData.Query.ODataUriParser.ParseFilterImplementation(String filter, IEdmType elementType, IEdmEntitySet entitySet)\r\n   at PX.Api.ContractBased.OData.Helpers.FillRestQueryOptions(IEdmModel edmModel, EntityImpl entity, String filter, String select, String expand, String custom)\r\n   at PX.Api.ContractBased.SystemContracts.V2.RestController.GetList(String objectName, CancellationToken cancellationToken, String select, String filter, String expand, String custom, Nullable`1 skip, Nullable`1 top)\r\n   at lambda_method(Closure , Object , Object[] )\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_3.<GetExecutor>b__3(Object instance, Object[] methodParameters)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__3.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__15.MoveNext()"}
+-----------------------------------------
+
+5/30/2022 1:25:40 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/logout
+-----------------------------------------
+
+5/30/2022 1:25:40 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:35:52 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
+	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
+-----------------------------------------
+
+5/30/2022 1:35:52 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:35:52 AM
+Request
+	Method: Get
+	URL: https://acu-demos.us/acumaticaerp/entity/Default/20.200.001/Case?%24select=CaseID%2c Subject%2c BusinessAccount%2c BusinessAccountName%2c Status%2c Reason%2c Severity%2c Priority%2c Owner%2c Workgroup%2c ClassID%2c CreatedDateTime%2c LastActivityDate%2c LastModifiedDateTime&%24filter=Date gt datetimeoffset%272016-01-01T00%3a00%3a00%27&%24skip=0&%24top=15?$select=CaseID, Subject, BusinessAccount, BusinessAccountName, Status, Reason, Severity, Priority, Owner, Workgroup, ClassID, CreatedDateTime, LastActivityDate, LastModifiedDateTime&$filter=Date gt datetimeoffset'2016-01-01T00:00:00'&$skip=0&$top=15
+-----------------------------------------
+
+5/30/2022 1:35:52 AM
+Response
+	Status code: InternalServerError
+	Content: {"message":"An error has occurred.","exceptionMessage":"The given key was not present in the dictionary.","exceptionType":"System.Collections.Generic.KeyNotFoundException","stackTrace":"   at System.ThrowHelper.ThrowKeyNotFoundException()\r\n   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\r\n   at Microsoft.Data.OData.Query.EndPathBinder.BindEndPath(EndPathToken endPathToken, BindingState state)\r\n   at Microsoft.Data.OData.Query.MetadataBinder.Bind(QueryToken token)\r\n   at Microsoft.Data.OData.Query.BinaryOperatorBinder.GetOperandFromToken(BinaryOperatorKind operatorKind, QueryToken queryToken)\r\n   at Microsoft.Data.OData.Query.BinaryOperatorBinder.BindBinaryOperator(BinaryOperatorToken binaryOperatorToken)\r\n   at Microsoft.Data.OData.Query.MetadataBinder.Bind(QueryToken token)\r\n   at Microsoft.Data.OData.Query.FilterBinder.BindFilter(QueryToken filter)\r\n   at Microsoft.Data.OData.Query.ODataUriParser.ParseFilterImplementation(String filter, IEdmType elementType, IEdmEntitySet entitySet)\r\n   at PX.Api.ContractBased.OData.Helpers.FillRestQueryOptions(IEdmModel edmModel, EntityImpl entity, String filter, String select, String expand, String custom)\r\n   at PX.Api.ContractBased.SystemContracts.V2.RestController.GetList(String objectName, CancellationToken cancellationToken, String select, String filter, String expand, String custom, Nullable`1 skip, Nullable`1 top)\r\n   at lambda_method(Closure , Object , Object[] )\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_3.<GetExecutor>b__3(Object instance, Object[] methodParameters)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__3.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__15.MoveNext()"}
+-----------------------------------------
+
+5/30/2022 1:35:52 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/logout
+-----------------------------------------
+
+5/30/2022 1:35:52 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:35:53 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
+	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
+-----------------------------------------
+
+5/30/2022 1:35:53 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:35:53 AM
+Request
+	Method: Get
+	URL: https://acu-demos.us/acumaticaerp/entity/Default/20.200.001/Case?%24select=CaseID%2c Subject%2c BusinessAccount%2c BusinessAccountName%2c Status%2c Reason%2c Severity%2c Priority%2c Owner%2c Workgroup%2c ClassID%2c CreatedDateTime%2c LastActivityDate%2c LastModifiedDateTime&%24filter=Date gt datetimeoffset%272016-01-01T00%3a00%3a00%27&%24skip=0&%24top=15?$select=CaseID, Subject, BusinessAccount, BusinessAccountName, Status, Reason, Severity, Priority, Owner, Workgroup, ClassID, CreatedDateTime, LastActivityDate, LastModifiedDateTime&$filter=Date gt datetimeoffset'2016-01-01T00:00:00'&$skip=0&$top=15
+-----------------------------------------
+
+5/30/2022 1:35:54 AM
+Response
+	Status code: InternalServerError
+	Content: {"message":"An error has occurred.","exceptionMessage":"The given key was not present in the dictionary.","exceptionType":"System.Collections.Generic.KeyNotFoundException","stackTrace":"   at System.ThrowHelper.ThrowKeyNotFoundException()\r\n   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\r\n   at Microsoft.Data.OData.Query.EndPathBinder.BindEndPath(EndPathToken endPathToken, BindingState state)\r\n   at Microsoft.Data.OData.Query.MetadataBinder.Bind(QueryToken token)\r\n   at Microsoft.Data.OData.Query.BinaryOperatorBinder.GetOperandFromToken(BinaryOperatorKind operatorKind, QueryToken queryToken)\r\n   at Microsoft.Data.OData.Query.BinaryOperatorBinder.BindBinaryOperator(BinaryOperatorToken binaryOperatorToken)\r\n   at Microsoft.Data.OData.Query.MetadataBinder.Bind(QueryToken token)\r\n   at Microsoft.Data.OData.Query.FilterBinder.BindFilter(QueryToken filter)\r\n   at Microsoft.Data.OData.Query.ODataUriParser.ParseFilterImplementation(String filter, IEdmType elementType, IEdmEntitySet entitySet)\r\n   at PX.Api.ContractBased.OData.Helpers.FillRestQueryOptions(IEdmModel edmModel, EntityImpl entity, String filter, String select, String expand, String custom)\r\n   at PX.Api.ContractBased.SystemContracts.V2.RestController.GetList(String objectName, CancellationToken cancellationToken, String select, String filter, String expand, String custom, Nullable`1 skip, Nullable`1 top)\r\n   at lambda_method(Closure , Object , Object[] )\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_3.<GetExecutor>b__3(Object instance, Object[] methodParameters)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__3.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__15.MoveNext()"}
+-----------------------------------------
+
+5/30/2022 1:35:54 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/logout
+-----------------------------------------
+
+5/30/2022 1:35:54 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:35:54 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
+	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
+-----------------------------------------
+
+5/30/2022 1:35:54 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:35:54 AM
+Request
+	Method: Get
+	URL: https://acu-demos.us/acumaticaerp/entity/Default/20.200.001/Case?%24select=CaseID%2c Subject%2c BusinessAccount%2c BusinessAccountName%2c Status%2c Reason%2c Severity%2c Priority%2c Owner%2c Workgroup%2c ClassID%2c CreatedDateTime%2c LastActivityDate%2c LastModifiedDateTime&%24filter=Date gt datetimeoffset%272016-01-01T00%3a00%3a00%27&%24skip=0&%24top=15?$select=CaseID, Subject, BusinessAccount, BusinessAccountName, Status, Reason, Severity, Priority, Owner, Workgroup, ClassID, CreatedDateTime, LastActivityDate, LastModifiedDateTime&$filter=Date gt datetimeoffset'2016-01-01T00:00:00'&$skip=0&$top=15
+-----------------------------------------
+
+5/30/2022 1:35:54 AM
+Response
+	Status code: InternalServerError
+	Content: {"message":"An error has occurred.","exceptionMessage":"The given key was not present in the dictionary.","exceptionType":"System.Collections.Generic.KeyNotFoundException","stackTrace":"   at System.ThrowHelper.ThrowKeyNotFoundException()\r\n   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\r\n   at Microsoft.Data.OData.Query.EndPathBinder.BindEndPath(EndPathToken endPathToken, BindingState state)\r\n   at Microsoft.Data.OData.Query.MetadataBinder.Bind(QueryToken token)\r\n   at Microsoft.Data.OData.Query.BinaryOperatorBinder.GetOperandFromToken(BinaryOperatorKind operatorKind, QueryToken queryToken)\r\n   at Microsoft.Data.OData.Query.BinaryOperatorBinder.BindBinaryOperator(BinaryOperatorToken binaryOperatorToken)\r\n   at Microsoft.Data.OData.Query.MetadataBinder.Bind(QueryToken token)\r\n   at Microsoft.Data.OData.Query.FilterBinder.BindFilter(QueryToken filter)\r\n   at Microsoft.Data.OData.Query.ODataUriParser.ParseFilterImplementation(String filter, IEdmType elementType, IEdmEntitySet entitySet)\r\n   at PX.Api.ContractBased.OData.Helpers.FillRestQueryOptions(IEdmModel edmModel, EntityImpl entity, String filter, String select, String expand, String custom)\r\n   at PX.Api.ContractBased.SystemContracts.V2.RestController.GetList(String objectName, CancellationToken cancellationToken, String select, String filter, String expand, String custom, Nullable`1 skip, Nullable`1 top)\r\n   at lambda_method(Closure , Object , Object[] )\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_3.<GetExecutor>b__3(Object instance, Object[] methodParameters)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__3.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__15.MoveNext()"}
+-----------------------------------------
+
+5/30/2022 1:35:54 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/logout
+-----------------------------------------
+
+5/30/2022 1:35:54 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:36:08 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
+	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
+-----------------------------------------
+
+5/30/2022 1:36:08 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:36:08 AM
+Request
+	Method: Get
+	URL: https://acu-demos.us/acumaticaerp/entity/Default/20.200.001/Case?%24select=CaseID%2c Subject%2c BusinessAccount%2c BusinessAccountName%2c Status%2c Reason%2c Severity%2c Priority%2c Owner%2c Workgroup%2c ClassID%2c CreatedDateTime%2c LastActivityDate%2c LastModifiedDateTime&%24filter=Date gt datetimeoffset%272016-01-01T00%3a00%3a00%27&%24skip=0&%24top=15?$select=CaseID, Subject, BusinessAccount, BusinessAccountName, Status, Reason, Severity, Priority, Owner, Workgroup, ClassID, CreatedDateTime, LastActivityDate, LastModifiedDateTime&$filter=Date gt datetimeoffset'2016-01-01T00:00:00'&$skip=0&$top=15
+-----------------------------------------
+
+5/30/2022 1:36:08 AM
+Response
+	Status code: InternalServerError
+	Content: {"message":"An error has occurred.","exceptionMessage":"The given key was not present in the dictionary.","exceptionType":"System.Collections.Generic.KeyNotFoundException","stackTrace":"   at System.ThrowHelper.ThrowKeyNotFoundException()\r\n   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\r\n   at Microsoft.Data.OData.Query.EndPathBinder.BindEndPath(EndPathToken endPathToken, BindingState state)\r\n   at Microsoft.Data.OData.Query.MetadataBinder.Bind(QueryToken token)\r\n   at Microsoft.Data.OData.Query.BinaryOperatorBinder.GetOperandFromToken(BinaryOperatorKind operatorKind, QueryToken queryToken)\r\n   at Microsoft.Data.OData.Query.BinaryOperatorBinder.BindBinaryOperator(BinaryOperatorToken binaryOperatorToken)\r\n   at Microsoft.Data.OData.Query.MetadataBinder.Bind(QueryToken token)\r\n   at Microsoft.Data.OData.Query.FilterBinder.BindFilter(QueryToken filter)\r\n   at Microsoft.Data.OData.Query.ODataUriParser.ParseFilterImplementation(String filter, IEdmType elementType, IEdmEntitySet entitySet)\r\n   at PX.Api.ContractBased.OData.Helpers.FillRestQueryOptions(IEdmModel edmModel, EntityImpl entity, String filter, String select, String expand, String custom)\r\n   at PX.Api.ContractBased.SystemContracts.V2.RestController.GetList(String objectName, CancellationToken cancellationToken, String select, String filter, String expand, String custom, Nullable`1 skip, Nullable`1 top)\r\n   at lambda_method(Closure , Object , Object[] )\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_3.<GetExecutor>b__3(Object instance, Object[] methodParameters)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__3.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__15.MoveNext()"}
+-----------------------------------------
+
+5/30/2022 1:36:08 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/logout
+-----------------------------------------
+
+5/30/2022 1:36:08 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:37:29 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
+	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
+-----------------------------------------
+
+5/30/2022 1:37:30 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:37:30 AM
+Request
+	Method: Get
+	URL: https://acu-demos.us/acumaticaerp/entity/Default/20.200.001/Case?%24select=CaseID%2c Subject%2c BusinessAccount%2c BusinessAccountName%2c Status%2c Reason%2c Severity%2c Priority%2c Owner%2c Workgroup%2c ClassID%2c CreatedDateTime%2c LastActivityDate%2c LastModifiedDateTime&%24filter=Date gt datetimeoffset%272016-01-01T00%3a00%3a00%27&%24skip=0&%24top=15?$select=CaseID, Subject, BusinessAccount, BusinessAccountName, Status, Reason, Severity, Priority, Owner, Workgroup, ClassID, CreatedDateTime, LastActivityDate, LastModifiedDateTime&$filter=Date gt datetimeoffset'2016-01-01T00:00:00'&$skip=0&$top=15
+-----------------------------------------
+
+5/30/2022 1:37:30 AM
+Response
+	Status code: InternalServerError
+	Content: {"message":"An error has occurred.","exceptionMessage":"The given key was not present in the dictionary.","exceptionType":"System.Collections.Generic.KeyNotFoundException","stackTrace":"   at System.ThrowHelper.ThrowKeyNotFoundException()\r\n   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\r\n   at Microsoft.Data.OData.Query.EndPathBinder.BindEndPath(EndPathToken endPathToken, BindingState state)\r\n   at Microsoft.Data.OData.Query.MetadataBinder.Bind(QueryToken token)\r\n   at Microsoft.Data.OData.Query.BinaryOperatorBinder.GetOperandFromToken(BinaryOperatorKind operatorKind, QueryToken queryToken)\r\n   at Microsoft.Data.OData.Query.BinaryOperatorBinder.BindBinaryOperator(BinaryOperatorToken binaryOperatorToken)\r\n   at Microsoft.Data.OData.Query.MetadataBinder.Bind(QueryToken token)\r\n   at Microsoft.Data.OData.Query.FilterBinder.BindFilter(QueryToken filter)\r\n   at Microsoft.Data.OData.Query.ODataUriParser.ParseFilterImplementation(String filter, IEdmType elementType, IEdmEntitySet entitySet)\r\n   at PX.Api.ContractBased.OData.Helpers.FillRestQueryOptions(IEdmModel edmModel, EntityImpl entity, String filter, String select, String expand, String custom)\r\n   at PX.Api.ContractBased.SystemContracts.V2.RestController.GetList(String objectName, CancellationToken cancellationToken, String select, String filter, String expand, String custom, Nullable`1 skip, Nullable`1 top)\r\n   at lambda_method(Closure , Object , Object[] )\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_3.<GetExecutor>b__3(Object instance, Object[] methodParameters)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__3.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__15.MoveNext()"}
+-----------------------------------------
+
+5/30/2022 1:37:30 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/logout
+-----------------------------------------
+
+5/30/2022 1:37:30 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:37:45 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
+	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
+-----------------------------------------
+
+5/30/2022 1:37:45 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:38:53 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
+	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
+-----------------------------------------
+
+5/30/2022 1:38:54 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:39:43 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
+	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
+-----------------------------------------
+
+5/30/2022 1:39:44 AM
+Response
+	Status code: InternalServerError
+	Content: {"message":"An error has occurred.","exceptionMessage":"API Login Limit","exceptionType":"PX.Data.PXException","stackTrace":"   at PX.LicensePolicy.PXLicensePolicy.CheckApiUsersLimits(HttpContextBase c)\r\n   at PX.Data.PXLogin.LoginUserImpl(HttpContext httpContext, String userName, String password)\r\n   at PX.Data.PXLogin.PX.Data.IPXLogin.LoginUser(String& userName, String password)\r\n   at PX.Api.Services.LoginService.Login(String login, String password, String company, String branch, String locale, String prefix)\r\n   at PX.Api.ContractBased.ILoginServiceExtensions.LoginForSoapApi(ILoginService loginService, IMultiFactorService multiFactorService, String login, String password, String company, String branch, String locale)\r\n   at PX.Api.ContractBased.WebApi.Controllers.AuthController.Login(Credentials credentials)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_1.<GetExecutor>b__0(Object instance, Object[] methodParameters)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__15.MoveNext()"}
+-----------------------------------------
+
+5/30/2022 1:39:44 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/logout
+-----------------------------------------
+
+5/30/2022 1:39:44 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:39:56 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
+	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
+-----------------------------------------
+
+5/30/2022 1:39:56 AM
+Response
+	Status code: InternalServerError
+	Content: {"message":"An error has occurred.","exceptionMessage":"API Login Limit","exceptionType":"PX.Data.PXException","stackTrace":"   at PX.LicensePolicy.PXLicensePolicy.CheckApiUsersLimits(HttpContextBase c)\r\n   at PX.Data.PXLogin.LoginUserImpl(HttpContext httpContext, String userName, String password)\r\n   at PX.Data.PXLogin.PX.Data.IPXLogin.LoginUser(String& userName, String password)\r\n   at PX.Api.Services.LoginService.Login(String login, String password, String company, String branch, String locale, String prefix)\r\n   at PX.Api.ContractBased.ILoginServiceExtensions.LoginForSoapApi(ILoginService loginService, IMultiFactorService multiFactorService, String login, String password, String company, String branch, String locale)\r\n   at PX.Api.ContractBased.WebApi.Controllers.AuthController.Login(Credentials credentials)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_1.<GetExecutor>b__0(Object instance, Object[] methodParameters)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__15.MoveNext()"}
+-----------------------------------------
+
+5/30/2022 1:39:56 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/logout
+-----------------------------------------
+
+5/30/2022 1:39:56 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:40:13 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
+	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
+-----------------------------------------
+
+5/30/2022 1:40:13 AM
+Response
+	Status code: InternalServerError
+	Content: {"message":"An error has occurred.","exceptionMessage":"API Login Limit","exceptionType":"PX.Data.PXException","stackTrace":"   at PX.LicensePolicy.PXLicensePolicy.CheckApiUsersLimits(HttpContextBase c)\r\n   at PX.Data.PXLogin.LoginUserImpl(HttpContext httpContext, String userName, String password)\r\n   at PX.Data.PXLogin.PX.Data.IPXLogin.LoginUser(String& userName, String password)\r\n   at PX.Api.Services.LoginService.Login(String login, String password, String company, String branch, String locale, String prefix)\r\n   at PX.Api.ContractBased.ILoginServiceExtensions.LoginForSoapApi(ILoginService loginService, IMultiFactorService multiFactorService, String login, String password, String company, String branch, String locale)\r\n   at PX.Api.ContractBased.WebApi.Controllers.AuthController.Login(Credentials credentials)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_1.<GetExecutor>b__0(Object instance, Object[] methodParameters)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__15.MoveNext()"}
+-----------------------------------------
+
+5/30/2022 1:40:13 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/logout
+-----------------------------------------
+
+5/30/2022 1:40:13 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:40:23 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
+	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
+-----------------------------------------
+
+5/30/2022 1:40:24 AM
+Response
+	Status code: InternalServerError
+	Content: {"message":"An error has occurred.","exceptionMessage":"API Login Limit","exceptionType":"PX.Data.PXException","stackTrace":"   at PX.LicensePolicy.PXLicensePolicy.CheckApiUsersLimits(HttpContextBase c)\r\n   at PX.Data.PXLogin.LoginUserImpl(HttpContext httpContext, String userName, String password)\r\n   at PX.Data.PXLogin.PX.Data.IPXLogin.LoginUser(String& userName, String password)\r\n   at PX.Api.Services.LoginService.Login(String login, String password, String company, String branch, String locale, String prefix)\r\n   at PX.Api.ContractBased.ILoginServiceExtensions.LoginForSoapApi(ILoginService loginService, IMultiFactorService multiFactorService, String login, String password, String company, String branch, String locale)\r\n   at PX.Api.ContractBased.WebApi.Controllers.AuthController.Login(Credentials credentials)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_1.<GetExecutor>b__0(Object instance, Object[] methodParameters)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__15.MoveNext()"}
+-----------------------------------------
+
+5/30/2022 1:40:24 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/logout
+-----------------------------------------
+
+5/30/2022 1:40:24 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:41:25 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
+	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
+-----------------------------------------
+
+5/30/2022 1:41:25 AM
+Response
+	Status code: InternalServerError
+	Content: {"message":"An error has occurred.","exceptionMessage":"API Login Limit","exceptionType":"PX.Data.PXException","stackTrace":"   at PX.LicensePolicy.PXLicensePolicy.CheckApiUsersLimits(HttpContextBase c)\r\n   at PX.Data.PXLogin.LoginUserImpl(HttpContext httpContext, String userName, String password)\r\n   at PX.Data.PXLogin.PX.Data.IPXLogin.LoginUser(String& userName, String password)\r\n   at PX.Api.Services.LoginService.Login(String login, String password, String company, String branch, String locale, String prefix)\r\n   at PX.Api.ContractBased.ILoginServiceExtensions.LoginForSoapApi(ILoginService loginService, IMultiFactorService multiFactorService, String login, String password, String company, String branch, String locale)\r\n   at PX.Api.ContractBased.WebApi.Controllers.AuthController.Login(Credentials credentials)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_1.<GetExecutor>b__0(Object instance, Object[] methodParameters)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__15.MoveNext()"}
+-----------------------------------------
+
+5/30/2022 1:41:25 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/logout
+-----------------------------------------
+
+5/30/2022 1:41:25 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:41:27 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
+	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
+-----------------------------------------
+
+5/30/2022 1:41:27 AM
+Response
+	Status code: InternalServerError
+	Content: {"message":"An error has occurred.","exceptionMessage":"API Login Limit","exceptionType":"PX.Data.PXException","stackTrace":"   at PX.LicensePolicy.PXLicensePolicy.CheckApiUsersLimits(HttpContextBase c)\r\n   at PX.Data.PXLogin.LoginUserImpl(HttpContext httpContext, String userName, String password)\r\n   at PX.Data.PXLogin.PX.Data.IPXLogin.LoginUser(String& userName, String password)\r\n   at PX.Api.Services.LoginService.Login(String login, String password, String company, String branch, String locale, String prefix)\r\n   at PX.Api.ContractBased.ILoginServiceExtensions.LoginForSoapApi(ILoginService loginService, IMultiFactorService multiFactorService, String login, String password, String company, String branch, String locale)\r\n   at PX.Api.ContractBased.WebApi.Controllers.AuthController.Login(Credentials credentials)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_1.<GetExecutor>b__0(Object instance, Object[] methodParameters)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__15.MoveNext()"}
+-----------------------------------------
+
+5/30/2022 1:41:27 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/logout
+-----------------------------------------
+
+5/30/2022 1:41:27 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:41:35 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
+	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
+-----------------------------------------
+
+5/30/2022 1:41:35 AM
+Response
+	Status code: InternalServerError
+	Content: {"message":"An error has occurred.","exceptionMessage":"API Login Limit","exceptionType":"PX.Data.PXException","stackTrace":"   at PX.LicensePolicy.PXLicensePolicy.CheckApiUsersLimits(HttpContextBase c)\r\n   at PX.Data.PXLogin.LoginUserImpl(HttpContext httpContext, String userName, String password)\r\n   at PX.Data.PXLogin.PX.Data.IPXLogin.LoginUser(String& userName, String password)\r\n   at PX.Api.Services.LoginService.Login(String login, String password, String company, String branch, String locale, String prefix)\r\n   at PX.Api.ContractBased.ILoginServiceExtensions.LoginForSoapApi(ILoginService loginService, IMultiFactorService multiFactorService, String login, String password, String company, String branch, String locale)\r\n   at PX.Api.ContractBased.WebApi.Controllers.AuthController.Login(Credentials credentials)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_1.<GetExecutor>b__0(Object instance, Object[] methodParameters)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__15.MoveNext()"}
+-----------------------------------------
+
+5/30/2022 1:41:35 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/logout
+-----------------------------------------
+
+5/30/2022 1:41:36 AM
+Response
+	Status code: NoContent
+	Content: 
+-----------------------------------------
+
+5/30/2022 1:41:45 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/login
+	Body: {"name":"admin","password":"123","company":"","tenant":"","branch":""}
+-----------------------------------------
+
+5/30/2022 1:41:45 AM
+Response
+	Status code: InternalServerError
+	Content: {"message":"An error has occurred.","exceptionMessage":"API Login Limit","exceptionType":"PX.Data.PXException","stackTrace":"   at PX.LicensePolicy.PXLicensePolicy.CheckApiUsersLimits(HttpContextBase c)\r\n   at PX.Data.PXLogin.LoginUserImpl(HttpContext httpContext, String userName, String password)\r\n   at PX.Data.PXLogin.PX.Data.IPXLogin.LoginUser(String& userName, String password)\r\n   at PX.Api.Services.LoginService.Login(String login, String password, String company, String branch, String locale, String prefix)\r\n   at PX.Api.ContractBased.ILoginServiceExtensions.LoginForSoapApi(ILoginService loginService, IMultiFactorService multiFactorService, String login, String password, String company, String branch, String locale)\r\n   at PX.Api.ContractBased.WebApi.Controllers.AuthController.Login(Credentials credentials)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_1.<GetExecutor>b__0(Object instance, Object[] methodParameters)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__6.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__15.MoveNext()"}
+-----------------------------------------
+
+5/30/2022 1:41:45 AM
+Request
+	Method: Post
+	URL: https://acu-demos.us/acumaticaerp/entity/auth/logout
+-----------------------------------------
+
+5/30/2022 1:41:45 AM
 Response
 	Status code: NoContent
 	Content: 

@@ -123,7 +123,8 @@ public class CRCase
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
 
-    [StringLength(20)]
+    [StringLength(10)]
+    [Display(Name = "Case CD")]
     public string? CaseID { get; set; }
 
     [StringLength(30)]
