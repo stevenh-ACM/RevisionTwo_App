@@ -19,14 +19,9 @@ footer {
 }
 
 #mybanner {
-    border-radius: 10px;
-    min-height: 250px;
+    border-radius: 12px;
 }
 
 #mycard {
-    border-radius: 10px;
-}
-
-td, th {
-    min-width: 200px
+    border-radius: 12px;
 }

@@ -1,0 +1,62 @@
+﻿@page
+@model RevisionTwo_App.Areas.Demo.Pages.Clients.ShipmentDetails.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>SPDetail</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SPDetail.OrderType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SPDetail.OrderType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SPDetail.OrderNbr)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SPDetail.OrderNbr)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SPDetail.InventoryID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SPDetail.InventoryID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SPDetail.WarehouseID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SPDetail.WarehouseID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SPDetail.ShippedQty)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SPDetail.ShippedQty)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SPDetail.OrderedQty)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SPDetail.OrderedQty)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SPDetail.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SPDetail.Description)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.SPDetail?.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

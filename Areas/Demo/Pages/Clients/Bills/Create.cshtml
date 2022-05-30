@@ -1,0 +1,85 @@
+﻿@page
+@model RevisionTwo_App.Areas.Demo.Pages.Clients.Bills.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>AR_Bill</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AR_Bill.Type" class="control-label"></label>
+                <input asp-for="AR_Bill.Type" class="form-control" />
+                <span asp-validation-for="AR_Bill.Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AR_Bill.ReferenceNbr" class="control-label"></label>
+                <input asp-for="AR_Bill.ReferenceNbr" class="form-control" />
+                <span asp-validation-for="AR_Bill.ReferenceNbr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AR_Bill.Status" class="control-label"></label>
+                <input asp-for="AR_Bill.Status" class="form-control" />
+                <span asp-validation-for="AR_Bill.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AR_Bill.Date" class="control-label"></label>
+                <input asp-for="AR_Bill.Date" class="form-control" />
+                <span asp-validation-for="AR_Bill.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AR_Bill.PostPeriod" class="control-label"></label>
+                <input asp-for="AR_Bill.PostPeriod" class="form-control" />
+                <span asp-validation-for="AR_Bill.PostPeriod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AR_Bill.Vendor" class="control-label"></label>
+                <input asp-for="AR_Bill.Vendor" class="form-control" />
+                <span asp-validation-for="AR_Bill.Vendor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AR_Bill.Description" class="control-label"></label>
+                <input asp-for="AR_Bill.Description" class="form-control" />
+                <span asp-validation-for="AR_Bill.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AR_Bill.VendorRef" class="control-label"></label>
+                <input asp-for="AR_Bill.VendorRef" class="form-control" />
+                <span asp-validation-for="AR_Bill.VendorRef" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AR_Bill.Amount" class="control-label"></label>
+                <input asp-for="AR_Bill.Amount" class="form-control" />
+                <span asp-validation-for="AR_Bill.Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AR_Bill.CurrencyID" class="control-label"></label>
+                <input asp-for="AR_Bill.CurrencyID" class="form-control" />
+                <span asp-validation-for="AR_Bill.CurrencyID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AR_Bill.LastModifiedDateTime" class="control-label"></label>
+                <input asp-for="AR_Bill.LastModifiedDateTime" class="form-control" />
+                <span asp-validation-for="AR_Bill.LastModifiedDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

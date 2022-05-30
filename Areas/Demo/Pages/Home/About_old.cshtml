@@ -3,22 +3,25 @@
 @{
     ViewData["Title"] = "Background";
 }
-<div class="card h-100 shadow">
-    <img class="card-img" src="~/images/bg_homepage.jpg" style="height:auto"/> 
-    <div class="card-img-overlay">
-        <div class="card-body mb-2">
-            <h1 class="card-title">@ViewData["Title"]</h1>
-        </div>  
-        <div class="card-footer bg-transparent border-0">
-            <p>
-                <a class="btn btn-primary" asp-area="" asp-page="/Index"><i class="bi bi-arrow-return-left"></i></a>
-            </p>
-            <p class="card-text text-wrap" style="width:auto">
-                Acumatica Cloud ERP has a comprehensive implementation of Open Apis. <br />See below for more information.
-            </p>
 
-        </div>
-    </div>   
+<div class="container-fluid p-4" style="height:30rem;">
+    <div class="card h-100 shadow" id="mycard">
+        <img class="card-img" src="~/images/bg_homepage.jpg" style="height:auto"/> 
+        <div class="card-img-overlay">
+            <div class="card-body mb-2">
+                <h1 class="card-title">@ViewData["Title"]</h1>
+            </div>  
+            <div class="card-footer bg-transparent border-0">
+                <p>
+                    <a class="btn btn-primary" asp-area="" asp-page="/Index"><i class="bi bi-arrow-return-left"></i></a>
+                </p>
+                <p class="card-text text-wrap" style="width:auto">
+                    Acumatica Cloud ERP has a comprehensive implementation of Open Apis. <br />See below for more information.
+                </p>
+
+            </div>
+        </div>   
+    </div>
 </div>
 <br/>
 <div class="card h-100 shadow p-2">

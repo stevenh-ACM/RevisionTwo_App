@@ -4,25 +4,28 @@
     ViewData["Title"] = "About Revision Two";
 }
 
-<div class="card h-100 shadow" id="mycard">
-    <img class="card-img" id="mybanner" src="~/images/bg_homepage.jpg" /> 
-    <div class="card-img-overlay">
-        <div class="card-body">
-            <h2 class="card-title">@ViewData["Title"]</h2></h2><br/>
-            <h4>Key Statistics</h4>
-                <ul class="card-text">
-                    <li>Founded: January @Model.DisplayStartYear</li>
-                    <li>Employees: ~ @Model.DisplayNumOfEmployees</li>
-                    <li>Revenue: ~$ @Model.DisplayTotalRevenue M annually</li>
-                </ul>
-        </div>  
-        <div class="card-footer bg-transparent border-0">
-            <p><a class="btn btn-primary" asp-area="" asp-page="/Index"><i class="bi bi-arrow-return-left"></i></a></p>
-        </div>
+<div class="container-fluid p-4" style="height:23rem;">
+    <div class="card h-100 shadow" id="mycard">
+        <img class="card-img" id="mybanner" src="~/images/bg_homepage.jpg"  style="height:23em"/> 
+        <div class="card-img-overlay">
+            <div class="card-body mb-2">
+                <h2 class="card-title">@ViewData["Title"]</h2><br/>
+                <h4>Key Statistics</h4>
+                    <ul class="card-text">
+                        <li>Founded: January @Model.DisplayStartYear</li>
+                        <li>Employees: ~ @Model.DisplayNumOfEmployees</li>
+                        <li>Revenue: ~$ @Model.DisplayTotalRevenue M annually</li>
+                    </ul>
+            </div>  
+            <div class="card-footer bg-transparent border-0">
+                <p><a class="btn btn-primary" asp-area="" asp-page="/Index"><i class="bi bi-arrow-return-left"></i></a></p>
+            </div>
+        </div>   
     </div>   
-</div>            
-<br/><br/>
-<div class="container-fluid p-3 mb-2">
+</div>
+
+<br/><hr />
+<div class="container-fluid p-4 mb-2">
     <p class="card-text text-wrap"><b>Revision Two</b> is a fictional company used to demonstrate Acumatica Cloud ERP OpenAPI capabilities. 
         The company has multiple lines of business, a few branches, a European based entity, 
         and several employee personas to demonstrate the full capabilities of Acumatica Cloud ERP.</p>

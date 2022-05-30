@@ -319,8 +319,8 @@ namespace RevisionTwo_App.Migrations
                         .HasColumnType("nvarchar(30)");
 
                     b.Property<string>("CompanyName")
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("ContactClass")
                         .HasMaxLength(20)
@@ -331,22 +331,22 @@ namespace RevisionTwo_App.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("DisplayName")
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("JobTitle")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<DateTime?>("LastModifiedDateTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Owner")
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Phone1")
                         .HasColumnType("nvarchar(max)");

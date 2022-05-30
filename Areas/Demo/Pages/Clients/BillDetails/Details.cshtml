@@ -1,0 +1,80 @@
+﻿@page
+@model RevisionTwo_App.Areas.Demo.Pages.Clients.BillDetails.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>AR_BillDetail</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_BillDetail.Branch)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_BillDetail.Branch)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_BillDetail.InventoryID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_BillDetail.InventoryID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_BillDetail.TransactionDescription)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_BillDetail.TransactionDescription)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_BillDetail.Qty)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_BillDetail.Qty)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_BillDetail.UnitCost)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_BillDetail.UnitCost)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_BillDetail.Amount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_BillDetail.Amount)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_BillDetail.Account)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_BillDetail.Account)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_BillDetail.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_BillDetail.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_BillDetail.CostCode)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_BillDetail.CostCode)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_BillDetail.POOrderNbr)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_BillDetail.POOrderNbr)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.AR_BillDetail?.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

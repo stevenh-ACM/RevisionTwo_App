@@ -1,0 +1,86 @@
+﻿@page
+@model RevisionTwo_App.Areas.Demo.Pages.Clients.Shipments.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>SP</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="SP.Id" />
+            <div class="form-group">
+                <label asp-for="SP.Type" class="control-label"></label>
+                <input asp-for="SP.Type" class="form-control" />
+                <span asp-validation-for="SP.Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SP.ShipmentNbr" class="control-label"></label>
+                <input asp-for="SP.ShipmentNbr" class="form-control" />
+                <span asp-validation-for="SP.ShipmentNbr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SP.Status" class="control-label"></label>
+                <input asp-for="SP.Status" class="form-control" />
+                <span asp-validation-for="SP.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SP.ShipmentDate" class="control-label"></label>
+                <input asp-for="SP.ShipmentDate" class="form-control" />
+                <span asp-validation-for="SP.ShipmentDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SP.CustomerID" class="control-label"></label>
+                <input asp-for="SP.CustomerID" class="form-control" />
+                <span asp-validation-for="SP.CustomerID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SP.CustomerName" class="control-label"></label>
+                <input asp-for="SP.CustomerName" class="form-control" />
+                <span asp-validation-for="SP.CustomerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SP.WarehouseID" class="control-label"></label>
+                <input asp-for="SP.WarehouseID" class="form-control" />
+                <span asp-validation-for="SP.WarehouseID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SP.ShippedQty" class="control-label"></label>
+                <input asp-for="SP.ShippedQty" class="form-control" />
+                <span asp-validation-for="SP.ShippedQty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SP.ShippedWeight" class="control-label"></label>
+                <input asp-for="SP.ShippedWeight" class="form-control" />
+                <span asp-validation-for="SP.ShippedWeight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SP.CreatedDateTime" class="control-label"></label>
+                <input asp-for="SP.CreatedDateTime" class="form-control" />
+                <span asp-validation-for="SP.CreatedDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SP.LastModified" class="control-label"></label>
+                <input asp-for="SP.LastModified" class="form-control" />
+                <span asp-validation-for="SP.LastModified" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

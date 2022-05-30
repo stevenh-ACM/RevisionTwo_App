@@ -7,11 +7,9 @@
 
     <link rel="stylesheet" href="wwwroot/css/site.css" />
     <link rel="stylesheet" href="~/RevisionTwo_App.styles.css" />
-
     <link rel="stylesheet" href="~/lib/jquery-ui-themes-1.13.1/jquery-ui.min.css" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cerulean/bootstrap.min.css" integrity="sha384-3fdgwJw17Bi87e1QQ4fsLn4rUFqWw//KU0g8TvV6quvahISRewev6/EocKNuJmEw" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" integrity="sha512-Oy+sz5W86PK0ZIkawrG0iv7XwWhYecM3exvUtMKNJMekGFJtVAhibhRPTpmyTj8+lJCkmWfnpxKgT2OopquBHA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -19,9 +17,9 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index"><img src="/images/Acumatica_Logo.png" width="140" height="35" title="Acumatica Logo"></a>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow pb-3">
+            <div class="container-fluid pl-5 pr-5 pt-2 pb-2">
+                <a class="navbar-brand" asp-area="" asp-page="/Index"><img src="/images/Acumatica_Logo.png" height="45" title="Acumatica Logo"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -35,35 +33,32 @@
                             <a class="nav-link text-dark" asp-area="Demo" asp-page="/Home/Index"><i class="bi bi-terminal"></i> Demo</a>
                         </li>
                     </ul>
-                    <partial name="_LoginPartial.cshtml"/>
+                    <partial name="_LoginPartial.cshtml" />
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+    <div class="container-fluid">
+        <main role="main">
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted text-wrap" style="position:relative;">
-        <div class="container">
-            <p id="copyRight">
-                Acumatica, Inc. &copy; 2008 — 2022 All rights reserved&nbsp;&nbsp;&nbsp;&nbsp;<a asp-area="" asp-page="/Terms">Terms</a>&nbsp;&nbsp;&nbsp;&nbsp;<a asp-area="" asp-page="/Privacy">Privacy</a>&nbsp;&nbsp;&nbsp;
-                <a id="credits" href="https://github.com/Acumatica/AcumaticaRESTAPIClientForCSharp" target="_blank" alt="Acumatica ReST API Client"> Acumatica ReST API Client&nbsp;&nbsp;<img src="/images/abrx6-vri7x-005.png" /></a>
-            </p>
-        </div>
+    <footer class="border-top footer mt-auto text-muted text-center pt-4" style="position:relative">
+        <p id="copyRight" style=" line-height:0.9;">
+            <small>
+                Acumatica, Inc. &copy;2008-2022 All rights reserved<br /><a asp-area="" asp-page="/Terms">&nbsp;&nbsp;&nbsp;&nbsp;Terms</a><a asp-area="" asp-page="/Privacy">&nbsp;&nbsp;&nbsp;&nbsp;Privacy</a>&nbsp;&nbsp;&nbsp;
+                <a id="credits" href="https://github.com/Acumatica/AcumaticaRESTAPIClientForCSharp" target="_blank" alt="Acumatica ReST API Client"> Acumatica ReST API Client<img src="/images/abrx6-vri7x-005.png" /></a>
+            </small>
+        </p>
     </footer>
 
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="https://kit.fontawesome.com/49c5887ad3.js" crossorigin="anonymous"></script>
-
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.5/daterangepicker.min.js" integrity="sha512-mh+AjlD3nxImTUGisMpHXW03gE6F4WdQyvuFRkjecwuWLwD2yCijw4tKA3NsEFpA1C3neiKhGXPSIGSfCYPMlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     @await RenderSectionAsync("Scripts", required: false)
-    
+
 </body>
 </html>

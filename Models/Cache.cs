@@ -12,7 +12,7 @@ namespace RevisionTwo_App.Models;
 ///  Generally used for input/output to Storage.
 ///
 
-    #region AR_Bill
+#region AR_Bill
 /// Custom classes with std C# types that map to the Default classes
 /// <see cref="Conversion"/>
 /// </summary>
@@ -49,7 +49,7 @@ public class AR_Bill
     [StringLength(20)]
     public string? VendorRef { get; set; }
 
-    [Precision(19,2)]
+    [Precision(19, 2)]
     [DataType(DataType.Currency), DisplayFormat(DataFormatString = "{0:c}")]
     public decimal? Amount { get; set; }
 
@@ -60,10 +60,10 @@ public class AR_Bill
     [Display(Name = "Last Modified")]
     [DataType(DataType.Date), DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
     public DateTime? LastModifiedDateTime { get; set; }
-} 
-    #endregion
+}
+#endregion
 
-    #region AR_BillDetail
+#region AR_BillDetail
 /// <summary>
 ///  mapping class for standard output form
 /// </summary>
@@ -93,7 +93,7 @@ public class AR_BillDetail
     [DataType(DataType.Currency), DisplayFormat(DataFormatString = "{0:c}")]
     public decimal? UnitCost { get; set; }
 
-    [Precision(19,2)]
+    [Precision(19, 2)]
     [DataType(DataType.Currency), DisplayFormat(DataFormatString = "{0:c}")]
     public decimal? Amount { get; set; }
 
@@ -111,9 +111,9 @@ public class AR_BillDetail
     [StringLength(20)]
     public string? POOrderNbr { get; set; }
 }
-    #endregion
+#endregion
 
-    #region CRCase
+#region CRCase
 /// <summary>
 ///  mapping class for standard output form
 /// </summary>
@@ -129,8 +129,8 @@ public class CRCase
     [StringLength(30)]
     public string? Subject { get; set; }
 
-    [Display(Name = "Account ID")]
     [StringLength(20)]
+    [Display(Name = "Account ID")]
     public string? BusinessAccount { get; set; }
 
     [StringLength(30)]
@@ -160,7 +160,7 @@ public class CRCase
     public string? ClassID { get; set; }
 
     [DataType(DataType.Date), DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
-    public DateTime? Date { get; set; }
+    public DateTime? DateReported { get; set; }
 
     [Display(Name = "Last Activity")]
     [DataType(DataType.Date), DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
@@ -170,9 +170,9 @@ public class CRCase
     [DataType(DataType.Date), DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
     public DateTime? LastModifiedDateTime { get; set; }
 }
-    #endregion
+#endregion
 
-    #region CO
+#region CO
 /// <summary>
 ///  mapping class for standard output form
 /// </summary>
@@ -187,24 +187,24 @@ public class CO
     [Display(Name = "Contact ID")]
     [StringLength(20)]
     public int? ContactID { get; set; }
-    [StringLength(30)]
 
     [Display(Name = "Contact Name")]
+    [StringLength(50)]
     public string? DisplayName { get; set; }
 
-    [StringLength(30)]
     [Display(Name = "Account ID")]
+    [StringLength(30)]
     public string? BusinessAccount { get; set; }
 
     [Display(Name = "Job Title")]
-    [StringLength(20)]
+    [StringLength(50)]
     public string? JobTitle { get; set; }
 
-    [StringLength(30)]
+    [StringLength(50)]
     public string? Owner { get; set; }
 
     [Display(Name = "Company Name")]
-    [StringLength(30)]
+    [StringLength(50)]
     public string? CompanyName { get; set; }
 
     [Display(Name = "Class")]
@@ -222,9 +222,9 @@ public class CO
     [DataType(DataType.Date), DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
     public DateTime? LastModifiedDateTime { get; set; }
 }
-    #endregion
+#endregion
 
-    #region OP
+#region OP
 /// <summary>
 ///  mapping class for standard output form
 /// </summary>
@@ -251,7 +251,7 @@ public class OP
     [StringLength(20)]
     public string? CurrencyID { get; set; }
 
-    [Precision(19,2)]
+    [Precision(19, 2)]
     [DataType(DataType.Currency), DisplayFormat(DataFormatString = "{0:c}")]
     public decimal? Total { get; set; }
 
@@ -281,7 +281,7 @@ public class OP
 }
 #endregion
 
-    #region SO
+#region SO
 /// <summary>
 ///  mapping class for standard output form
 /// </summary>
@@ -313,12 +313,12 @@ public class SO
     public string? CustomerName { get; set; }
 
     [Display(Name = "Qty Ordered")]
-    [Precision(19,2)]
+    [Precision(19, 2)]
     [DisplayFormat(DataFormatString = "{0:N2}")]
     public decimal? OrderedQty { get; set; }
 
     [Display(Name = "Order Total")]
-    [Precision(19,2)]
+    [Precision(19, 2)]
     [DataType(DataType.Currency), DisplayFormat(DataFormatString = "{0:c}")]
     public decimal? OrderTotal { get; set; }
 
@@ -336,9 +336,9 @@ public class SO
     [DataType(DataType.Date), DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
     public DateTime? LastModified { get; set; }
 }
-    #endregion
+#endregion
 
-    #region SP
+#region SP
 /// <summary>
 ///  mapping class for standard output form
 /// </summary>
@@ -375,12 +375,12 @@ public class SP
     public string? WarehouseID { get; set; }
 
     [Display(Name = "Qty Shipped")]
-    [Precision(19,2)]
+    [Precision(19, 2)]
     [DisplayFormat(DataFormatString = "{0:N2}")]
     public decimal? ShippedQty { get; set; }
 
     [Display(Name = "Shipment Weight")]
-    [Precision(19,2)]
+    [Precision(19, 2)]
     [DisplayFormat(DataFormatString = "{0:N2}")]
     public decimal? ShippedWeight { get; set; }
 
@@ -392,9 +392,9 @@ public class SP
     [DataType(DataType.Date), DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
     public DateTime? LastModified { get; set; }
 }
-    #endregion
+#endregion
 
-    #region SPDetail
+#region SPDetail
 /// <summary>
 ///  mapping class for standard output form
 /// </summary>
@@ -420,21 +420,21 @@ public class SPDetail
     public string? WarehouseID { get; set; }
 
     [Display(Name = "Qty Shipped")]
-    [Precision(19,2)]
+    [Precision(19, 2)]
     [DisplayFormat(DataFormatString = "{0:N2}")]
     public decimal? ShippedQty { get; set; }
 
     [Display(Name = "Qty Ordered")]
-    [Precision(19,2)]
+    [Precision(19, 2)]
     [DisplayFormat(DataFormatString = "{0:N2}")]
     public decimal? OrderedQty { get; set; }
 
     [StringLength(50)]
     public string? Description { get; set; }
 }
-    #endregion
+#endregion
 
-    #region Addr
+#region Addr
 /// <summary>
 ///  mapping class for standard output form
 /// </summary>
@@ -465,5 +465,5 @@ public class Addr
     [StringLength(50)]
     public string? State { get; set; }
 }
-    #endregion
+#endregion
 

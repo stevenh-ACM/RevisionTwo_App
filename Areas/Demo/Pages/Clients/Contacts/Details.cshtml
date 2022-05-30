@@ -1,0 +1,87 @@
+﻿@page
+@model RevisionTwo_App.Areas.Demo.Pages.Clients.Contacts.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<div class="p-2"></div>
+<h1>Details</h1>
+
+<div>
+    <h4>Contacts</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CO.Active)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CO.Active)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CO.ContactID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CO.ContactID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CO.DisplayName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CO.DisplayName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CO.BusinessAccount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CO.BusinessAccount)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CO.JobTitle)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CO.JobTitle)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CO.Owner)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CO.Owner)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CO.CompanyName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CO.CompanyName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CO.ContactClass)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CO.ContactClass)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CO.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CO.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CO.Phone1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CO.Phone1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CO.LastModifiedDateTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CO.LastModifiedDateTime)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.CO?.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

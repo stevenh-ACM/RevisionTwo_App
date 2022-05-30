@@ -3,24 +3,26 @@
 @{
     ViewData["Title"] = "Getting Started";
 }
-<div class="card h-100 shadow" id="mycard">
-    <img class="card-img" id="mybanner" src="~/images/bg_homepage.jpg"/> 
-    <div class="card-img-overlay">
-        <div class="card-body">
-            <h2 class="card-title">@ViewData["Title"]</h2>
-        </div>  
-        <div class="card-footer bg-transparent border-0">
-            <p><a class="btn btn-primary" asp-area="" asp-page="/Index"><i class="bi bi-arrow-return-left"></i></a></p>
-            <p class="card-text text-wrap" style="width:auto">Information on getting ready to demo.</p>
-            <p><i><b>See</b></i> Steps to get started. <i class="bi bi-eyeglasses"></i> <i class="bi bi-arrow-down-square"></i></p>
+<div class="container-fluid p-4" style="height:23rem;">
+    <div class="card h-100 shadow" id="mycard">
+        <img class="card-img" id="mybanner" src="~/images/bg_homepage.jpg"  style="height:23rem"/> 
+        <div class="card-img-overlay">
+            <div class="card-body mb-2">
+                <h2 class="card-title">@ViewData["Title"]</h2>
+            </div>  
+            <div class="card-footer bg-transparent border-0">
+                <p><a class="btn btn-primary" asp-area="" asp-page="/Index"><i class="bi bi-arrow-return-left"></i></a></p>
+                <p class="card-text text-wrap" style="width:auto">Information on getting ready to demo.</p>
+                <p><i><b>See</b></i> Steps to get started. <i class="bi bi-eyeglasses"></i> <i class="bi bi-arrow-down-square"></i></p>
 
-        </div>
-    </div>   
+            </div>
+        </div>   
+    </div>
 </div>
-<br/>
+<br/><hr />
 
 
-<div class="accordion" id="accordionText">
+<div class="accordion p-4" id="accordionText">
 
     @*First accordion section*@
     <div class="accordion-item">
