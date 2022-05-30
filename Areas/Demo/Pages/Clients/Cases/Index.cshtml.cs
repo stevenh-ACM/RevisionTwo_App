@@ -130,15 +130,11 @@ public class IndexModel : PageModel
 
                         Cases = caseApi.GetList(select, filter, expand, custom, skip, top);
 
-                        DateTimeValue defaultDate = DateTime.Parse("1900-01-01T00:00:01.000");
-
                         for (int idx = 0; idx < (Cases.Count - 1); idx++)
                         {
-
-                            var _so = new ConvertToCRCase(Cases[idx]);
-
-                            _context.CRCases.Add(_so);
-
+                            CRCase _ca = new ConvertToCRCase(Cases[idx]);
+                            ca_cached.Add(_ca);
+                            _context.CRCases.Add(_ca);
                         }
                         await _context.SaveChangesAsync();
                     }

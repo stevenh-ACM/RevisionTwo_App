@@ -127,18 +127,18 @@ public class CRCase
     [Display(Name = "Case CD")]
     public string? CaseID { get; set; }
 
-    [StringLength(30)]
+    [StringLength(50)]
     public string? Subject { get; set; }
 
-    [StringLength(20)]
+    [StringLength(10)]
     [Display(Name = "Account ID")]
     public string? BusinessAccount { get; set; }
 
-    [StringLength(30)]
+    [StringLength(50)]
     [Display(Name = "Account Name")]
     public string? BusinessAccountName { get; set; }
 
-    [StringLength(20)]
+    [StringLength(50)]
     public string? Status { get; set; }
 
     [StringLength(20)]
@@ -150,14 +150,14 @@ public class CRCase
     [StringLength(20)]
     public string? Priority { get; set; }
 
-    [StringLength(30)]
+    [StringLength(50)]
     public string? Owner { get; set; }
 
-    [StringLength(20)]
+    [StringLength(50)]
     public string? Workgroup { get; set; }
 
     [Display(Name = "Class")]
-    [StringLength(20)]
+    [StringLength(10)]
     public string? ClassID { get; set; }
 
     [DataType(DataType.Date), DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
