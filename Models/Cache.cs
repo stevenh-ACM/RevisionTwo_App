@@ -236,20 +236,20 @@ public class OP
     public int Id { get; set; }
 
     [Display(Name = "Oppty ID")]
-    [StringLength(20)]
+    [StringLength(10)]
     public string? OpportunityID { get; set; }
 
-    [StringLength(20)]
+    [StringLength(256)]
     public string? Subject { get; set; }
 
-    [StringLength(20)]
+    [StringLength(10)]
     public string? Status { get; set; }
 
-    [StringLength(20)]
+    [StringLength(10)]
     public string? Stage { get; set; }
 
     [Display(Name = "Currency Denom.")]
-    [StringLength(20)]
+    [StringLength(5)]
     public string? CurrencyID { get; set; }
 
     [Precision(19, 2)]
@@ -257,7 +257,7 @@ public class OP
     public decimal? Total { get; set; }
 
     [Display(Name = "Class")]
-    [StringLength(20)]
+    [StringLength(10)]
     public string? ClassID { get; set; }
 
     [StringLength(20)]
@@ -268,7 +268,7 @@ public class OP
     public int? ContactID { get; set; }
 
     [Display(Name = "Contact Name")]
-    [StringLength(30)]
+    [StringLength(256)]
     public string? ContactDisplayName { get; set; }
 
     [Display(Name = "Account ID")]
@@ -364,11 +364,11 @@ public class SP
     public DateTime? ShipmentDate { get; set; }
 
     [Display(Name = "Customer ID")]
-    [StringLength(20)]
+    [StringLength(10)]
     public string? CustomerID { get; set; }
 
     [Display(Name = "Customer Name")]
-    [StringLength(20)]
+    [StringLength(50)]
     public string? CustomerName { get; set; } //from BAAcount
 
     [Display(Name = "Warehouse ID")]
@@ -417,7 +417,7 @@ public class SPDetail
     public string? InventoryID { get; set; }
 
     [Display(Name = "Warehouse ID")]
-    [StringLength(20)]
+    [StringLength(50)]
     public string? WarehouseID { get; set; }
 
     [Display(Name = "Qty Shipped")]
