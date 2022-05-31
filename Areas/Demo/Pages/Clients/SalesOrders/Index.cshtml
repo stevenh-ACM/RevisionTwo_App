@@ -62,6 +62,7 @@
             @foreach (var item in Model.so)
             {
                 <tr>
+                    <input type="hidden" id="so.Id" name="so.Id" value="so.Id"/>
                     <td>
                         @Html.DisplayFor(modelItem => item.OrderType)
                     </td>

@@ -72,66 +72,67 @@
             </tr>
         </thead>
         <tbody style="white-space: nowrap; width:80px;">
-@foreach (var item in Model.CRCase) {
-            <tr>    
-                <td><input type="hidden" id="CRCase.Id" name="CRCase.Id" value="CRCase.Id"/></td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CaseID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Subject)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BusinessAccount)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BusinessAccountName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Status)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Reason)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Severity)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Priority)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Owner)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Workgroup)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ClassID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DateReported)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LastActivityDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LastModifiedDateTime)
-                </td>
-                <td>
-                    <span style="white-space: nowrap">
-                        <a asp-page="./Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square" title="Edit"></i></a> |
-                        <a asp-page="./Details" asp-route-id="@item.Id"><i class="bi bi-view-list" title="Details"></i></a> |
-                        <a asp-page="./Delete" asp-route-id="@item.Id"><i class="bi bi-trash" title="Delete"></i></a>
-                    </span>
+            @foreach (var item in Model.CRCase)
+            {
+                <tr>    
+                    <input type="hidden" id="CRCase.Id" name="CRCase.Id" value="CRCase.Id"/>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CaseID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Subject)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BusinessAccount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BusinessAccountName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Reason)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Severity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Priority)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Owner)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Workgroup)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClassID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateReported)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastActivityDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastModifiedDateTime)
+                    </td>
+                    <td>
+                        <span style="white-space: nowrap">
+                            <a asp-page="./Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square" title="Edit"></i></a> |
+                            <a asp-page="./Details" asp-route-id="@item.Id"><i class="bi bi-view-list" title="Details"></i></a> |
+                            <a asp-page="./Delete" asp-route-id="@item.Id"><i class="bi bi-trash" title="Delete"></i></a>
+                        </span>
 
-                </td>
-            </tr>
-    }
+                    </td>
+                </tr>
+            }
     </tbody>
 </table>
 </div>
 @section Scripts
     {
-        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="\js\datePicker.js"></script>
+            <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
+            <script type="text/javascript" src="\js\datePicker.js"></script>
 }

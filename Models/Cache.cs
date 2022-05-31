@@ -369,7 +369,7 @@ public class SP
 
     [Display(Name = "Customer Name")]
     [StringLength(20)]
-    public string? CustomerName { get; set; }
+    public string? CustomerName { get; set; } //from BAAcount
 
     [Display(Name = "Warehouse ID")]
     [StringLength(20)]
@@ -391,7 +391,7 @@ public class SP
 
     [Display(Name = "Last Modified")]
     [DataType(DataType.Date), DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
-    public DateTime? LastModified { get; set; }
+    public DateTime? LastModifiedDateTime { get; set; }
 }
 #endregion
 

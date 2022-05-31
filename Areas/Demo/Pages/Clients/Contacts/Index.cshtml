@@ -58,6 +58,7 @@
         <tbody style="white-space: nowrap; width:80px;">
     @foreach (var item in Model.CO) {
             <tr>
+                <input type="hidden" id="CO.Id" name="CO.Id" value="CO.Id"/>
                 <td>
                     @Html.DisplayFor(modelItem => item.ContactID)
                 </td>

@@ -1,5 +1,5 @@
 ﻿@page
-@model RevisionTwo_App.Areas.Demo.Pages.Clients.Shipments.DeleteModel
+@model DeleteModel
 
 @{
     ViewData["Title"] = "Delete";
@@ -74,10 +74,10 @@
             @Html.DisplayFor(model => model.SP.CreatedDateTime)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SP.LastModified)
+            @Html.DisplayNameFor(model => model.SP.LastModifiedDateTime)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SP.LastModified)
+            @Html.DisplayFor(model => model.SP.LastModifiedDateTime)
         </dd>
     </dl>
     
