@@ -11,12 +11,16 @@ namespace RevisionTwo_App.Areas.Demo.Pages.Clients.SalesOrders;
 
 public class DeleteModel : PageModel
 {
+    #region ctor
+    private readonly ILogger<DeleteModel> _logger;
     private readonly AppDbContext _context;
 
-    public DeleteModel(AppDbContext context)
+    public DeleteModel(AppDbContext context, ILogger<DeleteModel> logger)
     {
         _context = context;
+        _logger = logger;
     }
+    #endregion
 
     [BindProperty]
     public SO SO { get; set; }

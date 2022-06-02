@@ -2,14 +2,15 @@
 @model CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Contact";
     Layout = "~/Pages/Shared/_Layout.cshtml";
+    var date = @DateTime.Now.TimeOfDay;
 }
 
 <div class="p-2"></div>
 <h1>Create</h1>
 
-<h4>Contacts</h4>
+<h4>Contact</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -17,22 +18,22 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="CO.Active" /> @Html.DisplayNameFor(model => model.CO.Active)
+                    <input class="form-check-input" asp-for="CO.Active" checked /> @Html.DisplayNameFor(model => model.CO.Active)
                 </label>
             </div>
             <div class="form-group">
                 <label asp-for="CO.ContactID" class="control-label"></label>
-                <input asp-for="CO.ContactID" class="form-control" value="<NEW>" />
+                <input asp-for="CO.ContactID" class="form-control" placeholder="<NEW>" value="<NEW>" readonly/>
                 <span asp-validation-for="CO.ContactID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CO.DisplayName" class="control-label"></label>
-                <input asp-for="CO.DisplayName" class="form-control" />
+                <input asp-for="CO.DisplayName" class="form-control" required />
                 <span asp-validation-for="CO.DisplayName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CO.BusinessAccount" class="control-label"></label>
-                <input asp-for="CO.BusinessAccount" class="form-control" />
+                <input asp-for="CO.BusinessAccount" class="form-control" required />
                 <span asp-validation-for="CO.BusinessAccount" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -47,12 +48,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="CO.CompanyName" class="control-label"></label>
-                <input asp-for="CO.CompanyName" class="form-control" />
+                <input asp-for="CO.CompanyName" class="form-control" required/>
                 <span asp-validation-for="CO.CompanyName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CO.ContactClass" class="control-label"></label>
-                <input asp-for="CO.ContactClass" class="form-control" />
+                <input asp-for="CO.ContactClass" class="form-control" required/>
                 <span asp-validation-for="CO.ContactClass" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -67,7 +68,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="CO.LastModifiedDateTime" class="control-label"></label>
-                <input asp-for="CO.LastModifiedDateTime" class="form-control" />
+                <input asp-for="CO.LastModifiedDateTime" class="form-control" value=date required/>
                 <span asp-validation-for="CO.LastModifiedDateTime" class="text-danger"></span>
             </div>
             <div class="form-group">

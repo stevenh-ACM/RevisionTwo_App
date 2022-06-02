@@ -2,15 +2,14 @@
 @model RevisionTwo_App.Areas.Demo.Pages.Clients.SalesOrders.EditModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "SalesOrder";
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
 <div class="p-2"></div>
 <h1>Edit</h1>
 
-<h4>s
-   SalesOrder</h4>
+<h4>SalesOrder</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -19,12 +18,12 @@
             <input type="hidden" asp-for="SO.Id" />
             <div class="form-group">
                 <label asp-for="SO.OrderType" class="control-label"></label>
-                <input asp-for="SO.OrderType" class="form-control" />
+                <input asp-for="SO.OrderType" class="form-control" required/>
                 <span asp-validation-for="SO.OrderType" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="SO.OrderNbr" class="control-label"></label>
-                <input asp-for="SO.OrderNbr" class="form-control" />
+                <input asp-for="SO.OrderNbr" class="form-control" readonly/>
                 <span asp-validation-for="SO.OrderNbr" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -69,7 +68,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="SO.LastModified" class="control-label"></label>
-                <input asp-for="SO.LastModified" class="form-control" />
+                <input asp-for="SO.LastModified" class="form-control" required/>
                 <span asp-validation-for="SO.LastModified" class="text-danger"></span>
             </div>
             <div class="form-group">

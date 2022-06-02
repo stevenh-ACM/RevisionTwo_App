@@ -1,14 +1,15 @@
 ﻿@page
-@model RevisionTwo_App.Areas.Demo.Pages.Clients.Opportunities.CreateModel
+@model CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Opportunity";
     Layout = "~/Pages/Shared/_Layout.cshtml";
+    var date = @DateTime.Now.TimeOfDay;
 }
 
 <h1>Create</h1>
 
-<h4>OP</h4>
+<h4>Opportunity</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -16,7 +17,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="OP.OpportunityID" class="control-label"></label>
-                <input asp-for="OP.OpportunityID" class="form-control" vale="<NEW>"/>
+                <input asp-for="OP.OpportunityID" class="form-control" placeholder="<NEW>" value="<NEW>" readonly/>
                 <span asp-validation-for="OP.OpportunityID" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -26,17 +27,17 @@
             </div>
             <div class="form-group">
                 <label asp-for="OP.Status" class="control-label"></label>
-                <input asp-for="OP.Status" class="form-control" />
+                @Html.DropDownListFor(model => model.combo_Boxes.Opportunity_Statuses, Model.combo_Boxes.ComboBox_Opportunity_Statuses, "--Select One--")
                 <span asp-validation-for="OP.Status" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="OP.Stage" class="control-label"></label>
-                <input asp-for="OP.Stage" class="form-control" />
+                @Html.DropDownListFor(model => model.combo_Boxes.Opportuny_Stages, Model.combo_Boxes.ComboBox_Opportunity_Stages, "--Select One--")
                 <span asp-validation-for="OP.Stage" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="OP.CurrencyID" class="control-label"></label>
-                <input asp-for="OP.CurrencyID" class="form-control" />
+                <input asp-for="OP.CurrencyID" class="form-control" placeholder="USD" value="USD"/>
                 <span asp-validation-for="OP.CurrencyID" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -46,7 +47,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="OP.ClassID" class="control-label"></label>
-                <input asp-for="OP.ClassID" class="form-control" />
+                <input asp-for="OP.ClassID" class="form-control" required/>
                 <span asp-validation-for="OP.ClassID" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -66,23 +67,19 @@
             </div>
             <div class="form-group">
                 <label asp-for="OP.BusinessAccount" class="control-label"></label>
-                <input asp-for="OP.BusinessAccount" class="form-control" />
+                <input asp-for="OP.BusinessAccount" class="form-control" required/>
                 <span asp-validation-for="OP.BusinessAccount" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="OP.LastModifiedDateTime" class="control-label"></label>
-                <input asp-for="OP.LastModifiedDateTime" class="form-control" />
+                <input asp-for="OP.LastModifiedDateTime" class="form-control" value=date required/>
                 <span asp-validation-for="OP.LastModifiedDateTime" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary" /><a asp-page="Index"> | Back to List</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-page="Index">Back to List</a>
 </div>
 
 @section Scripts {

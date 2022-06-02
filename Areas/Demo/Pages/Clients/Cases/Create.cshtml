@@ -2,13 +2,14 @@
 @model RevisionTwo_App.Areas.Demo.Pages.Clients.Cases.CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Case";
     Layout = "~/Pages/Shared/_Layout.cshtml";
+    var date = @DateTime.Now.TimeOfDay;
 }
 
 <h1>Create</h1>
 
-<h4>CRCase</h4>
+<h4>Case</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -16,7 +17,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="CRCase.CaseID" class="control-label"></label>
-                <input asp-for="CRCase.CaseID" class="form-control" />
+                <input asp-for="CRCase.CaseID" class="form-control" value="<NEW>" readonly/>
                 <span asp-validation-for="CRCase.CaseID" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -36,22 +37,22 @@
             </div>
             <div class="form-group">
                 <label asp-for="CRCase.Status" class="control-label"></label>
-                <input asp-for="CRCase.Status" class="form-control" />
+                @Html.DropDownListFor(model => model.combo_Boxes.Case_Statuses, Model.combo_Boxes.ComboBox_Case_Statuses, "--Select One--")
                 <span asp-validation-for="CRCase.Status" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CRCase.Reason" class="control-label"></label>
-                <input asp-for="CRCase.Reason" class="form-control" />
+                @Html.DropDownListFor(model => model.combo_Boxes.Case_Reasons, Model.combo_Boxes.ComboBox_Case_Reasons, "--Select One--")
                 <span asp-validation-for="CRCase.Reason" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CRCase.Severity" class="control-label"></label>
-                <input asp-for="CRCase.Severity" class="form-control" />
+                @Html.DropDownListFor(model => model.combo_Boxes.Case_Severity, Model.combo_Boxes.ComboBox_Case_Severity, "--Select One--")
                 <span asp-validation-for="CRCase.Severity" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CRCase.Priority" class="control-label"></label>
-                <input asp-for="CRCase.Priority" class="form-control" />
+                @Html.DropDownListFor(model => model.combo_Boxes.ComboBox_Case_Priorities, Model.combo_Boxes.ComboBox_Case_Priorities, "--Select One--")
                 <span asp-validation-for="CRCase.Priority" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -71,30 +72,25 @@
             </div>
             <div class="form-group">
                 <label asp-for="CRCase.DateReported" class="control-label"></label>
-                <input asp-for="CRCase.DateReported" class="form-control" />
+                <input asp-for="CRCase.DateReported" class="form-control" value=date/>
                 <span asp-validation-for="CRCase.DateReported" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CRCase.LastActivityDate" class="control-label"></label>
-                <input asp-for="CRCase.LastActivityDate" class="form-control" />
+                <input asp-for="CRCase.LastActivityDate" class="form-control" value=date/>
                 <span asp-validation-for="CRCase.LastActivityDate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CRCase.LastModifiedDateTime" class="control-label"></label>
-                <input asp-for="CRCase.LastModifiedDateTime" class="form-control" />
+                <input asp-for="CRCase.LastModifiedDateTime" class="form-control" value=date/>
                 <span asp-validation-for="CRCase.LastModifiedDateTime" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary" /><a asp-page="Index"> | Back to List</a>
             </div>
         </form>
     </div>
 </div>
-
-<div>
-    <a asp-page="Index">Back to List</a>
-</div>
-
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

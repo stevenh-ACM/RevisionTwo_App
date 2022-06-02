@@ -3,9 +3,11 @@
 using RevisionTwo_App.Data;
 
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RevisionTwo_App.Areas.Demo.Pages.Home;
 
+[Authorize]
 public class IndexModel : PageModel
 {
     private readonly ILogger<IndexModel> _logger;

@@ -2,8 +2,9 @@
 @model CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "SalesOrder";
     Layout = "~/Pages/Shared/_Layout.cshtml";
+    var date = @DateTime.Now.TimeOfDay;
 }
 
 <div class="p-2"></div>
@@ -17,7 +18,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="SO.OrderType" class="control-label"></label>
-                <input asp-for="SO.OrderType" class="form-control" />
+                @Html.DropDownListFor(model => model.combo_Boxes.SalesOrder_OrderTypes, Model.combo_Boxes.ComboBox_SalesOrder_OrderTypes, "--Select One--")
                 <span asp-validation-for="SO.OrderType" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -27,7 +28,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="SO.Status" class="control-label"></label>
-                <input asp-for="SO.Status" class="form-control" />
+                @Html.DropDownListFor(model => model.combo_Boxes.SalesOrder_Statuses, Model.combo_Boxes.ComboBox_SalesOrder_Statuses, "--Select One--")
                 <span asp-validation-for="SO.Status" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -47,7 +48,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="SO.OrderedQty" class="control-label"></label>
-                <input asp-for="SO.OrderedQty" class="form-control" />
+                <input asp-for="SO.OrderedQty" class="form-control" required  />
                 <span asp-validation-for="SO.OrderedQty" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -57,42 +58,28 @@
             </div>
             <div class="form-group">
                 <label asp-for="SO.CurrencyID" class="control-label"></label>
-                <input asp-for="SO.CurrencyID" class="form-control" />
+                <input asp-for="SO.CurrencyID" class="form-control" value="USD"  />
                 <span asp-validation-for="SO.CurrencyID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="SO.ShipmentDate" class="control-label"></label>
-                <input asp-for="SO.ShipmentDate" class="form-control" />
+                <input asp-for="SO.ShipmentDate" class="form-control" value=date  />
                 <span asp-validation-for="SO.ShipmentDate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="SO.LastModified" class="control-label"></label>
-                <input asp-for="SO.LastModified" class="form-control" />
+                <input asp-for="SO.LastModified" class="form-control" value=date  required/>
                 <span asp-validation-for="SO.LastModified" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary" /><a asp-page="Index"> | Back to List</a>
             </div>
         </form>
     </div>
 </div>
-
-<div>
-    <a asp-page="Index">Back to List</a>
-</div>
-
 @section Scripts {
     @{
-        
-        
-        
-        
-        
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    
-    
-    
-    
-    
+
+    }}
     }
-                        }

@@ -11,12 +11,16 @@ namespace RevisionTwo_App.Areas.Demo.Pages.Clients.SalesOrders
 {
     public class DetailsModel : PageModel
     {
+        #region ctor
+        private readonly ILogger<DetailsModel> _logger;
         private readonly AppDbContext _context;
 
-        public DetailsModel(AppDbContext context)
+        public DetailsModel(AppDbContext context, ILogger<DetailsModel> logger)
         {
             _context = context;
+            _logger = logger;
         }
+        #endregion
 
         public SO SO { get; set; }
 

@@ -2,14 +2,14 @@
 @model EditModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Contact";
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
 <div class="p-2"></div>
 <h1>Edit</h1>
 
-<h4>Contacts</h4>
+<h4>Contact</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -23,7 +23,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="CO.ContactID" class="control-label"></label>
-                <input asp-for="CO.ContactID" class="form-control" />
+                <input asp-for="CO.ContactID" class="form-control" readonly/>
                 <span asp-validation-for="CO.ContactID" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -68,7 +68,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="CO.LastModifiedDateTime" class="control-label"></label>
-                <input asp-for="CO.LastModifiedDateTime" class="form-control" />
+                <input asp-for="CO.LastModifiedDateTime" class="form-control" required/>
                 <span asp-validation-for="CO.LastModifiedDateTime" class="text-danger"></span>
             </div>
             <div class="form-group">

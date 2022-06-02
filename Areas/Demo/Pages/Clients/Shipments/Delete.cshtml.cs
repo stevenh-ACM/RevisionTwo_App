@@ -12,12 +12,16 @@ namespace RevisionTwo_App.Areas.Demo.Pages.Clients.Shipments
 {
     public class DeleteModel : PageModel
     {
-        private readonly RevisionTwo_App.Data.AppDbContext _context;
+        #region ctor
+        private readonly ILogger<DeleteModel> _logger;
+        private readonly AppDbContext _context;
 
-        public DeleteModel(RevisionTwo_App.Data.AppDbContext context)
+        public DeleteModel(AppDbContext context, ILogger<DeleteModel> logger)
         {
             _context = context;
+            _logger = logger;
         }
+        #endregion
 
         [BindProperty]
       public SP SP { get; set; } = default!;

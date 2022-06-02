@@ -2,13 +2,13 @@
 @model RevisionTwo_App.Areas.Demo.Pages.Clients.Shipments.EditModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Shipment";
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
 <h1>Edit</h1>
 
-<h4>SP</h4>
+<h4>Shipment</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -17,12 +17,12 @@
             <input type="hidden" asp-for="SP.Id" />
             <div class="form-group">
                 <label asp-for="SP.Type" class="control-label"></label>
-                <input asp-for="SP.Type" class="form-control" />
+                <input asp-for="SP.Type" class="form-control" required/>
                 <span asp-validation-for="SP.Type" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="SP.ShipmentNbr" class="control-label"></label>
-                <input asp-for="SP.ShipmentNbr" class="form-control" />
+                <input asp-for="SP.ShipmentNbr" class="form-control" required/>
                 <span asp-validation-for="SP.ShipmentNbr" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -52,7 +52,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="SP.ShippedQty" class="control-label"></label>
-                <input asp-for="SP.ShippedQty" class="form-control" />
+                <input asp-for="SP.ShippedQty" class="form-control" required/>
                 <span asp-validation-for="SP.ShippedQty" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -62,12 +62,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="SP.CreatedDateTime" class="control-label"></label>
-                <input asp-for="SP.CreatedDateTime" class="form-control" />
+                <input asp-for="SP.CreatedDateTime" class="form-control" required/>
                 <span asp-validation-for="SP.CreatedDateTime" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="SP.LastModifiedDateTime" class="control-label"></label>
-                <input asp-for="SP.LastModifiedDateTime" class="form-control" />
+                <input asp-for="SP.LastModifiedDateTime" class="form-control" required/>
                 <span asp-validation-for="SP.LastModifiedDateTime" class="text-danger"></span>
             </div>
             <div class="form-group">

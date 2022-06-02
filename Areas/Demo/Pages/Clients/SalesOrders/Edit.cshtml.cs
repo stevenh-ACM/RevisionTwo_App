@@ -11,12 +11,16 @@ namespace RevisionTwo_App.Areas.Demo.Pages.Clients.SalesOrders
 {
     public class EditModel : PageModel
     {
+        #region ctor
+        private readonly ILogger<EditModel> _logger;
         private readonly AppDbContext _context;
 
-        public EditModel(AppDbContext context)
+        public EditModel(AppDbContext context, ILogger<EditModel> logger)
         {
             _context = context;
+            _logger = logger;
         }
+        #endregion
 
         [BindProperty]
         public SO SO{ get; set; }
