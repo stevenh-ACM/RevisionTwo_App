@@ -12,14 +12,18 @@ namespace RevisionTwo_App.Areas.Demo.Pages.Clients.Cases
 {
     public class DetailsModel : PageModel
     {
-        private readonly RevisionTwo_App.Data.AppDbContext _context;
+        #region ctor
+        private readonly ILogger<DetailsModel> _logger;
+        private readonly AppDbContext _context;
 
-        public DetailsModel(RevisionTwo_App.Data.AppDbContext context)
+        public DetailsModel(AppDbContext context, ILogger<DetailsModel> logger)
         {
             _context = context;
+            _logger = logger;
         }
+        #endregion
 
-      public CRCase CRCase { get; set; } = default!; 
+        public CRCase CRCase { get; set; } = default!; 
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

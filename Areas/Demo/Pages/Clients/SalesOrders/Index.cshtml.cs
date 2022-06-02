@@ -39,7 +39,7 @@ public class IndexModel : PageModel
     public List<Credential> Credentials { get; set; }
     public List<SalesOrder> SalesOrders { get; set; }
     public BusinessAccount BAccount { get; set; }
-    public List<SO> so_cached { get; set; }
+    public List<SO> cache { get; set; }
     private int id { get; set; }
 
     /// <summary>
@@ -52,7 +52,7 @@ public class IndexModel : PageModel
     public DateTime ToDate { get; set; } = DateTime.Now;
 
     [BindProperty]
-    public List<SO> so { get; set; }
+    public List<SO> SO { get; set; }
 
 
     #endregion
@@ -65,7 +65,7 @@ public class IndexModel : PageModel
     {
         Credentials = await _context.Credentials.ToListAsync();
 
-        so_cached = await _context.SalesOrders.ToListAsync();
+        cache = await _context.SalesOrders.ToListAsync();
 
         if (Credentials is null)
         {
@@ -78,7 +78,7 @@ public class IndexModel : PageModel
             _logger.LogError($"Credential secured. SiteURL is {Credentials[id].SiteUrl} and id is {id}");
         }
 
-        if (!so_cached.Any())
+        if (!cache.Any())
         {
             AuthApi authApi = new AuthApi(Credentials[id].SiteUrl,
                 requestInterceptor: RequestLogger.LogRequest, responseInterceptor: RequestLogger.LogResponse);
@@ -166,12 +166,12 @@ public class IndexModel : PageModel
             }
         }
 
-        so = so_cached;
+        SO = cache;
 
-        if (so is null)
+        if (SO is null)
         {
-            _logger.LogError($"SalesOrder list is empty {so}");
-            throw new NullReferenceException(nameof(so));
+            _logger.LogError($"SalesOrder list is empty {SO}");
+            throw new NullReferenceException(nameof(SO));
         }
 
         return Page();
@@ -181,7 +181,7 @@ public class IndexModel : PageModel
     {
         Console.WriteLine($"From Date is {FromDate}: To Date is {ToDate}");
 
-        so = await _context.SalesOrders.Where(x => x.Date >= FromDate && x.Date <= ToDate).ToListAsync();
+        SO = await _context.SalesOrders.Where(x => x.Date >= FromDate && x.Date <= ToDate).ToListAsync();
 
         return Page();
     }

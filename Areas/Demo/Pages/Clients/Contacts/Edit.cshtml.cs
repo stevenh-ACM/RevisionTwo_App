@@ -13,12 +13,16 @@ namespace RevisionTwo_App.Areas.Demo.Pages.Clients.Contacts
 {
     public class EditModel : PageModel
     {
-        private readonly RevisionTwo_App.Data.AppDbContext _context;
+        #region ctor
+        private readonly ILogger<EditModel> _logger;
+        private readonly AppDbContext _context;
 
-        public EditModel(RevisionTwo_App.Data.AppDbContext context)
+        public EditModel(AppDbContext context, ILogger<EditModel> logger)
         {
             _context = context;
+            _logger = logger;
         }
+        #endregion
 
         [BindProperty]
         public CO CO { get; set; } = default!;

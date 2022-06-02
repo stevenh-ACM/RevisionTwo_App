@@ -4,19 +4,20 @@
 @{
     ViewData["Title"] = "Create";
     Layout = "~/Pages/Shared/_Layout.cshtml";
+    var date = @DateTime.Now.TimeOfDay;
 }
 
 <h1>Create</h1>
 
 <h4>AR_Bill</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
+<div class="container">
+        <form method="post" class="col-md-4">
+
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="AR_Bill.Type" class="control-label"></label>
-                <input asp-for="AR_Bill.Type" class="form-control" />
+                @Html.DropDownListFor(model => model.combo_Boxes.Bill_Types, Model.combo_Boxes.ComboBox_Bill_Types, "--Select One--")
                 <span asp-validation-for="AR_Bill.Type" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -26,7 +27,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="AR_Bill.Status" class="control-label"></label>
-                <input asp-for="AR_Bill.Status" class="form-control" />
+                @Html.DropDownListFor(model => model.combo_Boxes.Bill_Statuses, Model.combo_Boxes.ComboBox_Bill_Statuses, "--Select One--")
                 <span asp-validation-for="AR_Bill.Status" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -39,7 +40,8 @@
                 <input asp-for="AR_Bill.PostPeriod" class="form-control" />
                 <span asp-validation-for="AR_Bill.PostPeriod" class="text-danger"></span>
             </div>
-            <div class="form-group">
+
+            <div class="form-group col-md-2">
                 <label asp-for="AR_Bill.Vendor" class="control-label"></label>
                 <input asp-for="AR_Bill.Vendor" class="form-control" />
                 <span asp-validation-for="AR_Bill.Vendor" class="text-danger"></span>
@@ -61,25 +63,22 @@
             </div>
             <div class="form-group">
                 <label asp-for="AR_Bill.CurrencyID" class="control-label"></label>
-                <input asp-for="AR_Bill.CurrencyID" class="form-control" />
+                <input asp-for="AR_Bill.CurrencyID" class="form-control" value="USD" />
                 <span asp-validation-for="AR_Bill.CurrencyID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="AR_Bill.LastModifiedDateTime" class="control-label"></label>
-                <input asp-for="AR_Bill.LastModifiedDateTime" class="form-control" />
+                <input asp-for="AR_Bill.LastModifiedDateTime" class="form-control" value=date />
                 <span asp-validation-for="AR_Bill.LastModifiedDateTime" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary" /><a asp-page="Index"> | Back to List</a>
             </div>
         </form>
-    </div>
-</div>
-
-<div>
-    <a asp-page="Index">Back to List</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

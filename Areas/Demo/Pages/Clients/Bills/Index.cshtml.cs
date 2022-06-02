@@ -120,7 +120,7 @@ public class IndexModel : PageModel
                     else
                     {
 
-                        var dateTimeOffset = new DateTime(DateTime.Now.Year - 1, /*DateTime.Now.Month*/1, 1, 0, 0, 0).ToString("s");
+                        var dateTimeOffset = new DateTime(DateTime.Now.Year, /*DateTime.Now.Month*/1, 1, 0, 0, 0).ToString("s");
                         string filter = @$"Date gt datetimeoffset'{dateTimeOffset}'";
                         string select = "Type, ReferenceNbr, Status, Date, PostPeriod, Vendor, Description, VendorRef, Amount, CurrencyID, LastModifiedDateTime";
                         string expand = "";

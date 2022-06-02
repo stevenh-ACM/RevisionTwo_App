@@ -12,12 +12,16 @@ namespace RevisionTwo_App.Areas.Demo.Pages.Clients.Contacts
 {
     public class CreateModel : PageModel
     {
-        private readonly RevisionTwo_App.Data.AppDbContext _context;
+        #region ctor
+        private readonly ILogger<CreateModel> _logger;
+        private readonly AppDbContext _context;
 
-        public CreateModel(RevisionTwo_App.Data.AppDbContext context)
+        public CreateModel(AppDbContext context, ILogger<CreateModel> logger)
         {
             _context = context;
+            _logger = logger;
         }
+        #endregion
 
         public IActionResult OnGet()
         {

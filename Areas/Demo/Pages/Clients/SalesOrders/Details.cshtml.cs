@@ -18,7 +18,7 @@ namespace RevisionTwo_App.Areas.Demo.Pages.Clients.SalesOrders
             _context = context;
         }
 
-        public SO so { get; set; }
+        public SO SO { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -27,9 +27,9 @@ namespace RevisionTwo_App.Areas.Demo.Pages.Clients.SalesOrders
                 return NotFound();
             }
 
-            so = await _context.SalesOrders.FirstOrDefaultAsync(m => m.Id == id);
+            SO = await _context.SalesOrders.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (so == null)
+            if (SO == null)
             {
                 return NotFound();
             }

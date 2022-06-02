@@ -16,59 +16,59 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="so.OrderType" class="control-label"></label>
-                <input asp-for="so.OrderType" class="form-control" />
-                <span asp-validation-for="so.OrderType" class="text-danger"></span>
+                <label asp-for="SO.OrderType" class="control-label"></label>
+                <input asp-for="SO.OrderType" class="form-control" />
+                <span asp-validation-for="SO.OrderType" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="so.OrderNbr" class="control-label"></label>
-                <input asp-for="so.OrderNbr" class="form-control" />
-                <span asp-validation-for="so.OrderNbr" class="text-danger"></span>
+                <label asp-for="SO.OrderNbr" class="control-label"></label>
+                <input asp-for="SO.OrderNbr" class="form-control" value="<NEW>" />
+                <span asp-validation-for="SO.OrderNbr" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="so.Status" class="control-label"></label>
-                <input asp-for="so.Status" class="form-control" />
-                <span asp-validation-for="so.Status" class="text-danger"></span>
+                <label asp-for="SO.Status" class="control-label"></label>
+                <input asp-for="SO.Status" class="form-control" />
+                <span asp-validation-for="SO.Status" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="so.Date" class="control-label"></label>
-                <input asp-for="so.Date" class="form-control" />
-                <span asp-validation-for="so.Date" class="text-danger"></span>
+                <label asp-for="SO.Date" class="control-label"></label>
+                <input asp-for="SO.Date" class="form-control" />
+                <span asp-validation-for="SO.Date" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="so.CustomerID" class="control-label"></label>
-                <input asp-for="so.CustomerID" class="form-control" />
-                <span asp-validation-for="so.CustomerID" class="text-danger"></span>
+                <label asp-for="SO.CustomerID" class="control-label"></label>
+                <input asp-for="SO.CustomerID" class="form-control" />
+                <span asp-validation-for="SO.CustomerID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="so.CustomerName" class="control-label"></label>
-                <input asp-for="so.CustomerName" class="form-control" />
-                <span asp-validation-for="so.CustomerName" class="text-danger"></span>
+                <label asp-for="SO.CustomerName" class="control-label"></label>
+                <input asp-for="SO.CustomerName" class="form-control" />
+                <span asp-validation-for="SO.CustomerName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="so.OrderedQty" class="control-label"></label>
-                <input asp-for="so.OrderedQty" class="form-control" />
-                <span asp-validation-for="so.OrderedQty" class="text-danger"></span>
+                <label asp-for="SO.OrderedQty" class="control-label"></label>
+                <input asp-for="SO.OrderedQty" class="form-control" />
+                <span asp-validation-for="SO.OrderedQty" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="so.OrderTotal" class="control-label"></label>
-                <input asp-for="so.OrderTotal" class="form-control" />
-                <span asp-validation-for="so.OrderTotal" class="text-danger"></span>
+                <label asp-for="SO.OrderTotal" class="control-label"></label>
+                <input asp-for="SO.OrderTotal" class="form-control" />
+                <span asp-validation-for="SO.OrderTotal" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="so.CurrencyID" class="control-label"></label>
-                <input asp-for="so.CurrencyID" class="form-control" />
-                <span asp-validation-for="so.CurrencyID" class="text-danger"></span>
+                <label asp-for="SO.CurrencyID" class="control-label"></label>
+                <input asp-for="SO.CurrencyID" class="form-control" />
+                <span asp-validation-for="SO.CurrencyID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="so.ShipmentDate" class="control-label"></label>
-                <input asp-for="so.ShipmentDate" class="form-control" />
-                <span asp-validation-for="so.ShipmentDate" class="text-danger"></span>
+                <label asp-for="SO.ShipmentDate" class="control-label"></label>
+                <input asp-for="SO.ShipmentDate" class="form-control" />
+                <span asp-validation-for="SO.ShipmentDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="so.LastModified" class="control-label"></label>
-                <input asp-for="so.LastModified" class="form-control" />
-                <span asp-validation-for="so.LastModified" class="text-danger"></span>
+                <label asp-for="SO.LastModified" class="control-label"></label>
+                <input asp-for="SO.LastModified" class="form-control" />
+                <span asp-validation-for="SO.LastModified" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
@@ -82,5 +82,17 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @{
+        
+        
+        
+        
+        
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    
+    
+    
+    
+    
+    }
+                        }

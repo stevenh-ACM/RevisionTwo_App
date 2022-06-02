@@ -19,7 +19,7 @@ public class DeleteModel : PageModel
     }
 
     [BindProperty]
-    public SO so { get; set; }
+    public SO SO { get; set; }
 
     public async Task<IActionResult> OnGetAsync(int? id)
     {
@@ -28,9 +28,9 @@ public class DeleteModel : PageModel
             return NotFound();
         }
 
-        so = await _context.SalesOrders.FirstOrDefaultAsync(m => m.Id == id);
+        SO = await _context.SalesOrders.FirstOrDefaultAsync(m => m.Id == id);
 
-        if (so == null)
+        if (SO == null)
         {
             return NotFound();
         }
@@ -44,11 +44,11 @@ public class DeleteModel : PageModel
             return NotFound();
         }
 
-        so = await _context.SalesOrders.FindAsync(id);
+        SO = await _context.SalesOrders.FindAsync(id);
 
-        if (so != null)
+        if (SO != null)
         {
-            _context.SalesOrders.Remove(so);
+            _context.SalesOrders.Remove(SO);
             await _context.SaveChangesAsync();
         }
 

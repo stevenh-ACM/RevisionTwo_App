@@ -23,7 +23,7 @@ public class CreateModel : PageModel
     }
 
     [BindProperty]
-    public SO so { get; set; }
+    public SO SO { get; set; }
 
     // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
     public async Task<IActionResult> OnPostAsync()
@@ -33,7 +33,7 @@ public class CreateModel : PageModel
             return Page();
         }
 
-        _context.SalesOrders.Add(so);
+        _context.SalesOrders.Add(SO);
         await _context.SaveChangesAsync();
 
         return RedirectToPage("./Index");
