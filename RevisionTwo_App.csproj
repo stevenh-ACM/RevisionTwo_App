@@ -41,10 +41,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="Areas\Demo\Pages\Clients\Bills\test.cshtml" />
     <Content Remove="Areas\Demo\Pages\Clients\_ValidationScriptsPartial.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Pages\Test.cshtml" />
     <None Include="Areas\Demo\Pages\Clients\_ValidationScriptsPartial.cshtml" />
     <None Include="Areas\Demo\Pages\_ValidationScriptsPartial.cshtml" />
     <None Include="Pages\Shared\_Layout.cshtml" />
@@ -112,6 +114,14 @@
 
   <ItemGroup>
     <Folder Include="Entities\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Areas\Demo\Pages\Clients\Bills\test.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Areas\Demo\Pages\Clients\Bills\test.cshtml" />
   </ItemGroup>
 
 </Project>

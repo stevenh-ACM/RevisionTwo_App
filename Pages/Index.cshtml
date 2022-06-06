@@ -3,34 +3,34 @@
 @{
     ViewData["Title"] = "Home";
 }
-
-<div class="container-fluid p-4" style="height:30rem;">
+<div class="container-fluid p-4">
     <div class="card shadow" id="mycard">
-        <img class="card-img" id="mybanner" src="../images/bg_homepage.jpg" style="height:30rem;"/> 
-        <div class="card-img-overlay"  >  
-            <div class="card-body p-2" >
-                <h1 class="card-title">@ViewData["Title"]</h1>
-                <p class="card-text mt-3">
-                    <div class="container-left-sm" style="width:50%;">
-                        An Acumatica Cloud ERP demonstartion company.<br/><br/>
-                        <b>RevisionTwo</b> is a fictional company used for learning about Acumatica and demonstrating Acumatica ERP API features.
-                    </div>
-
+        <picture style="opacity:1.2;">
+            <source media="(min-width:960px)" srcset="../img/bg_homepage.jpg">
+            <source media="(min-width:768px)" srcset="../img/airplane7.jpg">
+            <img class="card-img" id="mybanner"  src="../img/airplane5az.jpg" style="height:27em; object-fit:cover">
+        </picture>
+        <div class="card-img-overlay">
+            <div class="card-body p-2">
+                <h1 class="card-titled">@ViewData["Title"]</h1>
+                <p class="card-texts mt-3" style="width:30vw">
+                    An Acumatica Cloud ERP demonstartion company.<br /><br />
+                    <b>RevisionTwo</b> is a fictional company used for learning about Acumatica and demonstrating Acumatica ERP API features.
                 </p>
             </div>
-            <div class="card-footer bg-transparent border-0 mb-2">
-                <p><a class="btn btn-primary" asp-area="Demo" asp-page="/Home/About_old"><i class="bi bi-lightbulb"></i> Learn More &raquo;</a>
-                </p>
+            <div class="card-footer bg-transparent border-0 mb-3 p-1">
+                <p><a class="btn btn-primary" asp-area="Demo" asp-page="/Home/About_old"><i class="bi bi-lightbulb"></i> Learn More &raquo;</a></p>
             </div>
         </div>
     </div>
 </div>
 
-<br/><hr />
+<br />
+<hr />
 <div class="container-fluid p-4 card-group">
     <div class="row row-cols-1 row-cols-md-2 g-4">
         <div class="col">
-            <div class="card h-100 shadow" id="mycard">        
+            <div class="card h-100 shadow" id="mycard">
                 <div class="card-body">
                     <h3 class=card-title>Getting Started</h3>
                     <p class="card-text text-wrap" style="width: auto">Details on What and How to use this Demo Application</p>
@@ -39,10 +39,10 @@
                     <p><a class="btn btn-primary" asp-area="Demo" asp-page=/Home/GettingStarted><i class="bi bi-lightbulb"></i> Learn More &raquo;</a></p>
                 </div>
             </div>
-        </div>  
-    
+        </div>
+
         <div class="col">
-            <div class="card h-100 shadow" id="mycard">            
+            <div class="card h-100 shadow" id="mycard">
                 <div class="card-body ">
                     <h3 class=card-title>About Revision Two</h3>
                     <p class="card-text text-wrap" style="width: auto">This ASP.Net Core Web App is a front-end to an Acumatica ERP system using ReST Open API web services.</p>
@@ -55,7 +55,7 @@
 
 
         <div class="col">
-            <div class="card h-100 shadow" id="mycard">            
+            <div class="card h-100 shadow" id="mycard">
                 <div class="card-body">
                     <h3 class=card-title>About Acumatica</h3>
                     <p class="card-text text-break" card-text text-wrap" style="width: auto">Acumatica was born in the cloud, built to meet the ever-evolving needs of midmarket companies and their customers.</p>
@@ -63,11 +63,11 @@
                 <div class="card-footer bg-transparent border-0">
                     <p><a class="btn btn-primary" href="https://www.acumatica.com" target="_blank"><i class="bi bi-lightbulb"></i> Learn More &raquo;</a></p>
                 </div>
-            </div>   
+            </div>
         </div>
-    
+
         <div class="col">
-            <div class="card h-100 shadow" id="mycard">        
+            <div class="card h-100 shadow" id="mycard">
                 <div class="card-body">
                     <h3 class=card-title>Partner Portal</h3>
                     <p class="card-text text-wrap" style="width: auto">Get the RevisionTwo demo data from the Sales -> Demo Materials section of the Acumatica Partner Portal.</p>

@@ -4,33 +4,41 @@
     ViewData["Title"] = "Demo Home";
 }
 
-<div class="container-fluid p-4" style="height:30rem;">
-    <div class="card h-100 shadow" id="mycard"> 
-        <img class="card-img" id="mybanner"  src="../images/bg_homepage.jpg" style="height:30rem;"/> 
+<div class="container-fluid p-4">
+    <div class="card shadow" id="mycard">
+        <picture style="opacity:1.2;">
+            <source media="(min-width:960px)" srcset="../img/bg_homepage.jpg">
+            <source media="(min-width:768px)" srcset="../img/airplane7.jpg">
+            <img class="card-img" id="mybanner" src="../img/airplane5az.jpg" style="height:27em; object-fit:cover">
+        </picture>
         <div class="card-img-overlay">
             <div class="card-body p-2">
-                <h1 class="card-title">@ViewData["Title"]</h1>
-                <br/><br/>
-                <p> <a class="btn btn-primary" asp-area="Demo" asp-page="/Credentials/Index"><i class="bi bi-person-workspace"></i> Demo Setup &raquo;</a>&nbsp;&nbsp;
+                <h1 class="card-titled">@ViewData["Title"]</h1>
+                <br /><br />
+                <p>
+                    <a class="btn btn-primary" asp-area="Demo" asp-page="/Credentials/Index"><i class="bi bi-person-workspace"></i> Demo Setup &raquo;</a>&nbsp;&nbsp;
                     <a class="btn btn-primary" asp-area="" asp-page="/Index"><i class="bi bi-arrow-return-left"></i></a>
                 </p>
-            </div>  
-            <div class="card-footer bg-transparent border-0">
-                <p class="card-text text-wrap" >Acumatica ERP information required to start. <br/>Edit and check off the Demo credentials you wish to use...</p>
             </div>
-        </div>   
+            <div class="card-footer bg-transparent border-0">
+                <br /><br /><br /><br />
+                <p class="card-texts text-wrap">Acumatica ERP information required to start. <br />Edit and check off the Demo credentials you wish to use...</p>
+            </div>
+        </div>
     </div>
 </div>
 
-<br/><br /><hr/><br />
-<h4 text-muted>ERP Functional Area Demos</h4>
-<br/>
+<br />
+<hr />
+<br />
+<h4 class="ml-2">ERP Functional Area Demos</h4>
+<br />
 
 <div class="container-fluid p-2 card-group">
 
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
-            <div class="card h-100 shadow" id="mycard">         
+            <div class="card h-100 shadow" id="mycard">
                 <div class="card-body">
                     <h3 class=card-title>Sales Orders</h3>
                     <p class="card-text text-wrap" style="width: auto">The following demo shows how to work with a SalesOrder using ReST Open APIs.</p>
@@ -39,22 +47,22 @@
                     <p><a class="btn btn-primary" asp-area="Demo" asp-page="/Clients/SalesOrders/Index"><i class="bi bi-card-list"></i> Get Sales Orders &raquo;</a></p>
                 </div>
             </div>
-        </div>  
-    
+        </div>
+
         <div class="col">
-            <div class="card h-100 shadow" id="mycard">            
+            <div class="card h-100 shadow" id="mycard">
                 <div class="card-body">
                     <h3 class=card-title>Contacts</h3>
                     <p class="card-text text-wrap" style="width: auto">The following demo shows how to work with Contacts using ReST Open APIs.</p>
                 </div>
                 <div class="card-footer bg-transparent border-0">
-                     <p><a class="btn btn-primary" asp-area="Demo" asp-page="/Clients/Contacts/Index"><i class="bi bi-person-rolodex"></i> Get Contacts &raquo;</a></p>
+                    <p><a class="btn btn-primary" asp-area="Demo" asp-page="/Clients/Contacts/Index"><i class="bi bi-person-rolodex"></i> Get Contacts &raquo;</a></p>
                 </div>
             </div>
         </div>
 
         <div class="col">
-            <div class="card h-100 shadow" id="mycard">             
+            <div class="card h-100 shadow" id="mycard">
                 <div class="card-body">
                     <h3 class=card-title>Opportunities</h3>
                     <p class="card-text text-wrap" style="width: auto">The following demo shows how to work with Opportunities using ReST Open APIs.</p>
@@ -62,11 +70,11 @@
                 <div class="card-footer bg-transparent border-0">
                     <p><a class="btn btn-primary" asp-area="Demo" asp-page="/Clients/Opportunities/Index"><i class="bi bi-headset"></i> Get Opportunities &raquo;</a></p>
                 </div>
-            </div>   
+            </div>
         </div>
 
         <div class="col">
-            <div class="card h-100 shadow" id="mycard">        
+            <div class="card h-100 shadow" id="mycard">
                 <div class="card-body">
                     <h3 class=card-title>Cases</h3>
                     <p class="card-text text-wrap" style="width: auto">The following demo shows how to work with Cases using ReST Open APIs.</p>
@@ -78,7 +86,7 @@
         </div>
 
         <div class="col">
-            <div class="card h-100 shadow" id="mycard">        
+            <div class="card h-100 shadow" id="mycard">
                 <div class="card-body">
                     <h3 class=card-title>Bills</h3>
                     <p class="card-text text-wrap" style="width: auto">The following demo shows how to work with Bills using ReST Open APIs.</p>
@@ -90,7 +98,7 @@
         </div>
 
         <div class="col">
-            <div class="card h-100 shadow" id="mycard">         
+            <div class="card h-100 shadow" id="mycard">
                 <div class="card-body">
                     <h3 class=card-title>Shipments</h3>
                     <p class="card-text text-wrap" style="width: auto">The following demo shows how to work with Shipments using ReST Open APIs.</p>
