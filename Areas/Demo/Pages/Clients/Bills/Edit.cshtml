@@ -1,81 +1,141 @@
 ﻿@page
 @model EditModel
-
 @{
     ViewData["Title"] = "Bill";
     Layout = "~/Pages/Shared/_Layout.cshtml";
+    var date = @DateTime.Now.TimeOfDay;
 }
+<br /><hr />
 
-<h1>Edit</h1>
-
-<h4>Bill</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
+<form method="post" class="needs-validation center" novalidate>
+    <div class="container-fluid">
+        <h1>Edit a Bill</h1>
+        <div class="row py-5 mt-4 align-items-center">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="AR_Bill.Id" />
-            <div class="form-group">
-                <label asp-for="AR_Bill.Type" class="control-label"></label>
-                <input asp-for="AR_Bill.Type" class="form-control" required/>
-                <span asp-validation-for="AR_Bill.Type" class="text-danger"></span>
+            <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+                <img src="https://res.cloudinary.com/mhmd/image/upload/v1569543678/form_d9sh6m.svg" alt="" class="img-fluid mb-3 d-none d-md-block">
+                <p>Please create a new bill.</p>
             </div>
-            <div class="form-group">
-                <label asp-for="AR_Bill.ReferenceNbr" class="control-label"></label>
-                <input asp-for="AR_Bill.ReferenceNbr" class="form-control" readonly/>
-                <span asp-validation-for="AR_Bill.ReferenceNbr" class="text-danger"></span>
+            <!--Second Column-->
+            <div class="col-md-7 col-lg-6 ml-auto">
+                <div class="form-row">
+                                             <!--Bill Type Combo-->
+                    <div class="col-lg-6 mb-4">
+                        <label asp-for="AR_Bill.Type" class="control-label"></label>
+                        @Html.DropDownListFor(model => model.combo_Boxes.Bill_Types, Model.combo_Boxes.ComboBox_Bill_Types, "--Select One--")
+                        <span asp-validation-for="AR_Bill.Type" class="text-danger"></span>&nbsp;&nbsp;
+                    </div>
+                                            <!--Bill Status Combo-->                    
+                    <div class="col-lg-6 mb-4">
+                        <label asp-for="AR_Bill.Status" class="control-label"></label>
+                        @Html.DropDownListFor(model => model.combo_Boxes.Bill_Statuses, Model.combo_Boxes.ComboBox_Bill_Statuses, "--Select One--")
+                        <span asp-validation-for="AR_Bill.Status" class="text-danger"></span>
+                    </div>
+                                            <!--Bill Date -->     
+                    <div class="col-lg-6 mb-4">
+                        <label asp-for="AR_Bill.Date" class="control-label"></label>
+                        <input asp-for="AR_Bill.Date" class="form-control" placeholder="" value=date required />
+                        <span asp-validation-for="AR_Bill.Date" class="text-danger"></span>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+                                            <!--Bill PostPeriod -->     
+                    <div class="col-md-5 mb-3">
+                        <label asp-for="AR_Bill.PostPeriod" class="control-label"></label>
+                        <input asp-for="AR_Bill.PostPeriod" class="form-control" placeholder="" />
+                        <span asp-validation-for="AR_Bill.PostPeriod" class="text-danger"></span>
+                        <div class="invalid-feedback">Please provide a valid zip.</div>
+                    </div>
+                                            <!--Bill Ref Nbr -->     
+                    <div class="col-lg-12 mb-4">
+                        <label asp-for="AR_Bill.ReferenceNbr" class="form-label"></label>
+                        <input readonly asp-for="AR_Bill.ReferenceNbr" class="form-control" placeholder="" value="<NEW>" />
+                        <span asp-validation-for="AR_Bill.ReferenceNbr" class="text-danger"></span>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+                                            <!--Bill Description -->     
+                    <div class="col-lg-12 mb-4">
+                        <label asp-for="AR_Bill.Description" class="control-label"></label>
+                        <input asp-for="AR_Bill.Description" class="form-control" placeholder=""/>
+                        <span asp-validation-for="AR_Bill.Description" class="text-danger"></span>
+                        <div class="invalid-feedback">Please provide a valid zip.</div>
+                    </div>
+                                            <!--Bill Vendor Ref Nbr -->     
+                    <div class="col-lg-4 mb-3">
+                        <label asp-for="AR_Bill.VendorRef" class="control-label"></label>
+                        <input asp-for="AR_Bill.VendorRef" class="form-control" placeholder="" required />
+                        <span asp-validation-for="AR_Bill.VendorRef" class="text-danger"></span>
+                        <div class="invalid-feedback">Please provide a valid vendor reference number.</div>
+                        </div>
+                                                <!--Bill Currency ID -->     
+                    <div class="col-lg-4 mb-3">
+                        <label asp-for="AR_Bill.CurrencyID" class="control-label"></label>
+                        <input asp-for="AR_Bill.CurrencyID" class="form-control" placeholder="" value="USD" />
+                        <span asp-validation-for="AR_Bill.CurrencyID" class="text-danger"></span>
+                        <div class="invalid-feedback">Please provide a valid vendor reference number.</div>
+                    </div>
+                                            <!--Bill Currency Amount -->     
+                    <div class="col-lg-4 mb-3">
+                        <label asp-for="AR_Bill.Amount" class="control-label"></label>
+                        <input asp-for="AR_Bill.Amount" class="form-control" placeholder="0.00" />
+                        <span asp-validation-for="AR_Bill.Amount" class="text-danger"></span>
+                        <div class="invalid-feedback">Please provide a valid name.</div>
+                    </div>
+                                            <!--Bill Vendor Name -->     
+                    <div class="col-lg-6 mb-3">
+                        <label asp-for="AR_Bill.Vendor" class="control-label"></label>
+                        <input asp-for="AR_Bill.Vendor" class="form-control" placeholder="" required/>
+                        <span asp-validation-for="AR_Bill.Vendor" class="text-danger"></span>
+                        <div class="invalid-feedback">Please provide a valid name.</div>
+                    </div>
+                                            <!--Bill Last Date Modified -->     
+                    <div class="col-lg-6 mb-4">
+                        <label asp-for="AR_Bill.LastModifiedDateTime" class="control-label"></label>
+                        <input asp-for="AR_Bill.LastModifiedDateTime" class="form-control" placeholder="" value=date required/>
+                        <span asp-validation-for="AR_Bill.LastModifiedDateTime" class="text-danger"></span>
+                        <div class="invalid-feedback">Please choose a username.</div>
+                    </div>
+                                            <!--Bill Submit -->     
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" /><a asp-page="Index">  |  Back to List</a>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="AR_Bill.Status" class="control-label"></label>
-                <input asp-for="AR_Bill.Status" class="form-control" />
-                <span asp-validation-for="AR_Bill.Status" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AR_Bill.Date" class="control-label"></label>
-                <input asp-for="AR_Bill.Date" class="form-control" />
-                <span asp-validation-for="AR_Bill.Date" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AR_Bill.PostPeriod" class="control-label"></label>
-                <input asp-for="AR_Bill.PostPeriod" class="form-control" />
-                <span asp-validation-for="AR_Bill.PostPeriod" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AR_Bill.Vendor" class="control-label"></label>
-                <input asp-for="AR_Bill.Vendor" class="form-control" />
-                <span asp-validation-for="AR_Bill.Vendor" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AR_Bill.Description" class="control-label"></label>
-                <input asp-for="AR_Bill.Description" class="form-control" />
-                <span asp-validation-for="AR_Bill.Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AR_Bill.VendorRef" class="control-label"></label>
-                <input asp-for="AR_Bill.VendorRef" class="form-control" />
-                <span asp-validation-for="AR_Bill.VendorRef" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AR_Bill.Amount" class="control-label"></label>
-                <input asp-for="AR_Bill.Amount" class="form-control" />
-                <span asp-validation-for="AR_Bill.Amount" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AR_Bill.CurrencyID" class="control-label"></label>
-                <input asp-for="AR_Bill.CurrencyID" class="form-control" value="USD"/>
-                <span asp-validation-for="AR_Bill.CurrencyID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AR_Bill.LastModifiedDateTime" class="control-label"></label>
-                <input asp-for="AR_Bill.LastModifiedDateTime" class="form-control" />
-                <span asp-validation-for="AR_Bill.LastModifiedDateTime" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" /><a asp-page="./Index"> | Back to List</a>
-            </div>
-        </form>
+        </div>
     </div>
-</div>
+</form>
+
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+
+// For Demo Purpose [Changing input group text on focus]
+$(function () {
+    $('input, select').on('focus', function () {
+        $(this).parent().find('.input-group-text').css('border-color', '#80bdff');
+    });
+    $('input, select').on('blur', function () {
+        $(this).parent().find('.input-group-text').css('border-color', '#ced4da');
+    });
+});
+
+</script>
+
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 }

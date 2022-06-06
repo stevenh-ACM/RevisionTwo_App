@@ -46,7 +46,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Pages\Test.cshtml" />
     <None Include="Areas\Demo\Pages\Clients\_ValidationScriptsPartial.cshtml" />
     <None Include="Areas\Demo\Pages\_ValidationScriptsPartial.cshtml" />
     <None Include="Pages\Shared\_Layout.cshtml" />

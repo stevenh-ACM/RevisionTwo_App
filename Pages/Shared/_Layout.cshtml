@@ -17,7 +17,7 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow pb-3">
+        <nav class="navbar navbar-expand-md navbar-toggleable-md navbar-light bg-white border-bottom box-shadow pb-3">
             <div class="container-fluid pl-5 pr-5 pt-2 pb-2">
                 <a class="navbar-brand" asp-area="" asp-page="/Index"><img src="/img/Acumatica_Logo.png" height="45" title="Acumatica Logo"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -32,10 +32,8 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="Demo" asp-page="/Home/Index"><i class="bi bi-terminal"></i> Demo</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Test"><i class="bi bi-house"></i>Test</a>
-                        </li>
-                    </ul>>
+                    </ul>
+                    <partial name="_LoginPartial.cshtml"/>
                 </div>
             </div>
         </nav>
@@ -50,7 +48,7 @@
         <p id="copyRight" style=" line-height:0.9;">
             <small>
                 Acumatica, Inc. &copy;2008-2022 All rights reserved<br /><a asp-area="" asp-page="/Terms">&nbsp;&nbsp;&nbsp;&nbsp;Terms</a><a asp-area="" asp-page="/Privacy">&nbsp;&nbsp;&nbsp;&nbsp;Privacy</a>&nbsp;&nbsp;&nbsp;
-                <a id="credits" href="https://github.com/Acumatica/AcumaticaRESTAPIClientForCSharp" target="_blank" alt="Acumatica ReST API Client"> Acumatica ReST API Client<img src="/images/abrx6-vri7x-005.png" /></a>
+                <a id="credits" href="https://github.com/Acumatica/AcumaticaRESTAPIClientForCSharp" target="_blank" alt="Acumatica ReST API Client"> Acumatica ReST API Client<img src="/img/abrx6-vri7x-006.png" /></a>
             </small>
         </p>
     </footer>

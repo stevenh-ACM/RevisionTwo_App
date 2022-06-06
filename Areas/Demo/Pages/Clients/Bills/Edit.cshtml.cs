@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 using RevisionTwo_App.Data;
+using RevisionTwo_App.Helper;
 using RevisionTwo_App.Models;
 
 namespace RevisionTwo_App.Areas.Demo.Pages.Clients.Bills
@@ -28,6 +29,8 @@ namespace RevisionTwo_App.Areas.Demo.Pages.Clients.Bills
 
         [BindProperty]
         public AR_Bill AR_Bill { get; set; } = default!;
+        [BindProperty]
+        public Combo_Boxes combo_Boxes { get; set; } = new();
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
